@@ -8,7 +8,7 @@ chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 chassis\controller.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 chassis\controller.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 chassis\controller.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\controller.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\controller.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\controller.o: ../Drivers/CMSIS/Include/cmsis_version.h
 chassis\controller.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 chassis\controller.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ chassis\controller.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 chassis\controller.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-chassis\controller.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\controller.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stddef.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -34,8 +34,8 @@ chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 chassis\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-chassis\controller.o: D:\ARM\ARMCC\Bin\..\include\string.h
-chassis\controller.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\controller.o: D:\keil\core\ARM\ARMCC\Bin\..\include\string.h
+chassis\controller.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdlib.h
 chassis\controller.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
 chassis\controller.o: ../ACE-ECF/Algorithm/inc/user_lib.h
 chassis\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
@@ -54,4 +54,4 @@ chassis\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.
 chassis\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 chassis\controller.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\controller.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\controller.o: D:\ARM\ARMCC\Bin\..\include\math.h
+chassis\controller.o: D:\keil\core\ARM\ARMCC\Bin\..\include\math.h

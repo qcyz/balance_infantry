@@ -9,7 +9,7 @@ chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/cmsis_version.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -17,7 +17,7 @@ chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stddef.h
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -36,10 +36,10 @@ chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 chassis\lk9025_communication.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\string.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\stdbool.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdio.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\string.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdbool.h
 chassis\lk9025_communication.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h
 chassis\lk9025_communication.o: ../Core/Inc/FreeRTOSConfig.h
 chassis\lk9025_communication.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -63,7 +63,7 @@ chassis\lk9025_communication.o: ../IMU/QuaternionEKF.h
 chassis\lk9025_communication.o: ../IMU/kalman_filter.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\math.h
+chassis\lk9025_communication.o: D:\keil\core\ARM\ARMCC\Bin\..\include\math.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/mat.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/pid.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/lqr.h
