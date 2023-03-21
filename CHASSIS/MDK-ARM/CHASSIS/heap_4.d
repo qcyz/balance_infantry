@@ -1,8 +1,8 @@
 chassis\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
-chassis\heap_4.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\heap_4.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 chassis\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-chassis\heap_4.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stddef.h
-chassis\heap_4.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\heap_4.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\heap_4.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
 chassis\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 chassis\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

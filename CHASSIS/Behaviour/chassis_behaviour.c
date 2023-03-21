@@ -34,7 +34,7 @@ void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f)
         rc_behaviour = CHASSIS_FOLLOW;
         break;
     case RC_SW_DOWN:
-        rc_behaviour = CHASSIS_FOLLOW;
+        rc_behaviour = CHASSIS_NO_FOLLOW;
         break;
     default:
         break;
@@ -92,6 +92,9 @@ void chassis_behaviour_react(chassis_control_t *Chassis_behaviour_react_f)
     case CHASSIS_BATTERY:
         f_CHASSIS_BATTERY(Chassis_behaviour_react_f);
         break;
+	case CHASSIS_NO_FOLLOW:
+        f_CHASSIS_NO_FOLLOW(Chassis_behaviour_react_f);
+        break;
     default:
         break;
     }
@@ -101,9 +104,9 @@ void chassis_state_choose(chassis_control_t *chassis_state_choose_f)
 {
     chassis_state_e last_state;
     last_state = chassis_state_choose_f->chassis_state;
-    if ((user_abs(chassis_state_choose_f->chassis_speedX_pid.SetValue) < chassis_state_choose_f->chassis_speedX_pid.stepIn))
+    if ((user_abs(get_chassis_speed(chassis_state_choose_f)) < 0.3) && (Chassis_x == 0)	&& user_abs(chassis_state_choose_f->chassis_yaw_lqr.Output[0]) < 0.4)
     {
-        chassis_state_choose_f->chassis_state = CHASSIS_SPEED;
+        chassis_state_choose_f->chassis_state = CHASSIS_LOCK_POSITION;
     }
     else
     {
@@ -119,6 +122,8 @@ void chassis_state_choose(chassis_control_t *chassis_state_choose_f)
 	
     if (last_state != chassis_state_choose_f->chassis_state)
     {
+		chassis_state_choose_f->Stop_Position = get_chassis_position(chassis_state_choose_f);
+		
         EncoderValZero(chassis_state_choose_f->Chassis_Motor_encoder[0]);
         EncoderValZero(chassis_state_choose_f->Chassis_Motor_encoder[1]);
         
@@ -130,47 +135,77 @@ void chassis_state_choose(chassis_control_t *chassis_state_choose_f)
 }
 void chassis_speed_pid_calculate(chassis_control_t *chassis_speed_pid_calculate_f)
 {
-    PidCalculate(&chassis_speed_pid_calculate_f->chassis_speedX_pid, Chassis_x, (chassis_speed_pid_calculate_f->chassis_motor[0]->Speed - chassis_speed_pid_calculate_f->chassis_motor[1]->Speed) / 2.0 / RADIAN_COEF * MOTOR_RADIUS);
+    PidCalculate(&chassis_speed_pid_calculate_f->chassis_speedX_pid, Chassis_x, get_chassis_speed(chassis_speed_pid_calculate_f));
 }
 float see_lqr_speed = 0.0f;
+float see_lqr_speed1 = 0.0f;
+float see_lqr_speed2 = 0.0f;
+float see_lqr_speed3 = 0.0f;
 
 void motor_lqr_calculate(chassis_control_t *lqr_calculate_f)
 {
-	lqr_calculate_f->chassis_balance_lqr.Input[0] = (lqr_calculate_f->chassis_motor[0]->Muli_Angle - lqr_calculate_f->chassis_motor[1]->Muli_Angle) / 2.0 / RADIAN_COEF * MOTOR_RADIUS;;
-	lqr_calculate_f->chassis_balance_lqr.Input[1] = (lqr_calculate_f->Chassis_INS->Pitch + BARYCENTER_ZERO_OFFSET) / RADIAN_COEF;
-	lqr_calculate_f->chassis_balance_lqr.Input[2] = (lqr_calculate_f->chassis_motor[0]->Speed - lqr_calculate_f->chassis_motor[1]->Speed) / 2.0 / RADIAN_COEF * MOTOR_RADIUS;
-	lqr_calculate_f->chassis_balance_lqr.Input[3] = lqr_calculate_f->Chassis_INS->Gyro[0] ;		//弧度/s
-
+	double banlance_system_state[4] ={	(lqr_calculate_f->chassis_motor[0]->Muli_Angle - lqr_calculate_f->chassis_motor[1]->Muli_Angle) / 2.0 / RADIAN_COEF * MOTOR_RADIUS - lqr_calculate_f->chassis_speedX_pid.out / RADIAN_COEF, \
+										(lqr_calculate_f->Chassis_INS->Pitch + lqr_calculate_f->chassis_barycenter) / RADIAN_COEF,		\
+										(lqr_calculate_f->chassis_motor[0]->Speed - lqr_calculate_f->chassis_motor[1]->Speed) / 2.0 / RADIAN_COEF * MOTOR_RADIUS, \
+										lqr_calculate_f->Chassis_INS->Gyro[0]		\
+	};
+	double yaw_system_state[2] ={	-float_min_distance(-Chassis_yaw, lqr_calculate_f->Chassis_INS->Yaw, -180, 180) / 57.0, \
+									lqr_calculate_f->Chassis_INS->Gyro[2]	\
+	};
 	
-	lqr_calculate_f->chassis_yaw_lqr.Input[0] = -float_min_distance(-Chassis_yaw, lqr_calculate_f->Chassis_INS->Yaw, -180, 180) / 57.0;
 	
-	lqr_calculate_f->chassis_yaw_lqr.Input[1] = lqr_calculate_f->Chassis_INS->Gyro[2];
+	//LQR数据更新
+	LQR_Data_Update(&lqr_calculate_f->chassis_balance_lqr, banlance_system_state);
+	LQR_Data_Update(&lqr_calculate_f->chassis_yaw_lqr, yaw_system_state);
 	
-	lqr_calculate_f->chassis_balance_lqr.Input[1] -=  lqr_calculate_f->chassis_speedX_pid.out / RADIAN_COEF;
-	
-	lqr_calculate_f->chassis_balance_lqr.Output[0] = lqr_calculate_f->chassis_balance_lqr.Input[0] * lqr_calculate_f->chassis_balance_lqr.k[0]    	\
-													+ lqr_calculate_f->chassis_balance_lqr.Input[1] * lqr_calculate_f->chassis_balance_lqr.k[1]		\
-													+ lqr_calculate_f->chassis_balance_lqr.Input[2] * lqr_calculate_f->chassis_balance_lqr.k[2]		\
-													+ lqr_calculate_f->chassis_balance_lqr.Input[3] * lqr_calculate_f->chassis_balance_lqr.k[3];
-	
-	lqr_calculate_f->chassis_yaw_lqr.Output[0] = lqr_calculate_f->chassis_yaw_lqr.Input[0] * lqr_calculate_f->chassis_yaw_lqr.k[0]		\
-												+ lqr_calculate_f->chassis_yaw_lqr.Input[1] * lqr_calculate_f->chassis_yaw_lqr.k[1];
-	
-	see_lqr_speed = lqr_calculate_f->chassis_balance_lqr.Output[0];
+	//LQR数据计算
+	LQR_Calculate(&lqr_calculate_f->chassis_balance_lqr);
+	LQR_Calculate(&lqr_calculate_f->chassis_yaw_lqr);
 
 }
 
+
+double get_chassis_position(chassis_control_t *get_position_f)
+{
+	return (get_position_f->chassis_motor[0]->Muli_Angle - get_position_f->chassis_motor[1]->Muli_Angle) / 2.0 / RADIAN_COEF * MOTOR_RADIUS;
+}
+
+double get_chassis_speed(chassis_control_t *get_speed_f)
+{
+	return (get_speed_f->chassis_motor[0]->Speed - get_speed_f->chassis_motor[1]->Speed) / 2.0 / RADIAN_COEF * MOTOR_RADIUS;
+}
+
+float see_position_speed;
+float see_position;
+float see_position_t;
+//底盘重心调整
+void chassis_barycenter_dispose(chassis_control_t *barycenter_dispose_f)
+{
+	float last_posion;
+	last_posion = see_position_t;
+    if ((user_abs(get_chassis_speed(barycenter_dispose_f)) < 0.1) && (Chassis_x == 0)	&& user_abs(barycenter_dispose_f->chassis_yaw_lqr.Output[0]) < 0.4)
+	{
+		see_position_speed = get_chassis_speed(barycenter_dispose_f);
+		see_position = (get_chassis_position(barycenter_dispose_f) - barycenter_dispose_f->Stop_Position) * 100;
+		see_position_t = see_position_t + (get_chassis_position(barycenter_dispose_f) - barycenter_dispose_f->Stop_Position);
+		barycenter_dispose_f->chassis_barycenter += see_position / 5000;
+	}
+
+}
 
 
 
 void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 {
-    //Chassis_yaw = Chassis_behaviour_react_f->Chassis_Gimbal_Diference_Angle;
+    Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - 4120) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
+}
+void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
+{
 }
 
 void f_CHASSIS_ROTATION(chassis_control_t *Chassis_behaviour_react_f)
 {
-    Chassis_yaw = CHASSIS_ROTATION_SPEED;
+    Chassis_yaw += CHASSIS_ROTATION_SPEED;
 	Chassis_x = 0;
 }
 void f_CHASSIS_BATTERY(chassis_control_t *Chassis_behaviour_react_f)
@@ -178,3 +213,4 @@ void f_CHASSIS_BATTERY(chassis_control_t *Chassis_behaviour_react_f)
     Chassis_x = 0;
     Chassis_yaw = 0;
 }
+

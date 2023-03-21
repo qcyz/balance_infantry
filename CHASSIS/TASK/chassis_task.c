@@ -27,10 +27,11 @@ static void chassis_get_gimbal_differece_angle(chassis_control_t *chassis_get_gi
 
 
 
-double k_banlance[4] = {0,-71.5271420011465,0,-18.2171785142389};
-double k_yaw[2] = {14.1421356237310, 2.70149737510667};
+double k_banlance[4] = {0,-36.9048292577891,-1.00690578556486,-5.47729819946999};
+double k_yaw[2] = {20.1421356237309,2.33567287862321};
 
 
+float see_r_out =  0;
 
 float see_l_out =  0;
 void Task_Chassis(void const *argument)
@@ -42,6 +43,7 @@ void Task_Chassis(void const *argument)
 	{
 		taskENTER_CRITICAL(); //进入临界区
 		
+		chassis_motor_read_turns();
 
 		Chassis_Work(&Chassis_Control);
 
@@ -50,9 +52,9 @@ void Task_Chassis(void const *argument)
 		chassis_motor_9025_send(Chassis_Control.chassis_motor[0]->Motor_output,	\
 								Chassis_Control.chassis_motor[1]->Motor_output);
 		
-		see_l_out = Chassis_Control.chassis_motor[0]->Motor_output;
-		
-		
+//		chassis_barycenter_dispose(&Chassis_Control);
+		see_l_out =  Chassis_Control.chassis_motor[0]->Motor_output;
+		see_r_out =  Chassis_Control.chassis_motor[1]->Motor_output;
 		taskEXIT_CRITICAL(); //退出临界区
 
 		//vTaskDelayUntil(&currentTime, 1); //绝对延时//vTaskDelay(2)
@@ -129,10 +131,15 @@ static void Chassis_Init(chassis_control_t *chassis_data_init_f)
 	sliding_average_filter_init(&chassis_data_init_f->chassis_output_l_filter, 10);
 	sliding_average_filter_init(&chassis_data_init_f->chassis_output_r_filter, 10);
 	
+	/*底盘输出滤波初始化*/
+	sliding_average_filter_init(&chassis_data_init_f->chassis_gory, 10);
+	
 	chassis_data_init_f->behaviour = CHASSIS_FOLLOW;
 	//速度因子
 	chassis_data_init_f->chassis_speed_gain = 1;
+	chassis_data_init_f->chassis_barycenter = BARYCENTER_ZERO_OFFSET;
 }
+
 void chassis_state_react(chassis_control_t *chassis_state_react_f)
 {
 	switch (chassis_state_react_f->chassis_state)
@@ -158,11 +165,13 @@ void chassis_state_react(chassis_control_t *chassis_state_react_f)
 	}
 }
 
+
 void chassis_prevent_motion_distortion(chassis_control_t *chassis_prevent_motion_distortion_f)
 {
 	chassis_prevent_motion_distortion_f->chassis_motor[0]->Motor_output = TORQUE_TO_OUTPUT * (-chassis_prevent_motion_distortion_f->chassis_balance_lqr.Output[0] + chassis_prevent_motion_distortion_f->chassis_yaw_lqr.Output[0]) / 2.0;
 	chassis_prevent_motion_distortion_f->chassis_motor[1]->Motor_output = TORQUE_TO_OUTPUT * (chassis_prevent_motion_distortion_f->chassis_balance_lqr.Output[0] + chassis_prevent_motion_distortion_f->chassis_yaw_lqr.Output[0]) / 2.0;
 	
+	//平滑输出
 	chassis_prevent_motion_distortion_f->chassis_motor[0]->Motor_output = sliding_average_filter(&chassis_prevent_motion_distortion_f->chassis_output_l_filter, chassis_prevent_motion_distortion_f->chassis_motor[0]->Motor_output);
 	chassis_prevent_motion_distortion_f->chassis_motor[1]->Motor_output = sliding_average_filter(&chassis_prevent_motion_distortion_f->chassis_output_r_filter, chassis_prevent_motion_distortion_f->chassis_motor[1]->Motor_output);
 
@@ -172,11 +181,11 @@ void chassis_zero_fore_react(chassis_control_t *chassis_zero_fore_react_f)
 	chassis_zero_fore_react_f->chassis_balance_lqr.Output[0] = 0;
 	chassis_zero_fore_react_f->chassis_yaw_lqr.Output[0] = 0;
 }
+
 void motor_position_speed_pid_calculate(chassis_control_t *motor_position_speed_pid_calculate_f)
 {
-	motor_position_speed_control(&motor_position_speed_pid_calculate_f->chassis_speedX_pid, &motor_position_speed_pid_calculate_f->chassis_positionX_pid, 0, (motor_position_speed_pid_calculate_f->Chassis_Motor_encoder[0]->Encode_Record_Val- motor_position_speed_pid_calculate_f->Chassis_Motor_encoder[1]->Encode_Record_Val) / 2.0, (motor_position_speed_pid_calculate_f->chassis_motor[0]->Speed - motor_position_speed_pid_calculate_f->chassis_motor[0]->Speed) / 2.0f);
+	motor_position_speed_control(&motor_position_speed_pid_calculate_f->chassis_speedX_pid, &motor_position_speed_pid_calculate_f->chassis_positionX_pid, motor_position_speed_pid_calculate_f->Stop_Position,get_chassis_position(motor_position_speed_pid_calculate_f), get_chassis_speed(motor_position_speed_pid_calculate_f));
 }
-
 
 void chassis_get_gimbal_differece_angle(chassis_control_t *chassis_get_gimbal_differece_angle_f)
 {

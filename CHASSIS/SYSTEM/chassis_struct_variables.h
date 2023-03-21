@@ -72,7 +72,7 @@ ___`. .' /--.--\ `. . __
 typedef enum
 {
 	CHASSIS_FOLLOW,	   //跟随
-//	CHASSIS_NO_FOLLOW, //不跟随
+	CHASSIS_NO_FOLLOW, //不跟随
 	CHASSIS_ROTATION,  //小陀螺
 	CHASSIS_BATTERY,   //炮台模式
 } chassis_behaviour_e;
@@ -158,7 +158,7 @@ typedef struct
     uint8_t Spin_Direction;           //0:clockwise  1:anticlockwise
 	
 	int16_t Motor_output;
-
+	
 } motor_9025_t;
 
 typedef struct
@@ -184,13 +184,17 @@ typedef struct
 	SlidAveFilterObj chassis_output_l_filter;
     SlidAveFilterObj chassis_output_r_filter;
 
+	SlidAveFilterObj chassis_gory;
+	
+	fp32 chassis_barycenter;
 	
 	fp32 Chassis_Gimbal_Diference_Angle; //底盘与云台的差角
 
 	supercapacitor_receive_t *super_cap_c; //超电
 	fp32 chassis_speed_gain;			   //速度因子
 	
-	
+	double Stop_Position;	
+
 
 } chassis_control_t;
 

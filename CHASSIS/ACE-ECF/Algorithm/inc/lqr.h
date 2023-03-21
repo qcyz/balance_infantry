@@ -59,6 +59,8 @@ typedef struct
 /* Funtion */
 //extern void LQR_Calculate(LQR_t *lqr);
 void LQR_Init(LQR_t *lqr, uint8_t system_state_size, uint8_t control_size, double *k);
+void LQR_Data_Update(LQR_t *lqr, double* system_state);
+void LQR_Calculate(LQR_t *lqr);
 
 #endif
 

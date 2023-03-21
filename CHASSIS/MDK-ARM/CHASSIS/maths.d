@@ -1,13 +1,13 @@
 chassis\maths.o: ..\ACE-ECF\Algorithm\src\maths.c
 chassis\maths.o: ../ACE-ECF/Algorithm/inc/maths.h
 chassis\maths.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
-chassis\maths.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\maths.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
 chassis\maths.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\maths.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\maths.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\maths.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\maths.o: ../Drivers/CMSIS/Include/cmsis_version.h
 chassis\maths.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 chassis\maths.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-chassis\maths.o: D:\keil\core\ARM\ARMCC\Bin\..\include\string.h
-chassis\maths.o: D:\keil\core\ARM\ARMCC\Bin\..\include\math.h
+chassis\maths.o: D:\ARM\ARMCC\Bin\..\include\string.h
+chassis\maths.o: D:\ARM\ARMCC\Bin\..\include\math.h
 chassis\maths.o: ../ACE-ECF/Algorithm/inc/list_of_function.h

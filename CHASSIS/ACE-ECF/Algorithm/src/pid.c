@@ -240,7 +240,7 @@ int16_t motor_speed_control(pid_parameter_t *spid, fp32 setSpeed, fp32 actualSpe
 int16_t motor_position_speed_control(pid_parameter_t *speed_pid, pid_parameter_t *position_pid, fp32 setPosition, fp32 actual_position, fp32 actual_speed)
 {
     speed_pid->SetValue = PidCalculate(position_pid, setPosition, actual_position); // 速度环设定值由位置环处理
-    return PidCalculate(speed_pid, speed_pid->SetValue, actual_speed);              // 电机输出量
+    return PidCalculate(speed_pid, speed_pid->SetValue, actual_speed);              // 电机输出力矩
 }
 
 /*------------------------------以下为内部函数---------------------------------*/

@@ -22,10 +22,19 @@ void LQR_Data_Clear(LQR_t *lqr);
  * @param  lqr              
  * ************************* Dongguan-University of Technology -ACE**************************
  */
-//void LQR_Calculate(LQR_t *lqr)
-//{
-
-//}
+void LQR_Calculate(LQR_t *lqr)
+{
+	int i,j;
+	for(i = 0; i < lqr->Control_Size; i++)
+	{
+		lqr->Output[i] = 0;
+		for(j = 0; j < lqr->System_State_Size; j++)
+		{
+			lqr->Output[i] += lqr->Input[j] * lqr->k[i * lqr->System_State_Size + j];
+		}
+	}
+	
+}
 
 
 /**
@@ -80,14 +89,19 @@ void LQR_Data_Clear(LQR_t *lqr)
 
 /**
  * ************************* Dongguan-University of Technology -ACE**************************
- * @brief  LQR数据清除
+ * @brief  LQR数据更新
  * @param  lqr              
  * ************************* Dongguan-University of Technology -ACE**************************
  */
-void LQR_Data_Cclear(LQR_t *lqr)
+void LQR_Data_Update(LQR_t *lqr, double* system_state)
 {
-  memset(lqr->Input, 0, sizeof(double) * lqr->System_State_Size * lqr->Control_Size);
-  
-  memset(lqr->Output, 0, sizeof(double) * lqr->Control_Size);
+	int i = 0;
+	for(; i < lqr->System_State_Size; i++)
+	{
+		lqr->Input[i] = system_state[i];
+	}
 }
+
+
+
 

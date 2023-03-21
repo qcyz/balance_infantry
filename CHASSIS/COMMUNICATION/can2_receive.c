@@ -56,12 +56,7 @@ void chassis_can2_callback(CAN_HandleTypeDef *hcan)
     {
 			case 0x300:
 			{
-								__asm__ 
-								(
-									"LDR Register , [Rx_Data] \n"
-									"STR Register , [&Chassis_Control.Chassis_Gimbal_Diference_Angle] \n"
-								);
-								break;
+				yaw_motor_measure.position = (int16_t)(Rx_Data[0] << 8 | Rx_Data[1]);
 			}
 			case 0x206: // YÖá
 			{
