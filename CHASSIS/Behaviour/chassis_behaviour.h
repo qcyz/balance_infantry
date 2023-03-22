@@ -13,7 +13,7 @@
 #endif
 
 #define CHASSIS_X_SEN	3.0f		// m /s
-#define CHASSIS_YAW_SEN 180.0f  	// бу/s
+#define CHASSIS_YAW_SEN 720.0f  	// бу/s
 
 void chassis_behaviour_react(chassis_control_t *Chassis_behaviour_react_f);
 void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f);

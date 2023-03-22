@@ -44,7 +44,7 @@
 /**********************键盘鼠标遥控速度设置**********************/
 #define MOUSE_YAW_SPEED 0.011f   //鼠标yaw轴速度增益
 #define MOUSE_PITCH_SPEED 0.009f //鼠标pitch轴速度增益
-#define RC_YAW_SPEED 0.0003f     //遥控器yaw轴速度增益
+#define RC_YAW_SPEED 0.0008f     //遥控器yaw轴速度增益
 #define RC_PITCH_SPEED 0.0005f   //遥控器pitch轴速度增益
 
 #endif
