@@ -22,7 +22,6 @@ static void motor_position_speed_pid_calculate(chassis_control_t *motor_position
 static void chassis_zero_fore_react(chassis_control_t *chassis_zero_fore_react_f);
 static void chassis_state_react(chassis_control_t *chassis_state_react_f);
 static void chassis_prevent_motion_distortion(chassis_control_t *chassis_prevent_motion_distortion_f);
-static void chassis_get_gimbal_differece_angle(chassis_control_t *chassis_get_gimbal_differece_angle_f);
 
 
 
@@ -52,7 +51,7 @@ void Task_Chassis(void const *argument)
 		chassis_motor_9025_send(Chassis_Control.chassis_motor[0]->Motor_output,	\
 								Chassis_Control.chassis_motor[1]->Motor_output);
 		
-//		chassis_barycenter_dispose(&Chassis_Control);
+//		chassis_barycenter_dispose(&Chassis_Control);                                                                                                                                                                                                                                                                                   
 		see_l_out =  Chassis_Control.chassis_motor[0]->Motor_output;
 		see_r_out =  Chassis_Control.chassis_motor[1]->Motor_output;
 		taskEXIT_CRITICAL(); //退出临界区
@@ -64,9 +63,6 @@ void Task_Chassis(void const *argument)
 
 void Chassis_Work(chassis_control_t *Chassis_Control_f)
 {
-	//底盘云台角度计算
-	chassis_get_gimbal_differece_angle(Chassis_Control_f);
-
 	//选择底盘模式
 	chassis_behaviour_choose(Chassis_Control_f);
 
@@ -187,8 +183,3 @@ void motor_position_speed_pid_calculate(chassis_control_t *motor_position_speed_
 	motor_position_speed_control(&motor_position_speed_pid_calculate_f->chassis_speedX_pid, &motor_position_speed_pid_calculate_f->chassis_positionX_pid, motor_position_speed_pid_calculate_f->Stop_Position,get_chassis_position(motor_position_speed_pid_calculate_f), get_chassis_speed(motor_position_speed_pid_calculate_f));
 }
 
-void chassis_get_gimbal_differece_angle(chassis_control_t *chassis_get_gimbal_differece_angle_f)
-{
-	chassis_get_gimbal_differece_angle_f->Chassis_Gimbal_Diference_Angle = ((float)(chassis_get_gimbal_differece_angle_f->yaw_motor_encoder->Encode_Actual_Val - YAW_ZERO_OFFSET)* 360.0f / 8192.0f);
-    chassis_get_gimbal_differece_angle_f->Chassis_Gimbal_Diference_Angle = loop_float_constrain(chassis_get_gimbal_differece_angle_f->Chassis_Gimbal_Diference_Angle, -180.0f, 180.0f);
-}

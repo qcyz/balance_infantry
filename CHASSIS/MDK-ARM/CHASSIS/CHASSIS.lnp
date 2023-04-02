@@ -50,6 +50,8 @@
 "chassis\bsp_motor_encoder.o"
 "chassis\bsp_dwt.o"
 "chassis\bsp_pwm.o"
+"chassis\crc.o"
+"chassis\bsp_referee.o"
 "chassis\init_task.o"
 "chassis\task_safe.o"
 "chassis\chassis_task.o"

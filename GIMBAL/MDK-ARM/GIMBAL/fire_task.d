@@ -45,9 +45,11 @@ gimbal\fire_task.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\fire_task.o: ../Core/Inc/usart.h
 gimbal\fire_task.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
 gimbal\fire_task.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
+gimbal\fire_task.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
+gimbal\fire_task.o: ..\ACE-ECF\Bsp\Inc\CRC.h
+gimbal\fire_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\fire_task.o: ..\ACE-ECF\Algorithm\inc\pid.h
 gimbal\fire_task.o: ..\ACE-ECF\Algorithm\inc\fifo.h
-gimbal\fire_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\fire_task.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\fire_task.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h
 gimbal\fire_task.o: D:\ARM\ARMCC\Bin\..\include\math.h

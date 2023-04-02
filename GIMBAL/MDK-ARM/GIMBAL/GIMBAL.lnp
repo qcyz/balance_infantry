@@ -63,6 +63,8 @@
 "gimbal\bsp_motor_encoder.o"
 "gimbal\bsp_pwm.o"
 "gimbal\bsp_usb.o"
+"gimbal\bsp_referee.o"
+"gimbal\crc.o"
 "gimbal\gimbal_task.o"
 "gimbal\init_task.o"
 "gimbal\ins_task.o"
@@ -85,7 +87,7 @@
 "gimbal\segger_sysview.o"
 "gimbal\segger_sysview_config_freertos.o"
 "gimbal\segger_sysview_freertos.o"
---library_type=microlib --strict --scatter "GIMBAL\GIMBAL.sct"
+--strict --scatter "GIMBAL\GIMBAL.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "GIMBAL.map" -o GIMBAL\GIMBAL.axf

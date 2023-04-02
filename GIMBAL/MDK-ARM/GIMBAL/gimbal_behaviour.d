@@ -45,9 +45,11 @@ gimbal\gimbal_behaviour.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\gimbal_behaviour.o: ../Core/Inc/usart.h
 gimbal\gimbal_behaviour.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
 gimbal\gimbal_behaviour.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
+gimbal\gimbal_behaviour.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
+gimbal\gimbal_behaviour.o: ..\ACE-ECF\Bsp\Inc\CRC.h
+gimbal\gimbal_behaviour.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\gimbal_behaviour.o: ..\ACE-ECF\Algorithm\inc\pid.h
 gimbal\gimbal_behaviour.o: ..\ACE-ECF\Algorithm\inc\fifo.h
-gimbal\gimbal_behaviour.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\gimbal_behaviour.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\gimbal_behaviour.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h
 gimbal\gimbal_behaviour.o: D:\ARM\ARMCC\Bin\..\include\math.h

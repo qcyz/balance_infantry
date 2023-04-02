@@ -35,7 +35,7 @@ gimbal_control_t Gimbal_Control;
 static void Gimbal_Work(gimbal_control_t *Gimbal_Work_f);
 static void Gimbal_Init(gimbal_control_t *Gimbal_Init_f);
 
-double k_yaw_lqr[2] = {-7.96227766016838, -0.33467065322830};
+double k_yaw_lqr[2] = {-7.96227766016838, -0.23467065322830};
 double k_pitch_lqr[2] = {-5.94183025734807, -0.3};
 
 
@@ -101,12 +101,12 @@ void Gimbal_Init(gimbal_control_t *Gimbal_Init_f)
    
    /*--------------------初始化pid--------------------*/
 	PidInit(&Gimbal_Init_f->Pitch_c.motor_pid, GIMBAL_PITCH_P, GIMBAL_PITCH_I, GIMBAL_PITCH_D, Integral_Limit | Separated_Integral);
-    PidInitMode(&Gimbal_Init_f->Pitch_c.motor_pid, Separated_Integral, 13.0f, -13.0f);
+    PidInitMode(&Gimbal_Init_f->Pitch_c.motor_pid, Separated_Integral, 5.0f, -5.0f);
     PidInitMode(&Gimbal_Init_f->Pitch_c.motor_pid, Integral_Limit, 1000, 0);
 	
 	PidInit(&Gimbal_Init_f->Yaw_c.motor_pid, GIMBAL_YAW_P, GIMBAL_YAW_I, GIMBAL_YAW_D, Integral_Limit | Separated_Integral);
     PidInitMode(&Gimbal_Init_f->Yaw_c.motor_pid, Separated_Integral, 10.0f, -10.0f);
-    PidInitMode(&Gimbal_Init_f->Yaw_c.motor_pid, Integral_Limit, 400, 0);
+    PidInitMode(&Gimbal_Init_f->Yaw_c.motor_pid, Integral_Limit, 600, 0);
    
    /*------------初始化yaw轴与pitch轴的滤波------------*/
 	sliding_average_filter_init(&Gimbal_Init_f->Pitch_c.motor_filter, 10);

@@ -10,20 +10,21 @@
 #include "semphr.h"
 
 /*OS控制任务周期以及启动时间*/
-#define CHASSIS_TASK_INIT_TIME 5
-#define CHASSIS_CONTROL_TIME 2
+#define CHASSIS_TASK_INIT_TIME 	5
+#define CHASSIS_CONTROL_TIME 	2
+#define CHASSIS_TASK_Hz 		1000.0f
 
 /************底盘pid************/
 #define CHASSIS_SPEED_KP 20.0f
 #define CHASSIS_SPEED_KI 0.0f
 #define CHASSIS_SPEED_KD 0.0f
 
-#define CHASSIS_POSITION_KP 4.0f
-#define CHASSIS_POSITION_KI 0.0f
-#define CHASSIS_POSITION_KD 0.5f
+#define CHASSIS_POSITION_KP 	4.0f
+#define CHASSIS_POSITION_KI 	0.0f
+#define CHASSIS_POSITION_KD 	0.5f
 
-#define CHASSIS_SPEED_LIMIT  	0.3f
-#define CHASSIS_PITCH_LIMIT		25.0f
+#define CHASSIS_SPEED_LIMIT		0.3f
+#define CHASSIS_PITCH_LIMIT		20.0f
 
 
 
@@ -32,7 +33,7 @@
 
 #define MOTOR_RADIUS 0.1f
 
-#define BARYCENTER_ZERO_OFFSET	1.0f //重心偏移值
+#define BARYCENTER_ZERO_OFFSET	-0.5f //重心偏移值
 
 #ifndef RADIAN_COEF
 #define RADIAN_COEF 57.295779513f

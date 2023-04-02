@@ -98,17 +98,25 @@ void f_GIMBAL_MANUAL(gimbal_control_t *f_GIMBAL_MANUAL_f)
 	f_GIMBAL_MANUAL_f->Pitch_c.motor_target = float_min_distance(Gimbal_pitch, f_GIMBAL_MANUAL_f->Gimbal_INS->Pitch, -180, 180);;
 	
 }
+float k1 = 80.0f;
 void f_GIMBAL_AUTOATTACK(gimbal_control_t *f_GIMBAL_AUTOATTACK_f)
 {
 	
-	
+//	
 //	if(((*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw != 0) || ((*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch != 0))
 //	{
-		Gimbal_pitch = f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Pitch + (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch;
-		Gimbal_yaw = f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Yaw + (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw;
-		f_GIMBAL_AUTOATTACK_f->Yaw_c.motor_target = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch;
-		f_GIMBAL_AUTOATTACK_f->Pitch_c.motor_target = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch;
-		//gimbal_clear_virtual_recive();
+		Gimbal_pitch += (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch / k1;
+		Gimbal_yaw += (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw / k1;
+		f_GIMBAL_AUTOATTACK_f->Yaw_c.motor_target = float_min_distance(Gimbal_yaw, f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Yaw, -180, 180);
+		f_GIMBAL_AUTOATTACK_f->Pitch_c.motor_target = float_min_distance(Gimbal_pitch, f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Pitch, -180, 180);;
+//	
+//		f_GIMBAL_AUTOATTACK_f->Yaw_c.motor_target = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw;
+//		f_GIMBAL_AUTOATTACK_f->Pitch_c.motor_target = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch;
+		gimbal_clear_virtual_recive();
+//	}
+//	else
+//	{
+//		f_GIMBAL_MANUAL(f_GIMBAL_AUTOATTACK_f);
 //	}
 }
 void f_GIMBAL_AUTOBUFF(gimbal_control_t *f_GIMBAL_AUTOBUFF_f)

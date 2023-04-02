@@ -21,6 +21,7 @@
 #include "spi.h"
 #include "bsp_dwt.h"
 #include "bsp_dr16.h"
+#include "bsp_referee.h"
 
 
 extern osThreadId Init_TASKHandle;
@@ -52,7 +53,7 @@ void Init_Task(void const *argument)
 	ECF_RC_Init();
 
 	//裁判系统
-	//referee_system_init();
+	ECF_referee_uart_init();
 
 	//创建安全任务
 	osThreadDef(Safe_TASK, Safe_Task, osPriorityNormal, 0, 128);

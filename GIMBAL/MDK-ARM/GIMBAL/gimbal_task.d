@@ -55,6 +55,8 @@ gimbal\gimbal_task.o: ..\ACE-ECF\Bsp\Inc\bsp_dr16.h
 gimbal\gimbal_task.o: ../Core/Inc/usart.h
 gimbal\gimbal_task.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
 gimbal\gimbal_task.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
+gimbal\gimbal_task.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
+gimbal\gimbal_task.o: ..\ACE-ECF\Bsp\Inc\CRC.h
 gimbal\gimbal_task.o: ..\ACE-ECF\Algorithm\inc\pid.h
 gimbal\gimbal_task.o: ..\ACE-ECF\Algorithm\inc\fifo.h
 gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h

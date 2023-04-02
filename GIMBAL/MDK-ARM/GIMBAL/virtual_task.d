@@ -45,9 +45,11 @@ gimbal\virtual_task.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\virtual_task.o: ../Core/Inc/usart.h
 gimbal\virtual_task.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
 gimbal\virtual_task.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
+gimbal\virtual_task.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
+gimbal\virtual_task.o: ..\ACE-ECF\Bsp\Inc\CRC.h
+gimbal\virtual_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\virtual_task.o: ..\ACE-ECF\Algorithm\inc\pid.h
 gimbal\virtual_task.o: ..\ACE-ECF\Algorithm\inc\fifo.h
-gimbal\virtual_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\virtual_task.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\virtual_task.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h
 gimbal\virtual_task.o: D:\ARM\ARMCC\Bin\..\include\math.h

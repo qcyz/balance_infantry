@@ -47,9 +47,11 @@ gimbal\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\can2_receive.o: ../Core/Inc/usart.h
 gimbal\can2_receive.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
 gimbal\can2_receive.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
+gimbal\can2_receive.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
+gimbal\can2_receive.o: ..\ACE-ECF\Bsp\Inc\CRC.h
+gimbal\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\can2_receive.o: ..\ACE-ECF\Algorithm\inc\pid.h
 gimbal\can2_receive.o: ..\ACE-ECF\Algorithm\inc\fifo.h
-gimbal\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h
 gimbal\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\math.h

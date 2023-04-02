@@ -72,6 +72,7 @@ chassis\chassis_behaviour.o: ../ACE-ECF/Algorithm/inc/filter.h
 chassis\chassis_behaviour.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 chassis\chassis_behaviour.o: ../ACE-ECF/Bsp/Inc/bsp_Motor_Encoder.h
 chassis\chassis_behaviour.o: ../TASK/chassis_task.h
+chassis\chassis_behaviour.o: ../SYSTEM/chassis_config.h
 chassis\chassis_behaviour.o: ../ACE-ECF/Algorithm/inc/maths.h
 chassis\chassis_behaviour.o: ../ACE-ECF/Algorithm/inc/user_lib.h
 chassis\chassis_behaviour.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

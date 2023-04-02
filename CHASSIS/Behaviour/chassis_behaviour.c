@@ -1,5 +1,6 @@
 #include "chassis_behaviour.h"
 #include "chassis_task.h"
+#include "chassis_config.h"
 #include "bsp_dr16.h"
 #include "maths.h"
 #include "user_lib.h"
@@ -65,7 +66,7 @@ void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f)
     //**G 补给模式
     if (Chassis_behaviour_f->Chassis_RC->kb.bit.G)
     {
-        //kb_behaviour = CHASSIS_NO_FOLLOW; //补给模式下，底盘不跟随云台
+        kb_behaviour = CHASSIS_NO_FOLLOW; //补给模式下，底盘不跟随云台
     }
     //如果模式发生改变，设置对应的模式
     if (last_behaviour != kb_behaviour)
@@ -77,7 +78,7 @@ void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f)
 void chassis_behaviour_react(chassis_control_t *Chassis_behaviour_react_f)
 {
     Chassis_x = (Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) * CHASSIS_X_SEN;
-    Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) / 1000.0f * CHASSIS_YAW_SEN;
+    Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
 	
 	
 	
@@ -106,7 +107,7 @@ void chassis_state_choose(chassis_control_t *chassis_state_choose_f)
     last_state = chassis_state_choose_f->chassis_state;
     if ((user_abs(get_chassis_speed(chassis_state_choose_f)) < 0.3) && (Chassis_x == 0)	&& user_abs(chassis_state_choose_f->chassis_yaw_lqr.Output[0]) < 0.4)
     {
-        chassis_state_choose_f->chassis_state = CHASSIS_LOCK_POSITION;
+        chassis_state_choose_f->chassis_state = CHASSIS_SPEED;
     }
     else
     {
@@ -137,19 +138,15 @@ void chassis_speed_pid_calculate(chassis_control_t *chassis_speed_pid_calculate_
 {
     PidCalculate(&chassis_speed_pid_calculate_f->chassis_speedX_pid, Chassis_x, get_chassis_speed(chassis_speed_pid_calculate_f));
 }
-float see_lqr_speed = 0.0f;
-float see_lqr_speed1 = 0.0f;
-float see_lqr_speed2 = 0.0f;
-float see_lqr_speed3 = 0.0f;
 
 void motor_lqr_calculate(chassis_control_t *lqr_calculate_f)
 {
-	double banlance_system_state[4] ={	(lqr_calculate_f->chassis_motor[0]->Muli_Angle - lqr_calculate_f->chassis_motor[1]->Muli_Angle) / 2.0 / RADIAN_COEF * MOTOR_RADIUS - lqr_calculate_f->chassis_speedX_pid.out / RADIAN_COEF, \
-										(lqr_calculate_f->Chassis_INS->Pitch + lqr_calculate_f->chassis_barycenter) / RADIAN_COEF,		\
+	double banlance_system_state[4] ={	(lqr_calculate_f->chassis_motor[0]->Muli_Angle - lqr_calculate_f->chassis_motor[1]->Muli_Angle) / 2.0 / RADIAN_COEF * MOTOR_RADIUS, \
+										(lqr_calculate_f->Chassis_INS->Pitch + lqr_calculate_f->chassis_barycenter) / RADIAN_COEF - lqr_calculate_f->chassis_speedX_pid.out / RADIAN_COEF,		\
 										(lqr_calculate_f->chassis_motor[0]->Speed - lqr_calculate_f->chassis_motor[1]->Speed) / 2.0 / RADIAN_COEF * MOTOR_RADIUS, \
 										lqr_calculate_f->Chassis_INS->Gyro[0]		\
 	};
-	double yaw_system_state[2] ={	-float_min_distance(-Chassis_yaw, lqr_calculate_f->Chassis_INS->Yaw, -180, 180) / 57.0, \
+	double yaw_system_state[2] ={	-float_min_distance(-Chassis_yaw, lqr_calculate_f->Chassis_INS->Yaw, -180, 180) / RADIAN_COEF, \
 									lqr_calculate_f->Chassis_INS->Gyro[2]	\
 	};
 	
@@ -197,7 +194,7 @@ void chassis_barycenter_dispose(chassis_control_t *barycenter_dispose_f)
 
 void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 {
-    Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - 4120) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
+    Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - YAW_ZERO_OFFSET) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
 }
 void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 {

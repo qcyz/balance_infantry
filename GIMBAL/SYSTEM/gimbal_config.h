@@ -28,12 +28,12 @@
 #define YAW_ZERO_OFFSET 6617
 /**********************pitch轴PID参数**********************/
 #define GIMBAL_PITCH_P 0.0f
-#define GIMBAL_PITCH_I 4.0f
+#define GIMBAL_PITCH_I 0.0f
 #define GIMBAL_PITCH_D 0.0f
 
 /**********************Yaw轴PID参数**********************/
 #define GIMBAL_YAW_P 0.0f
-#define GIMBAL_YAW_I 6.0f
+#define GIMBAL_YAW_I 0.0f
 #define GIMBAL_YAW_D 0.0f
 
 

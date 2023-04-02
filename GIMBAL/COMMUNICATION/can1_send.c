@@ -75,7 +75,7 @@ void can1_gimbal_setmsg_to_motor(int16_t yaw, int16_t pitch)
 }
 
 
-void can2_gimbal_setmsg(int16_t left, int16_t right, int16_t fire)
+void can1_gimbal_setmsg_to_fire(int16_t left, int16_t right, int16_t fire)
 {
     uint32_t send_mail_box;
 		uint8_t Data[8]; //发送数据的数组
@@ -84,10 +84,10 @@ void can2_gimbal_setmsg(int16_t left, int16_t right, int16_t fire)
     Txmessage.IDE = CAN_ID_STD;
     Txmessage.RTR = CAN_RTR_DATA;
     Txmessage.DLC = 0x08;
-    Data[0] = right >> 8;
-    Data[1] = right;
-    Data[2] = left >> 8;
-    Data[3] = left;
+    Data[0] = left >> 8;
+    Data[1] = left;
+    Data[2] = right >> 8;
+    Data[3] = right;
     Data[4] = fire >> 8;
     Data[5] = fire;
     Data[6] = 0;

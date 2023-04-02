@@ -189,7 +189,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -752,6 +752,16 @@
               <FileName>bsp_usb.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\ACE-ECF\Bsp\Src\bsp_usb.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_referee.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ACE-ECF\Bsp\Src\bsp_referee.c</FilePath>
+            </File>
+            <File>
+              <FileName>CRC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ACE-ECF\Bsp\Src\CRC.c</FilePath>
             </File>
           </Files>
         </Group>

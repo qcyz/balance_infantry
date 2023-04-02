@@ -11,6 +11,7 @@
 #include "ins_task.h"
 #include "gimbal_task.h"
 #include "virtual_task.h"
+#include "fire_task.h"
 /* ************************freertos******************** */
 #include "freertos.h"
 #include "task.h"
@@ -67,9 +68,9 @@ void Init_Task(void const *argument)
 	INS_TASKHandle = osThreadCreate(osThread(INS_TASK), NULL);
 
 #ifdef FIRE_WORK //火力
-				 //创建火控任务
-				 //		osThreadDef(SHOOT_TASK, shoot_Task, osPriorityAboveNormal, 0, 128);
-				 //		ShootTask_Handler = osThreadCreate(osThread(SHOOT_TASK), NULL);
+	//创建火控任务
+	osThreadDef(SHOOT_TASK, fire_Task, osPriorityAboveNormal, 0, 128);
+	ShootTask_Handler = osThreadCreate(osThread(SHOOT_TASK), NULL);
 
 #endif
 

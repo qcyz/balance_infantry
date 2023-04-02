@@ -74,6 +74,8 @@ gimbal\usbd_cdc_if.o: ..\ACE-ECF\Bsp\Inc\bsp_dr16.h
 gimbal\usbd_cdc_if.o: ../Core/Inc/usart.h
 gimbal\usbd_cdc_if.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
 gimbal\usbd_cdc_if.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
+gimbal\usbd_cdc_if.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
+gimbal\usbd_cdc_if.o: ..\ACE-ECF\Bsp\Inc\CRC.h
 gimbal\usbd_cdc_if.o: ..\ACE-ECF\Algorithm\inc\pid.h
 gimbal\usbd_cdc_if.o: ..\ACE-ECF\Algorithm\inc\filter.h
 gimbal\usbd_cdc_if.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h

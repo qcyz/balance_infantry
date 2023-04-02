@@ -113,13 +113,13 @@ void gimbal_can1_callback(CAN_HandleTypeDef *hcan)
 				CAN_DATA_Encoder_Deal(pitch_motor_measure.position, pitch_motor_measure.speed, 1);
 				break;
 			}
-			case 0x201:
+			case 0x202:
 			{
 				right_motor.position = (uint16_t)(Rx_Data[0] << 8 | Rx_Data[1]);
 				right_motor.speed = (uint16_t)(Rx_Data[2] << 8 | Rx_Data[3]);
 				break;
 			}
-			case 0x202:
+			case 0x201:
 			{
 				left_motor.position = (uint16_t)(Rx_Data[0] << 8 | Rx_Data[1]);
 				left_motor.speed = (uint16_t)(Rx_Data[2] << 8 | Rx_Data[3]);
