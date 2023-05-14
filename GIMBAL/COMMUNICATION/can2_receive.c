@@ -3,11 +3,17 @@
 #include "gimbal_struct_variables.h"
 #include "bsp_Motor_Encoder.h"
 #include "bsp_dr16.h"
+#include "bsp_referee.h"
 extern CAN_HandleTypeDef hcan2;
 extern gimbal_control_t Gimbal_Control;
 
 /*--------------------变量-----------------------*/
+static motor_measure_t yaw_motor_measure;
 
+motor_measure_t *get_yaw_motor_measure_point(void)
+{
+	return &yaw_motor_measure;
+}
 /**
  * @brief		can2滤波器配置
  * @param		none
@@ -45,7 +51,10 @@ void CAN2_filter_config(void)
 void gimbal_can2_callback(CAN_HandleTypeDef *hcan)
 {
 	static RC_ctrl_t *rc_ctl ;
+	static REFEREE_t *referee;
 	rc_ctl = RC_Get_RC_Pointer();
+	referee = Get_referee_Address();
+	
 	CAN_RxHeaderTypeDef Rxmessage; //接收信息结构体
 	uint8_t Rx_Data[8];            //接收的信息缓存的数组
 
@@ -53,6 +62,15 @@ void gimbal_can2_callback(CAN_HandleTypeDef *hcan)
 	{
 		switch (Rxmessage.StdId)
 		{
+			case 0x205: 	//yaw轴
+			{
+				yaw_motor_measure.position = (int16_t)(Rx_Data[0] << 8 | Rx_Data[1]);
+				yaw_motor_measure.speed = (int16_t)(Rx_Data[2] << 8 | Rx_Data[3]);
+				yaw_motor_measure.current = (int16_t)(Rx_Data[4] << 8 | Rx_Data[5]);
+				yaw_motor_measure.temperature = Rx_Data[6];
+				CAN_DATA_Encoder_Deal(yaw_motor_measure.position, yaw_motor_measure.speed, 1);
+				break;
+			}
 			case 0x401:
 				if(Rx_Data[7] == 0xFF)
 				{
@@ -70,6 +88,14 @@ void gimbal_can2_callback(CAN_HandleTypeDef *hcan)
 					rc_ctl->rc.ch[4] = ((Rx_Data[7] << 8) | Rx_Data[6]);
 				}
 			break;
+			case 0x402:
+				if(Rx_Data[7] == 0xAA)
+				{
+					referee->Robot_Status.shooter_id1_17mm_cooling_limit = ((Rx_Data[0] << 8) | Rx_Data[1]);
+					referee->Power_Heat.shooter_id1_17mm_cooling_heat = ((Rx_Data[2] << 8) | Rx_Data[3]);
+					referee->Robot_Status.shooter_id1_17mm_speed_limit = Rx_Data[4];
+				
+				}
 		}
 	}
 }

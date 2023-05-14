@@ -1,7 +1,7 @@
 gimbal\user_lib.o: ..\ACE-ECF\Algorithm\src\user_lib.c
 gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\string.h
-gimbal\user_lib.o: ..\ACE-ECF\Algorithm\inc\user_lib.h
+gimbal\user_lib.o: ../ACE-ECF/Algorithm/inc/user_lib.h
 gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\user_lib.o: ../Core/Inc/main.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

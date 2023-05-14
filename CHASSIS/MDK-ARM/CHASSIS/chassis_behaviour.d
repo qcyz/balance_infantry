@@ -65,6 +65,8 @@ chassis\chassis_behaviour.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\chassis_behaviour.o: ../Drivers/CMSIS/Include/core_cm4.h
 chassis\chassis_behaviour.o: D:\ARM\ARMCC\Bin\..\include\math.h
 chassis\chassis_behaviour.o: ../ACE-ECF/Algorithm/inc/mat.h
+chassis\chassis_behaviour.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
+chassis\chassis_behaviour.o: ../ACE-ECF/Bsp/Inc/CRC.h
 chassis\chassis_behaviour.o: ../ACE-ECF/Algorithm/inc/pid.h
 chassis\chassis_behaviour.o: ../ACE-ECF/Algorithm/inc/lqr.h
 chassis\chassis_behaviour.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

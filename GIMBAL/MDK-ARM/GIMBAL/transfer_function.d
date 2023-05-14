@@ -3,7 +3,7 @@ gimbal\transfer_function.o: ..\IMU\transfer_function.h
 gimbal\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\math.h
-gimbal\transfer_function.o: ..\ACE-ECF\Bsp\Inc\bsp_dwt.h
+gimbal\transfer_function.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
 gimbal\transfer_function.o: ../Core/Inc/main.h
 gimbal\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\transfer_function.o: ../Core/Inc/stm32f4xx_hal_conf.h

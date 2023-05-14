@@ -17,21 +17,24 @@ Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.35.0.2
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      Segger\JL2CM3.dll V2.99.40.0
+Target DLL:      CMSIS_AGDI.dll V1.33.0.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 C:\Users\86178\Desktop\balance_infantry\GIMBAL\MDK-ARM\GIMBAL.uvprojx
-Project File Date:  03/24/2023
+Project File Date:  04/21/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\ARM\ARMCC\Bin'
 Build target 'GIMBAL'
-compiling gimbal_behaviour.c...
+compiling fire_task.c...
+..\TASK\fire_task.c(72): warning:  #177-D: variable "last_B"  was declared but never referenced
+  	static uint16_t last_B = 0;
+..\TASK\fire_task.c: 1 warning, 0 errors
 linking...
-Program Size: Code=57900 RO-data=3036 RW-data=980 ZI-data=47260  
+Program Size: Code=60172 RO-data=3036 RW-data=1020 ZI-data=47500  
 FromELF: creating hex file...
-"GIMBAL\GIMBAL.axf" - 0 Error(s), 0 Warning(s).
+"GIMBAL\GIMBAL.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 

@@ -1,5 +1,5 @@
 gimbal\bsp_dr16.o: ..\ACE-ECF\Bsp\Src\bsp_dr16.c
-gimbal\bsp_dr16.o: ..\ACE-ECF\Bsp\Inc\bsp_dr16.h
+gimbal\bsp_dr16.o: ../ACE-ECF/Bsp/Inc/bsp_dr16.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\bsp_dr16.o: ../Core/Inc/stm32f4xx_hal_conf.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -39,8 +39,8 @@ gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 gimbal\bsp_dr16.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\bsp_dr16.o: ../Core/Inc/usart.h
 gimbal\bsp_dr16.o: ../Core/Inc/main.h
-gimbal\bsp_dr16.o: ..\ACE-ECF\Algorithm\inc\struct_typedef.h
-gimbal\bsp_dr16.o: ..\ACE-ECF\Bsp\Inc\ECF_BspConfig.h
+gimbal\bsp_dr16.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
+gimbal\bsp_dr16.o: ../ACE-ECF/Bsp/Inc/ECF_BspConfig.h
 gimbal\bsp_dr16.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h
 gimbal\bsp_dr16.o: ../Core/Inc/FreeRTOSConfig.h
 gimbal\bsp_dr16.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

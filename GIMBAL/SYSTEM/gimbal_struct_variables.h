@@ -90,6 +90,7 @@ typedef struct
 	Encoder_t *motor_encoder;
 	pid_parameter_t motor_pid;
 	LQR_t motor_lqr;
+	LQR_t virtual_motor_lqr;
 	SlidAveFilterObj motor_filter;
 	
 	float motor_target;
@@ -115,7 +116,8 @@ typedef struct
 	
 	bool full_automatic;
 	bool feed_buttle;
-	
+	bool fire_sw;
+	bool replenish_flag;
 	const RC_ctrl_t *fire_rc;
 	const REFEREE_t *referee;
 } gimbal_fire_control_t;
@@ -138,6 +140,7 @@ typedef struct
 {
 	const RC_ctrl_t *Gimbal_RC;
 	const INS_t *Gimbal_INS;
+	const REFEREE_t *Gimbal_Referee;
 	
 	gimbal_behaviour_e gimbal_behaviour;
 	gimbal_state_e gimbal_state;

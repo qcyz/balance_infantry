@@ -1,7 +1,7 @@
 gimbal\bsp_motor_encoder.o: ..\ACE-ECF\Bsp\Src\bsp_Motor_Encoder.c
 gimbal\bsp_motor_encoder.o: D:\ARM\ARMCC\Bin\..\include\string.h
-gimbal\bsp_motor_encoder.o: ..\ACE-ECF\Bsp\Inc\bsp_Motor_Encoder.h
-gimbal\bsp_motor_encoder.o: ..\ACE-ECF\Algorithm\inc\struct_typedef.h
+gimbal\bsp_motor_encoder.o: ../ACE-ECF/Bsp/Inc/bsp_Motor_Encoder.h
+gimbal\bsp_motor_encoder.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
 gimbal\bsp_motor_encoder.o: ../Core/Inc/can.h
 gimbal\bsp_motor_encoder.o: ../Core/Inc/main.h
 gimbal\bsp_motor_encoder.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

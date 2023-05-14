@@ -39,8 +39,8 @@ gimbal\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 gimbal\controller.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 gimbal\controller.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\controller.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\controller.o: ..\ACE-ECF\Bsp\Inc\bsp_dwt.h
-gimbal\controller.o: ..\ACE-ECF\Algorithm\inc\user_lib.h
+gimbal\controller.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
+gimbal\controller.o: ../ACE-ECF/Algorithm/inc/user_lib.h
 gimbal\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 gimbal\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 gimbal\controller.o: ../Core/Inc/FreeRTOSConfig.h
@@ -55,6 +55,6 @@ gimbal\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 gimbal\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 gimbal\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 gimbal\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-gimbal\controller.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+gimbal\controller.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 gimbal\controller.o: ../Drivers/CMSIS/Include/core_cm4.h
 gimbal\controller.o: D:\ARM\ARMCC\Bin\..\include\math.h

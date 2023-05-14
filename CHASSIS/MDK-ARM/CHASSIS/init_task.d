@@ -68,6 +68,8 @@ chassis\init_task.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\init_task.o: ../Drivers/CMSIS/Include/core_cm4.h
 chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\math.h
 chassis\init_task.o: ../ACE-ECF/Algorithm/inc/mat.h
+chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
+chassis\init_task.o: ../ACE-ECF/Bsp/Inc/CRC.h
 chassis\init_task.o: ../ACE-ECF/Algorithm/inc/pid.h
 chassis\init_task.o: ../ACE-ECF/Algorithm/inc/lqr.h
 chassis\init_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
@@ -79,5 +81,3 @@ chassis\init_task.o: ..\TASK\Task_Safe.h
 chassis\init_task.o: ..\TASK\chassis_task.h
 chassis\init_task.o: ../Core/Inc/spi.h
 chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
-chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
-chassis\init_task.o: ../ACE-ECF/Bsp/Inc/CRC.h

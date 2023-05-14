@@ -12,8 +12,10 @@
 #include "string.h"
 
 #include "fifo.h"
+#include "bsp_referee.h"
 
 gimbal_auto_control_t *auto_control_p;
+static REFEREE_t *referee;
 
 static gimbal_auto_control_t *virtual_task_init(void);
 static void Virtual_send(gimbal_auto_control_t *Virtual_send_p);
@@ -21,6 +23,8 @@ static void Virtual_recive(gimbal_auto_control_t *Virtual_recive_p);
 
 void Virtual_Task(void const * argument)
 {
+  
+  referee = Get_referee_Address();
   auto_control_p = virtual_task_init();
 	while(1)
 	{
@@ -56,7 +60,7 @@ void Virtual_send(gimbal_auto_control_t *Virtual_send_p)
 	switch (*Virtual_send_p->gimbal_behaviour)
 	{
     case GIMBAL_MANUAL:
-				return;
+				Virtual_send_p->visual_buff_send[2] = -1;
     case GIMBAL_AUTOATTACK:
 				Virtual_send_p->visual_buff_send[2] = 0;
         break;
@@ -71,7 +75,7 @@ void Virtual_send(gimbal_auto_control_t *Virtual_send_p)
 		Virtual_send_p->visual_buff_send[1] = 1;
 //		//射速
 
-		Virtual_send_p->visual_buff_send[3] = 15;
+		Virtual_send_p->visual_buff_send[3] = referee->Robot_Status.shooter_id1_17mm_speed_limit;
 		//浮点转字节
 		{
 			float register *Register1 = INS.q;

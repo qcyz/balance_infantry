@@ -67,6 +67,8 @@ chassis\can2_receive.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\can2_receive.o: ../Drivers/CMSIS/Include/core_cm4.h
 chassis\can2_receive.o: D:\ARM\ARMCC\Bin\..\include\math.h
 chassis\can2_receive.o: ../ACE-ECF/Algorithm/inc/mat.h
+chassis\can2_receive.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
+chassis\can2_receive.o: ../ACE-ECF/Bsp/Inc/CRC.h
 chassis\can2_receive.o: ../ACE-ECF/Algorithm/inc/pid.h
 chassis\can2_receive.o: ../ACE-ECF/Algorithm/inc/lqr.h
 chassis\can2_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

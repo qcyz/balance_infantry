@@ -1,6 +1,6 @@
 gimbal\bsp_referee.o: ..\ACE-ECF\Bsp\Src\bsp_referee.c
-gimbal\bsp_referee.o: ..\ACE-ECF\Bsp\Inc\bsp_referee.h
-gimbal\bsp_referee.o: ..\ACE-ECF\Bsp\Inc\CRC.h
+gimbal\bsp_referee.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
+gimbal\bsp_referee.o: ../ACE-ECF/Bsp/Inc/CRC.h
 gimbal\bsp_referee.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\bsp_referee.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\bsp_referee.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

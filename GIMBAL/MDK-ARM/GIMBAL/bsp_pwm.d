@@ -1,5 +1,5 @@
 gimbal\bsp_pwm.o: ..\ACE-ECF\Bsp\Src\bsp_pwm.c
-gimbal\bsp_pwm.o: ..\ACE-ECF\Bsp\Inc\bsp_PWM.h
+gimbal\bsp_pwm.o: ../ACE-ECF/Bsp/Inc/bsp_PWM.h
 gimbal\bsp_pwm.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\bsp_pwm.o: ../Core/Inc/tim.h
 gimbal\bsp_pwm.o: ../Core/Inc/main.h

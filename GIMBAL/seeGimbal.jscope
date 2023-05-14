@@ -4,36 +4,20 @@
     <Project>
         <Configuration>
             <JLink>
-                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="-1" JTAG_DRPre="-1" IP="" TargetDevice="STM32F407IG" TargetInterface="SWD" InterfaceSpeed="4000" />
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="-1" JTAG_DRPre="-1" IP="localhost" TargetDevice="unspecified" TargetInterface="SWD" InterfaceSpeed="4000" />
             </JLink>
-            <ScriptFile Name="C:\Users\86178\Desktop\GIMBAL\seeGimbal.jscope\unspecified" />
-            <ElfFile Name="C:\Users\86178\Desktop\GIMBAL\MDK-ARM\GIMBAL\GIMBAL.axf" />
+            <ScriptFile Name="unspecified" />
+            <ElfFile Name="C:\Users\86178\Desktop\balance_infantry\CHASSIS\MDK-ARM\CHASSIS\CHASSIS.axf" />
             <DataFile Name="" />
             <RawFile Name="" />
             <Scope>
                 <Options TimeResolutionUs="1000000" />
             </Scope>
-            <Trigger>
-                <Options Level="0.000000" Symbol="Pitch" On="0" Auto="0" Rise="1" Fall="0" />
-            </Trigger>
         </Configuration>
         <Windows>
             <Graph Show="1" />
             <Watch Show="1" />
         </Windows>
-        <SelectedSymbols>
-            <Symbol>
-                <Options Name="Gimbal_pitch" Address="0x200003B0" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="4" ShowInGraph="0" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="5" MaxValue="-2147483648" File="..\BEHAVIOUR\gimbal_behaviour.c" Scope="0" DrawStyle="0" />
-            </Symbol>
-            <Symbol>
-                <Options Name="Pitch" Address="0x20006850" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-2147483648" YMaxSampled="-2147483648" YAvgSampled="-2147483648" Offset="8" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="2" MaxValue="-2147483648" File="..\TASK\ins_task.c" Scope="0" DrawStyle="0" />
-            </Symbol>
-            <Symbol>
-                <Options Name="Gimbal_pitch" Address="0x200003B0" Type="float" TypeID="1" Size="4" GraphColorRed="102" GraphColorGreen="102" GraphColorBlue="178" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="12" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="1" MaxValue="2" File="..\BEHAVIOUR\gimbal_behaviour.c" Scope="0" DrawStyle="0" />
-            </Symbol>
-            <Symbol>
-                <Options Name="Gimbal_yaw" Address="0x200003B4" Type="float" TypeID="1" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="16" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="1" MaxValue="2" File="..\BEHAVIOUR\gimbal_behaviour.c" Scope="0" DrawStyle="0" />
-            </Symbol>
-        </SelectedSymbols>
+        <SelectedSymbols />
     </Project>
 </JScopeProject>

@@ -182,7 +182,7 @@ fp32 PidCalculate(pid_parameter_t *pid, fp32 SetValue, fp32 ActualValue)
     }
     else
     {
-        pid_clear(pid);
+        //pid_clear(pid);
     }
 
     pid->LastActualValue = pid->ActualValue;

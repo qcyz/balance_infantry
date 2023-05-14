@@ -9,9 +9,9 @@ gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 gimbal\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-gimbal\quaternionekf.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+gimbal\quaternionekf.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 gimbal\quaternionekf.o: ../Drivers/CMSIS/Include/core_cm4.h
 gimbal\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\string.h
 gimbal\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\math.h
 gimbal\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\quaternionekf.o: ..\ACE-ECF\Algorithm\inc\mat.h
+gimbal\quaternionekf.o: ../ACE-ECF/Algorithm/inc/mat.h

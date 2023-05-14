@@ -153,20 +153,24 @@ fp32 PidCalculate(pid_parameter_t *pid, fp32 SetValue, fp32 ActualValue)
         if (pid->mode & ChangingIntegrationRate)
             Changing_Integration_Rate(pid);
 
-        // 积分限幅
-        if (pid->mode & Integral_Limit)
-            f_Integral_Limit(pid);
-        pid->Iout = pid->Ki * pid->Ierror;
-
+		
         // 积分分离 注意需要放在iout计算后
         if (pid->mode & Separated_Integral)
             f_Separated_Integral(pid);
+		
+		pid->Iout = pid->Ki * pid->Ierror;
+
+		// 积分限幅
+        if (pid->mode & Integral_Limit)
+            f_Integral_Limit(pid);
+		
+		pid->out = pid->Pout + pid->Iout + pid->Dout;
+		
 
         // 微分滤波
         if (pid->mode & DerivativeFilter)
             pid->Dout = first_order_filter(&pid->d_filter, pid->Dout);
 
-        pid->out = pid->Pout + pid->Iout + pid->Dout;
 
         // 输出滤波
         if (pid->mode & OutputFilter)
@@ -178,7 +182,7 @@ fp32 PidCalculate(pid_parameter_t *pid, fp32 SetValue, fp32 ActualValue)
     }
     else
     {
-        pid_clear(pid);
+        //pid_clear(pid);
     }
 
     pid->LastActualValue = pid->ActualValue;
@@ -318,7 +322,10 @@ void f_StepIn(pid_parameter_t *pid)
 void f_Separated_Integral(pid_parameter_t *pid)
 {
     if (pid->threshold_min > pid->error && pid->error < pid->threshold_max)
-        pid->Iout = 0;
+	{
+		pid->Iout = 0;
+		pid->Ierror = 0;
+	}
 }
 /**
  * @brief          积分限幅
@@ -376,3 +383,4 @@ void f_Output_Limit(pid_parameter_t *pid)
         pid->out = -(pid->max_out);
     }
 }
+

@@ -29,6 +29,7 @@ void can2_gimbal_setmsg_to_yaw(int16_t yaw)
  * @param		none
  *	@retval		none
  */
+
 void can2_gimbal_to_chassis(uint16_t position)
 {
 	uint32_t send_mail_box; //∑¢ÀÕ” œ‰

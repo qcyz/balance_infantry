@@ -1,5 +1,5 @@
 gimbal\bsp_usb.o: ..\ACE-ECF\Bsp\Src\bsp_usb.c
-gimbal\bsp_usb.o: ..\ACE-ECF\Bsp\Inc\bsp_usb.h
+gimbal\bsp_usb.o: ../ACE-ECF/Bsp/Inc/bsp_usb.h
 gimbal\bsp_usb.o: ../Core/Inc/main.h
 gimbal\bsp_usb.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\bsp_usb.o: ../Core/Inc/stm32f4xx_hal_conf.h

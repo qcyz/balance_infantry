@@ -1,5 +1,5 @@
 gimbal\bsp_dwt.o: ..\ACE-ECF\Bsp\Src\bsp_dwt.c
-gimbal\bsp_dwt.o: ..\ACE-ECF\Bsp\Inc\bsp_dwt.h
+gimbal\bsp_dwt.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
 gimbal\bsp_dwt.o: ../Core/Inc/main.h
 gimbal\bsp_dwt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\bsp_dwt.o: ../Core/Inc/stm32f4xx_hal_conf.h

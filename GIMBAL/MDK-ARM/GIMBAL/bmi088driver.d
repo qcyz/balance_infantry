@@ -39,5 +39,5 @@ gimbal\bmi088driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 gimbal\bmi088driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 gimbal\bmi088driver.o: ..\IMU\BMI088reg.h
 gimbal\bmi088driver.o: ..\IMU\BMI088Middleware.h
-gimbal\bmi088driver.o: ..\ACE-ECF\Bsp\Inc\bsp_dwt.h
+gimbal\bmi088driver.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
 gimbal\bmi088driver.o: D:\ARM\ARMCC\Bin\..\include\math.h

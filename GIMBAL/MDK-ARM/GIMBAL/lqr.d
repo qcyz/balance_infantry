@@ -1,5 +1,5 @@
 gimbal\lqr.o: ..\ACE-ECF\Algorithm\src\lqr.c
-gimbal\lqr.o: ..\ACE-ECF\Algorithm\inc\lqr.h
+gimbal\lqr.o: ../ACE-ECF/Algorithm/inc/lqr.h
 gimbal\lqr.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gimbal\lqr.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 gimbal\lqr.o: ../Drivers/CMSIS/Include/core_cm4.h
@@ -51,4 +51,4 @@ gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 gimbal\lqr.o: D:\ARM\ARMCC\Bin\..\include\string.h
-gimbal\lqr.o: ..\ACE-ECF\Algorithm\inc\mat.h
+gimbal\lqr.o: ../ACE-ECF/Algorithm/inc/mat.h

@@ -44,6 +44,7 @@ ___`. .' /--.--\ `. . __
 /********************CONTROL********************/
 #include "bsp_dr16.h"
 #include "ins_task.h"
+#include "bsp_referee.h"
 //#include "can2_receive.h"
 //#include "capacitor_control.h"
 //#include "upper_machine.h"
@@ -75,13 +76,14 @@ typedef enum
 	CHASSIS_NO_FOLLOW, //不跟随
 	CHASSIS_ROTATION,  //小陀螺
 	CHASSIS_BATTERY,   //炮台模式
+	CHASSIS_SLIP,		 // 打滑状态
 } chassis_behaviour_e;
 
 typedef enum
 {
-	CHASSIS_ZERO_FORCE,	   //底盘无力
-	CHASSIS_LOCK_POSITION, //底盘位置锁死
-	CHASSIS_SPEED,		   //速度
+	CHASSIS_ZERO_FORCE,	   	//底盘无力
+	CHASSIS_STAND, 			//底盘位置锁死
+	CHASSIS_SPEED,		   	//速度
 } chassis_state_e;
 
 typedef enum
@@ -165,6 +167,7 @@ typedef struct
 {
 	RC_ctrl_t *Chassis_RC; //底盘遥控数据
 	INS_t *Chassis_INS;
+	REFEREE_t *Chassis_Referee; 
 
 	chassis_behaviour_e behaviour; //底盘模式
 	chassis_state_e chassis_state;

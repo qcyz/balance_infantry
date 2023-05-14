@@ -15,8 +15,8 @@
 #define CHASSIS_TASK_Hz 		1000.0f
 
 /************底盘pid************/
-#define CHASSIS_SPEED_KP 20.0f
-#define CHASSIS_SPEED_KI 0.0f
+#define CHASSIS_SPEED_KP 15.0f
+#define CHASSIS_SPEED_KI 0.018f
 #define CHASSIS_SPEED_KD 0.0f
 
 #define CHASSIS_POSITION_KP 	4.0f
@@ -24,16 +24,16 @@
 #define CHASSIS_POSITION_KD 	0.5f
 
 #define CHASSIS_SPEED_LIMIT		0.3f
-#define CHASSIS_PITCH_LIMIT		20.0f
+#define CHASSIS_PITCH_LIMIT		18.0f
 
 
 
 
-#define CHASSIS_ROTATION_SPEED 30               //小陀螺的旋转速度  2000
+#define CHASSIS_ROTATION_SPEED 300             //小陀螺的旋转速度  dps
 
 #define MOTOR_RADIUS 0.1f
 
-#define BARYCENTER_ZERO_OFFSET	-0.5f //重心偏移值
+#define BARYCENTER_ZERO_OFFSET	0.0f //重心偏移值
 
 #ifndef RADIAN_COEF
 #define RADIAN_COEF 57.295779513f

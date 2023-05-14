@@ -65,6 +65,8 @@ chassis\lk9025_communication.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\lk9025_communication.o: ../Drivers/CMSIS/Include/core_cm4.h
 chassis\lk9025_communication.o: D:\ARM\ARMCC\Bin\..\include\math.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/mat.h
+chassis\lk9025_communication.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
+chassis\lk9025_communication.o: ../ACE-ECF/Bsp/Inc/CRC.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/pid.h
 chassis\lk9025_communication.o: ../ACE-ECF/Algorithm/inc/lqr.h
 chassis\lk9025_communication.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

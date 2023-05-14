@@ -35,9 +35,10 @@ gimbal_control_t Gimbal_Control;
 static void Gimbal_Work(gimbal_control_t *Gimbal_Work_f);
 static void Gimbal_Init(gimbal_control_t *Gimbal_Init_f);
 
-double k_yaw_lqr[2] = {-7.96227766016838, -0.23467065322830};
-double k_pitch_lqr[2] = {-5.94183025734807, -0.3};
-
+double k_yaw_lqr[2] = {-7.96227766016838, -0.63467065322830};
+double k_pitch_lqr[2] = {-8.94183025734807, -0.6};
+double k_virtual_yaw_lqr[2] = {-9.96227766016838, -0.83467065322830};
+double k_virtual_pitch_lqr[2] = {-10.94183025734807, -0.8};
 
 
 /**
@@ -63,8 +64,8 @@ void Gimbal_Task(void const *argument)
 		Gimbal_Work(&Gimbal_Control); 		// 云台状态控制    //云台工作
 		taskEXIT_CRITICAL();              	// 退出临界区
 		
-		can1_gimbal_setmsg_to_motor(Gimbal_Control.Yaw_c.motor_output, Gimbal_Control.Pitch_c.motor_output);
-			
+		can1_gimbal_setmsg_to_motor(0, Gimbal_Control.Pitch_c.motor_output);
+		can2_gimbal_setmsg_to_yaw(Gimbal_Control.Yaw_c.motor_output);
 		can2_gimbal_to_chassis(Gimbal_Control.Yaw_c.motor_measure->position);
 		vTaskDelay(1); // 绝对延时//vTaskDelay(2);
     }
@@ -79,6 +80,9 @@ void Gimbal_Init(gimbal_control_t *Gimbal_Init_f)
 	
 	// 获取陀螺仪指针
     Gimbal_Init_f->Gimbal_INS = Get_INS_Point();
+	
+	//获取裁判系统指针
+	Gimbal_Init_f->Gimbal_Referee = Get_referee_Address();
 	
     // 获取云台电机指针
     Gimbal_Init_f->Pitch_c.motor_measure = get_pitch_motor_measure_point();
@@ -97,6 +101,9 @@ void Gimbal_Init(gimbal_control_t *Gimbal_Init_f)
     /*--------------------初始化lqr--------------------*/
     LQR_Init(&Gimbal_Init_f->Pitch_c.motor_lqr, 2, 1, k_pitch_lqr);
 	LQR_Init(&Gimbal_Init_f->Yaw_c.motor_lqr, 2, 1, k_yaw_lqr);
+	
+	LQR_Init(&Gimbal_Init_f->Pitch_c.virtual_motor_lqr, 2, 1, k_virtual_pitch_lqr);
+	LQR_Init(&Gimbal_Init_f->Yaw_c.virtual_motor_lqr, 2, 1, k_virtual_yaw_lqr);
    
    
    /*--------------------初始化pid--------------------*/

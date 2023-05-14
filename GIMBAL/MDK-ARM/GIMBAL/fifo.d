@@ -1,5 +1,5 @@
 gimbal\fifo.o: ..\ACE-ECF\Algorithm\src\fifo.c
-gimbal\fifo.o: ..\ACE-ECF\Algorithm\inc\fifo.h
+gimbal\fifo.o: ../ACE-ECF/Algorithm/inc/fifo.h
 gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\string.h
@@ -7,7 +7,7 @@ gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h
 gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\math.h
 gimbal\fifo.o: D:\ARM\ARMCC\Bin\..\include\errno.h
-gimbal\fifo.o: ..\ACE-ECF\Algorithm\inc\linux_list.h
+gimbal\fifo.o: ../ACE-ECF/Algorithm/inc/linux_list.h
 gimbal\fifo.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\fifo.o: ../Core/Inc/stm32f4xx_hal_conf.h
 gimbal\fifo.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h

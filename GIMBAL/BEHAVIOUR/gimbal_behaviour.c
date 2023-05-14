@@ -13,6 +13,8 @@ static void f_GIMBAL_AUTOATTACK(gimbal_control_t *f_GIMBAL_AUTOATTACK_f);
 static void f_GIMBAL_AUTOBUFF(gimbal_control_t *f_GIMBAL_AUTOBUFF_f);
 float torque_to_voltage_6020(float torque);
 
+
+
 float *get_Gimbal_pitch_point(void)
 {
     return &Gimbal_pitch;
@@ -45,6 +47,9 @@ void gimbal_behaviour_choose(gimbal_control_t *gimbal_behaviour_choose_f)
     default:
         break;
     }
+	//test 
+	
+
     // 如果挡位发生改变，设置对应的模式
     if (last_behaviour != rc_behaviour)
     {
@@ -58,11 +63,28 @@ void gimbal_behaviour_choose(gimbal_control_t *gimbal_behaviour_choose_f)
     {
         kb_behaviour = GIMBAL_MANUAL;
     }
+	//**v
+    if (gimbal_behaviour_choose_f->Gimbal_RC->kb.bit.V)
+    {
+        kb_behaviour = GIMBAL_AUTOATTACK;
+    }
+	//**v
+    if (gimbal_behaviour_choose_f->Gimbal_RC->kb.bit.B)
+    {
+        kb_behaviour = GIMBAL_AUTOBUFF;
+    }
+	
+	if (gimbal_behaviour_choose_f->Gimbal_RC->mouse.press_r)
+    {
+        kb_behaviour = GIMBAL_AUTOATTACK;
+    }
     // 如果模式发生改变，设置对应的模式
     if (last_behaviour != kb_behaviour)
     {
         gimbal_behaviour_choose_f->gimbal_behaviour = kb_behaviour;
     }
+	
+	//test
 }
 float see_gimbal_yaw = 0;
 void gimbal_behaviour_react(gimbal_control_t *gimbal_behaviour_react_f)
@@ -98,29 +120,52 @@ void f_GIMBAL_MANUAL(gimbal_control_t *f_GIMBAL_MANUAL_f)
 	f_GIMBAL_MANUAL_f->Pitch_c.motor_target = float_min_distance(Gimbal_pitch, f_GIMBAL_MANUAL_f->Gimbal_INS->Pitch, -180, 180);;
 	
 }
-float k1 = 80.0f;
+
 void f_GIMBAL_AUTOATTACK(gimbal_control_t *f_GIMBAL_AUTOATTACK_f)
 {
 	
-//	
-//	if(((*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw != 0) || ((*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch != 0))
-//	{
-		Gimbal_pitch += (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch / k1;
-		Gimbal_yaw += (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw / k1;
+	
+	if(((*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw != 0) || ((*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch != 0))
+	{
+		Gimbal_pitch = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch + f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Pitch;
+		Gimbal_yaw = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw + f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Yaw;
+		
+		Gimbal_pitch = loop_float_constrain(Gimbal_pitch, -180,180);
+		Gimbal_yaw = loop_float_constrain(Gimbal_yaw, -180,180);
+
+	
 		f_GIMBAL_AUTOATTACK_f->Yaw_c.motor_target = float_min_distance(Gimbal_yaw, f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Yaw, -180, 180);
 		f_GIMBAL_AUTOATTACK_f->Pitch_c.motor_target = float_min_distance(Gimbal_pitch, f_GIMBAL_AUTOATTACK_f->Gimbal_INS->Pitch, -180, 180);;
 //	
 //		f_GIMBAL_AUTOATTACK_f->Yaw_c.motor_target = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_yaw;
 //		f_GIMBAL_AUTOATTACK_f->Pitch_c.motor_target = (*f_GIMBAL_AUTOATTACK_f->auto_c)->auto_pitch;
 		gimbal_clear_virtual_recive();
-//	}
-//	else
-//	{
-//		f_GIMBAL_MANUAL(f_GIMBAL_AUTOATTACK_f);
-//	}
+	}
+	else
+	{
+		f_GIMBAL_MANUAL(f_GIMBAL_AUTOATTACK_f);
+	}
 }
 void f_GIMBAL_AUTOBUFF(gimbal_control_t *f_GIMBAL_AUTOBUFF_f)
 {
+	if(((*f_GIMBAL_AUTOBUFF_f->auto_c)->auto_yaw != 0) || ((*f_GIMBAL_AUTOBUFF_f->auto_c)->auto_pitch != 0))
+	{
+		Gimbal_pitch = (*f_GIMBAL_AUTOBUFF_f->auto_c)->auto_pitch + f_GIMBAL_AUTOBUFF_f->Gimbal_INS->Pitch;
+		Gimbal_yaw = (*f_GIMBAL_AUTOBUFF_f->auto_c)->auto_yaw + f_GIMBAL_AUTOBUFF_f->Gimbal_INS->Yaw;
+		
+		Gimbal_pitch = loop_float_constrain(Gimbal_pitch, -180,180);
+		Gimbal_yaw = loop_float_constrain(Gimbal_yaw, -180,180);
+
+	
+		f_GIMBAL_AUTOBUFF_f->Yaw_c.motor_target = float_min_distance(Gimbal_yaw, f_GIMBAL_AUTOBUFF_f->Gimbal_INS->Yaw, -180, 180);
+		f_GIMBAL_AUTOBUFF_f->Pitch_c.motor_target = float_min_distance(Gimbal_pitch, f_GIMBAL_AUTOBUFF_f->Gimbal_INS->Pitch, -180, 180);;
+
+		gimbal_clear_virtual_recive();
+	}
+	else
+	{
+		f_GIMBAL_MANUAL(f_GIMBAL_AUTOBUFF_f);
+	}
 }
 
 
@@ -129,22 +174,51 @@ void gimbal_motor_calculate(gimbal_control_t *motor_calculate_f)
 	double pitch_system_state[2] = {((-motor_calculate_f->Pitch_c.motor_target) / 57.295779513f), motor_calculate_f->Gimbal_INS->Gyro[0]};
 	double yaw_system_state[2] = {((-motor_calculate_f->Yaw_c.motor_target) / 57.295779513f), motor_calculate_f->Gimbal_INS->Gyro[2]};
 	
-	LQR_Data_Update(&motor_calculate_f->Pitch_c.motor_lqr, pitch_system_state);
-	LQR_Calculate(&motor_calculate_f->Pitch_c.motor_lqr);
-	PidCalculate(&motor_calculate_f->Pitch_c.motor_pid, Gimbal_pitch, motor_calculate_f->Gimbal_INS->Pitch );
-	motor_calculate_f->Pitch_c.motor_lqr.Output[0] = sliding_average_filter(&motor_calculate_f->Pitch_c.motor_filter, motor_calculate_f->Pitch_c.motor_lqr.Output[0]);
-	motor_calculate_f->Pitch_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Pitch_c.motor_lqr.Output[0]) + motor_calculate_f->Pitch_c.motor_pid.out;
-	motor_calculate_f->Pitch_c.motor_output = abs_limit(motor_calculate_f->Pitch_c.motor_output, 25000);
-	
-	
-	LQR_Data_Update(&motor_calculate_f->Yaw_c.motor_lqr, yaw_system_state);
-	LQR_Calculate(&motor_calculate_f->Yaw_c.motor_lqr);
+	//Pitch与Yaw轴PID计算
+	PidCalculate(&motor_calculate_f->Pitch_c.motor_pid, Gimbal_pitch, motor_calculate_f->Gimbal_INS->Pitch);
 	PidCalculate(&motor_calculate_f->Yaw_c.motor_pid, Gimbal_yaw, motor_calculate_f->Gimbal_INS->Yaw);
-	motor_calculate_f->Yaw_c.motor_lqr.Output[0] = sliding_average_filter(&motor_calculate_f->Yaw_c.motor_filter, motor_calculate_f->Yaw_c.motor_lqr.Output[0]);
-	motor_calculate_f->Yaw_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Yaw_c.motor_lqr.Output[0]) + motor_calculate_f->Yaw_c.motor_pid.out;
+	
+
+
+	//Pitch与Yaw轴LQR计算
+	if(motor_calculate_f->gimbal_behaviour == GIMBAL_MANUAL)
+	{
+		LQR_Data_Update(&motor_calculate_f->Pitch_c.motor_lqr, pitch_system_state);
+		LQR_Calculate(&motor_calculate_f->Pitch_c.motor_lqr);
+		motor_calculate_f->Pitch_c.motor_lqr.Output[0] = sliding_average_filter(&motor_calculate_f->Pitch_c.motor_filter, motor_calculate_f->Pitch_c.motor_lqr.Output[0]);
+		motor_calculate_f->Pitch_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Pitch_c.motor_lqr.Output[0]) + motor_calculate_f->Pitch_c.motor_pid.out;
+
+		
+		LQR_Data_Update(&motor_calculate_f->Yaw_c.motor_lqr, yaw_system_state);
+		LQR_Calculate(&motor_calculate_f->Yaw_c.motor_lqr);
+		motor_calculate_f->Yaw_c.motor_lqr.Output[0] = sliding_average_filter(&motor_calculate_f->Yaw_c.motor_filter, motor_calculate_f->Yaw_c.motor_lqr.Output[0]);
+		motor_calculate_f->Yaw_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Yaw_c.motor_lqr.Output[0]) + motor_calculate_f->Yaw_c.motor_pid.out;
+
+	}
+	else if(motor_calculate_f->gimbal_behaviour == GIMBAL_AUTOATTACK || motor_calculate_f->gimbal_behaviour == GIMBAL_AUTOBUFF)
+	{
+		LQR_Data_Update(&motor_calculate_f->Pitch_c.virtual_motor_lqr, pitch_system_state);
+		LQR_Calculate(&motor_calculate_f->Pitch_c.virtual_motor_lqr);
+		motor_calculate_f->Pitch_c.virtual_motor_lqr.Output[0] = sliding_average_filter(&motor_calculate_f->Pitch_c.motor_filter, motor_calculate_f->Pitch_c.virtual_motor_lqr.Output[0]);
+		motor_calculate_f->Pitch_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Pitch_c.virtual_motor_lqr.Output[0]) + motor_calculate_f->Pitch_c.motor_pid.out;
+
+		
+		LQR_Data_Update(&motor_calculate_f->Yaw_c.virtual_motor_lqr, yaw_system_state);
+		LQR_Calculate(&motor_calculate_f->Yaw_c.virtual_motor_lqr);
+		motor_calculate_f->Yaw_c.virtual_motor_lqr.Output[0] = sliding_average_filter(&motor_calculate_f->Yaw_c.motor_filter, motor_calculate_f->Yaw_c.virtual_motor_lqr.Output[0]);
+		motor_calculate_f->Yaw_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Yaw_c.virtual_motor_lqr.Output[0]) + motor_calculate_f->Yaw_c.motor_pid.out;
+
+	}
+	
+	
+	
+
+	//限幅
+	motor_calculate_f->Pitch_c.motor_output = abs_limit(motor_calculate_f->Pitch_c.motor_output, 25000);
 	motor_calculate_f->Yaw_c.motor_output = abs_limit(motor_calculate_f->Yaw_c.motor_output, 25000);
 
 }
+
 float torque_to_voltage_6020(float torque)
 {
 	float voltage = 0.0f;
