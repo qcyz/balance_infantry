@@ -259,7 +259,8 @@ void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) * CHASSIS_X_SEN);
     Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
 	
-//4096 8192 4120
+	//4096 8192 4120
+	
 	if(Chassis_behaviour_react_f->yaw_motor->position > (YAW_ZERO_OFFSET - 8192 / 4) && Chassis_behaviour_react_f->yaw_motor->position < (YAW_ZERO_OFFSET + 8192 / 4))
 	{
 		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - YAW_ZERO_OFFSET) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
@@ -268,7 +269,26 @@ void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - YAW_ZERO_OFFSET - 8192 / 2) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
 		Chassis_x = (-Chassis_x);
 	}
+
+
 }
+
+void f_CHASSIS_SIDE_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
+{
+	int32_t offset = YAW_ZERO_OFFSET - 8192 / 4;
+	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) * CHASSIS_X_SEN);
+    Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
+
+	if(Chassis_behaviour_react_f->yaw_motor->position > (offset - 8192 / 4) && Chassis_behaviour_react_f->yaw_motor->position < (offset + 8192 / 4))
+	{
+		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - offset) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
+	}else
+	{
+		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - offset - 8192 / 2) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
+		Chassis_x = (-Chassis_x);
+	}
+}
+
 void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 {
 	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) * CHASSIS_X_SEN);
@@ -300,6 +320,7 @@ void f_CHASSIS_BATTERY(chassis_control_t *Chassis_behaviour_react_f)
 void f_CHASSIS_SLIP(chassis_control_t *Chassis_behaviour_react_f)
 { 
 	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) * CHASSIS_X_SEN);
+	
 }
 //œÚ«∞£®test£©
 void forward_test_plan2(chassis_control_t *Chassis_behaviour_react_f)

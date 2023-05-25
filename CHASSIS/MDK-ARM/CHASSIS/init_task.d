@@ -79,5 +79,6 @@ chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_Motor_Encoder.h
 chassis\init_task.o: ../COMMUNICATION/can2_receive.h
 chassis\init_task.o: ..\TASK\Task_Safe.h
 chassis\init_task.o: ..\TASK\chassis_task.h
+chassis\init_task.o: ..\TASK\ui_task.h
 chassis\init_task.o: ../Core/Inc/spi.h
 chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h

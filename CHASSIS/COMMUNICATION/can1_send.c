@@ -51,5 +51,6 @@ void can1_cap_setmsg(int16_t Chassis_power)
 	Data[0] = (Chassis_power >> 8);
 	Data[1] = Chassis_power;
 
+	while((HAL_CAN_GetTxMailboxesFreeLevel(&hcan1)) == 0);
 	HAL_CAN_AddTxMessage(&hcan1, &Txmessage, Data, &send_mail_box); //将一段数据通过 CAN 总线发送
 }

@@ -37,6 +37,8 @@ typedef enum
   
 } Command_9025_ID;
 
+supercapacitor_receive_t *get_supercap_control_point(void);
+
 
 void chassis_motor_9025_send(int16_t motor_l_set, int16_t motor_r_set);
 void chassis_motor_read_turns(void);

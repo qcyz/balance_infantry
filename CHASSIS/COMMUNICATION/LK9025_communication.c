@@ -7,6 +7,15 @@ static CAN_TxHeaderTypeDef Txmessage;
 motor_9025_t motor_9025_l;
 motor_9025_t motor_9025_r;
 
+//申明电容变量
+static supercapacitor_receive_t Supercap_receive;
+
+//电容
+supercapacitor_receive_t *get_supercap_control_point(void)
+{
+	return &Supercap_receive;
+}
+
 
 /* private funtion */
 void write_torque_closed_loop_control(uint16_t motor_id, int16_t iq_control_set);
@@ -98,46 +107,65 @@ void LK9025_can1_callback(CAN_HandleTypeDef *hcan)
     
     if (HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &Rxmessage, Rx_Data) == HAL_OK) //读取接收的信息
     {
-		motor_9025_t *rx_motor;
-		if((Rxmessage.StdId - CHASSIS_MOTOR_L) == 0)  
-			rx_motor = get_chassis_motor_l_point();
-		else if((Rxmessage.StdId - CHASSIS_MOTOR_R) == 0) 
-			rx_motor = get_chassis_motor_r_point();
-		else return;
-		switch (Rx_Data[0])
+		switch (Rxmessage.StdId)
 		{
-			case Read_PID:
-		    {
-	            rx_motor->Angle_Pid_Kp = Rx_Data[2];
-		        rx_motor->Angle_Pid_Ki= Rx_Data[3];
-		        rx_motor->Speed_Pid_Kp = Rx_Data[4];
-		        rx_motor->Speed_Pid_Ki = Rx_Data[5];
-		        rx_motor->Torqur_Pid_Kp = Rx_Data[6];
-		        rx_motor->Torqur_Pid_Ki = Rx_Data[7];
-		        break;
-		    }
-			case Read_Muli_Turns:
-		    {
-		        int64_t angle = Rx_Data[1] | (int64_t)Rx_Data[2] << (8 * 1) | \
-		    	  			  (int64_t)Rx_Data[3] << (8 * 2) | (int64_t)Rx_Data[4] << (8 * 3) | \
-		    	  			  (int64_t)Rx_Data[5] << (8 * 4) | (int64_t)Rx_Data[6] << (8 * 5) |  \
-		    	  			  (int64_t)Rx_Data[7] << (8 * 6);
-		        angle = (int64_t)(angle << 8) / 256;
-		        rx_motor->Muli_Angle = angle / 100;
-		        break;
-		    }
-			case Torque_Closed_Loop_Control:
+			case 0x211: //超级电容接收
 			{
-			    rx_motor->Last_Speed = rx_motor->Speed;	
-			    	
-			    rx_motor->Temperature = Rx_Data[1];
-			    rx_motor->Torque_Current = Rx_Data[3]<<8 | Rx_Data[2];
-			    rx_motor->Speed = Rx_Data[5] << 8 | Rx_Data[4];
-			    rx_motor->Encoder = Rx_Data[7] << 8 | Rx_Data[6];
-			    break;
+				Supercap_receive.input_voltage = (float)((Rx_Data[1] << 8 | Rx_Data[0]) / 100.0f);
+				Supercap_receive.Capacitance_voltage = (float)((Rx_Data[3] << 8 | Rx_Data[2]) / 100.0f);
+				Supercap_receive.Input_current = (float)((Rx_Data[5] << 8 | Rx_Data[4]) / 100.0f);
+				Supercap_receive.Set_power = (float)((Rx_Data[7] << 8 | Rx_Data[6]) / 100.0f);
+				break;
 			}
-			default :
-			break;
+			case CHASSIS_MOTOR_L:
+			case CHASSIS_MOTOR_R:
+			{
+				motor_9025_t *rx_motor;
+				if((Rxmessage.StdId - CHASSIS_MOTOR_L) == 0)  
+				rx_motor = get_chassis_motor_l_point();
+				else if((Rxmessage.StdId - CHASSIS_MOTOR_R) == 0) 
+				rx_motor = get_chassis_motor_r_point();
+				else return;
+				switch (Rx_Data[0])
+				{
+					case Read_PID:
+					{
+						rx_motor->Angle_Pid_Kp = Rx_Data[2];
+						rx_motor->Angle_Pid_Ki= Rx_Data[3];
+						rx_motor->Speed_Pid_Kp = Rx_Data[4];
+						rx_motor->Speed_Pid_Ki = Rx_Data[5];
+						rx_motor->Torqur_Pid_Kp = Rx_Data[6];
+						rx_motor->Torqur_Pid_Ki = Rx_Data[7];
+						break;
+					}
+					case Read_Muli_Turns:
+					{
+						int64_t angle = Rx_Data[1] | (int64_t)Rx_Data[2] << (8 * 1) | \
+									(int64_t)Rx_Data[3] << (8 * 2) | (int64_t)Rx_Data[4] << (8 * 3) | \
+									(int64_t)Rx_Data[5] << (8 * 4) | (int64_t)Rx_Data[6] << (8 * 5) |  \
+									(int64_t)Rx_Data[7] << (8 * 6);
+						angle = (int64_t)(angle << 8) / 256;
+						rx_motor->Muli_Angle = angle / 100;
+						break;
+					}
+					case Torque_Closed_Loop_Control:
+					{
+						rx_motor->Last_Speed = rx_motor->Speed;	
+							
+						rx_motor->Temperature = Rx_Data[1];
+						rx_motor->Torque_Current = Rx_Data[3]<<8 | Rx_Data[2];
+						rx_motor->Speed = Rx_Data[5] << 8 | Rx_Data[4];
+						rx_motor->Encoder = Rx_Data[7] << 8 | Rx_Data[6];
+						break;
+					}
+					default :
+					break;
+				}
+				break;
+				default :
+				break;
+			}
+		
 		}
     }
 }

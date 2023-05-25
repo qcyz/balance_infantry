@@ -4,7 +4,6 @@
 #include "can.h"
 #include "chassis_struct_variables.h"
 
-supercapacitor_receive_t *get_supercap_control_point(void);
 //motor_measure_t *get_chassis_motor_measure_point(uint8_t i);
 
 extern void CAN1_filter_config(void);

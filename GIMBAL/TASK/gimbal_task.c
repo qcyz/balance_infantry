@@ -63,10 +63,10 @@ void Gimbal_Task(void const *argument)
 		taskENTER_CRITICAL();         		// 进入临界区
 		Gimbal_Work(&Gimbal_Control); 		// 云台状态控制    //云台工作
 		taskEXIT_CRITICAL();              	// 退出临界区
-		
+		see_k1 = Gimbal_Control.fire_c->replenish_flag;
 		can1_gimbal_setmsg_to_motor(0, Gimbal_Control.Pitch_c.motor_output);
 		can2_gimbal_setmsg_to_yaw(Gimbal_Control.Yaw_c.motor_output);
-		can2_gimbal_to_chassis(Gimbal_Control.Yaw_c.motor_measure->position);
+		can2_gimbal_to_chassis(Gimbal_Control.Yaw_c.motor_measure->position, Gimbal_Control.gimbal_behaviour, Gimbal_Control.fire_c->replenish_flag);
 		vTaskDelay(1); // 绝对延时//vTaskDelay(2);
     }
 }
@@ -91,6 +91,9 @@ void Gimbal_Init(gimbal_control_t *Gimbal_Init_f)
    	
 	//获取自瞄指针
 	Gimbal_Init_f->auto_c = get_auto_control_point();
+	
+	//获取火控指针
+	Gimbal_Init_f->fire_c = get_fire_control_point();
 	
 
     /*--------------------初始化编码器--------------------*/

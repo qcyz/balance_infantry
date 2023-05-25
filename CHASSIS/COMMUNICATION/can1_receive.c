@@ -9,15 +9,6 @@ extern CAN_HandleTypeDef hcan2;
 extern void chassis_can2_callback(CAN_HandleTypeDef *hcan);
 
 /*--------------------变量-----------------------*/
-//申明电容变量
-static supercapacitor_receive_t Supercap_receive;
-
-//电容
-supercapacitor_receive_t *get_supercap_control_point(void)
-{
-	return &Supercap_receive;
-}
-
 
 
 /**
@@ -79,14 +70,14 @@ void chassis_can1_callback(CAN_HandleTypeDef *hcan)
 		switch (Rxmessage.StdId)
 		{
 		/*底盘电机*/
-		case 0x211: //超级电容接收
-		{
-			Supercap_receive.input_voltage = (float)(Rx_Data[0] / 100.0f);
-			Supercap_receive.Capacitance_voltage = (float)(Rx_Data[1] / 100.0f);
-			Supercap_receive.Input_current = (float)(Rx_Data[2] / 100.0f);
-			Supercap_receive.Set_power = (float)(Rx_Data[3] / 100.0f);
-			break;
-		}
+//		case 0x211: //超级电容接收
+//		{
+//			Supercap_receive.input_voltage = (float)(Rx_Data[0] / 100.0f);
+//			Supercap_receive.Capacitance_voltage = (float)(Rx_Data[1] / 100.0f);
+//			Supercap_receive.Input_current = (float)(Rx_Data[2] / 100.0f);
+//			Supercap_receive.Set_power = (float)(Rx_Data[3] / 100.0f);
+//			break;
+//		}
 		default:
 		{
 			break;
@@ -101,7 +92,4 @@ void chassis_can1_callback(CAN_HandleTypeDef *hcan)
  * @retval     超级电容电压
  * @attention  底盘板调用
  */
-float re_capacitance_voltage(void)
-{
-	return (Supercap_receive.Capacitance_voltage);
-}
+

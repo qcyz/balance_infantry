@@ -12,8 +12,8 @@
 //#define BARYCENTER_ZERO_OFFSET	1.0f //ÖØÐÄÆ«ÒÆÖµ
 //#endif
 
-#define CHASSIS_X_SEN	3.0f		// m /s
-#define CHASSIS_YAW_SEN 300.0f  	// ¡ã/s
+#define CHASSIS_X_SEN	2.0f		// m /s
+#define CHASSIS_YAW_SEN 150.0f  	// ¡ã/s
 
 void chassis_behaviour_react(chassis_control_t *Chassis_behaviour_react_f);
 void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f);

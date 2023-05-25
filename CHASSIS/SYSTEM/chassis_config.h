@@ -22,7 +22,7 @@
 #define __CHASSIS_CONFIG_H
 
 
-#define YAW_ZERO_OFFSET 6120
+#define YAW_ZERO_OFFSET 6300//6120
 
 
 #endif

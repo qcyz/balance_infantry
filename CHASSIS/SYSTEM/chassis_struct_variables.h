@@ -75,8 +75,8 @@ typedef enum
 	CHASSIS_FOLLOW,	   //跟随
 	CHASSIS_NO_FOLLOW, //不跟随
 	CHASSIS_ROTATION,  //小陀螺
+	CHASSIS_SLIP,	 // 打滑状态
 	CHASSIS_BATTERY,   //炮台模式
-	CHASSIS_SLIP,		 // 打滑状态
 } chassis_behaviour_e;
 
 typedef enum
@@ -163,6 +163,8 @@ typedef struct
 	
 } motor_9025_t;
 
+
+
 typedef struct
 {
 	RC_ctrl_t *Chassis_RC; //底盘遥控数据
@@ -200,6 +202,22 @@ typedef struct
 
 
 } chassis_control_t;
+
+
+
+typedef enum
+{
+	GIMBAL_MANUAL,		 // 手动状态
+	GIMBAL_AUTOATTACK,	 // 自瞄状态
+	GIMBAL_AUTOBUFF,	 // 打符状态
+} gimbal_behaviour_e;
+
+typedef struct
+{
+	gimbal_behaviour_e behaviour; //底盘模式
+	bool replenish_flag;	
+} gimbal_control_t;
+
 
 
 

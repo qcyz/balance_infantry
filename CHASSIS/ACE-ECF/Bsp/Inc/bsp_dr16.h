@@ -81,8 +81,8 @@ typedef struct{
             uint16_t R : 1;
             uint16_t F : 1;
             uint16_t G : 1;
-            uint16_t M : 1;//uint16_t Z : 1;
-            uint16_t N : 1;//uint16_t X : 1;
+            uint16_t M : 1;	//uint16_t Z : 1;
+            uint16_t N : 1;	//uint16_t X : 1;
             uint16_t C : 1;
             uint16_t V : 1;
             uint16_t B : 1;

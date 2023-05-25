@@ -22,7 +22,7 @@ static void Chassis_Work(chassis_control_t *Chassis_Control_f);
 
 
 double k_banlance[4] = {0,-60.9048292577891,-0.00690578556486,-10.47729819946999};
-double k_yaw[2] = {11.1421356237309,3.53567287862321};
+double k_yaw[2] = {15.1421356237309,3.53567287862321};
 
 void Task_Chassis(void const *argument)
 {
@@ -43,7 +43,8 @@ void Task_Chassis(void const *argument)
 		chassis_motor_9025_send(Chassis_Control.chassis_motor[0]->Motor_output,	\
 								Chassis_Control.chassis_motor[1]->Motor_output);
 		
-//		chassis_barycenter_dispose(&Chassis_Control);                                                                                                                                                                                                                                                                                   
+//		chassis_barycenter_dispose(&Chassis_Control);    
+		can1_cap_setmsg(Chassis_Control.Chassis_Referee->Robot_Status.chassis_power_limit - 2);
 	
 		taskEXIT_CRITICAL(); //退出临界区
 
@@ -130,4 +131,9 @@ static void Chassis_Init(chassis_control_t *chassis_data_init_f)
 	//速度因子
 	chassis_data_init_f->chassis_speed_gain = 1;
 	chassis_data_init_f->chassis_barycenter = BARYCENTER_ZERO_OFFSET;
+}
+
+chassis_control_t *Get_Chassis_Control_Point(void)
+{
+	return &Chassis_Control;
 }

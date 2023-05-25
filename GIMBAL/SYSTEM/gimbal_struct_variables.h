@@ -117,7 +117,7 @@ typedef struct
 	bool full_automatic;
 	bool feed_buttle;
 	bool fire_sw;
-	bool replenish_flag;
+	uint8_t replenish_flag;
 	const RC_ctrl_t *fire_rc;
 	const REFEREE_t *referee;
 } gimbal_fire_control_t;

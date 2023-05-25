@@ -15,8 +15,8 @@
 #define CHASSIS_TASK_Hz 		1000.0f
 
 /************底盘pid************/
-#define CHASSIS_SPEED_KP 15.0f
-#define CHASSIS_SPEED_KI 0.018f
+#define CHASSIS_SPEED_KP 20.0f
+#define CHASSIS_SPEED_KI 0.02f
 #define CHASSIS_SPEED_KD 0.0f
 
 #define CHASSIS_POSITION_KP 	4.0f
@@ -24,12 +24,12 @@
 #define CHASSIS_POSITION_KD 	0.5f
 
 #define CHASSIS_SPEED_LIMIT		0.3f
-#define CHASSIS_PITCH_LIMIT		18.0f
+#define CHASSIS_PITCH_LIMIT		15.0f
 
 
 
 
-#define CHASSIS_ROTATION_SPEED 300             //小陀螺的旋转速度  dps
+#define CHASSIS_ROTATION_SPEED 400             //小陀螺的旋转速度  dps
 
 #define MOTOR_RADIUS 0.1f
 
@@ -48,5 +48,6 @@
 #define TORQUE_TO_OUTPUT	1/TORQUE_CONSTANT*CURRENT_CONSTANT*CURRENT_FOLLOW
 
 void Task_Chassis(void const *argument);
+chassis_control_t *Get_Chassis_Control_Point(void);
 
 #endif
