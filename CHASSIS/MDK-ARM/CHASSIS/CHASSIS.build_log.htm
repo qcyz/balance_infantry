@@ -28,19 +28,25 @@ Project File Date:  05/19/2023
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\ARM\ARMCC\Bin'
 Build target 'CHASSIS'
 compiling Ui_task.c...
-..\TASK\Ui_task.c(92): warning:  #68-D: integer conversion resulted in a change of sign
-  	Arc_Draw(&diff_ang,"001",UI_Graph_ADD ,5 ,UI_Color_Main ,1,-1,5,MAX_X/2,MAX_Y/2,200,200);
-..\TASK\Ui_task.c(173): warning:  #1-D: last line of file ends without a newline
+..\TASK\Ui_task.c(95): warning:  #68-D: integer conversion resulted in a change of sign
+      Arc_Draw(&diff_ang, "001", UI_Graph_ADD, 5, UI_Color_Main, 1, -1, 5, MAX_X / 2, MAX_Y / 2, 200, 200);
+..\TASK\Ui_task.c(197): warning:  #1-D: last line of file ends without a newline
   }
-..\TASK\Ui_task.c(161): warning:  #177-D: function "print_chassis_gimbal_pose"  was declared but never referenced
+..\TASK\Ui_task.c(172): warning:  #177-D: function "print_chassis_gimbal_pose"  was declared but never referenced
   static void print_chassis_gimbal_pose(void)
-..\TASK\Ui_task.c(167): warning:  #177-D: function "print_chassis_path"  was declared but never referenced
+..\TASK\Ui_task.c(178): warning:  #177-D: function "print_chassis_path"  was declared but never referenced
   static void print_chassis_path(void)
-..\TASK\Ui_task.c: 4 warnings, 0 errors
+..\TASK\Ui_task.c(189): warning:  #177-D: function "print_reticle"  was declared but never referenced
+  static void print_reticle(void)
+..\TASK\Ui_task.c: 5 warnings, 0 errors
+compiling chassis_behaviour.c...
+..\Behaviour\chassis_behaviour.c(247): warning:  #550-D: variable "last_posion"  was set but never used
+  	float last_posion;
+..\Behaviour\chassis_behaviour.c: 1 warning, 0 errors
 linking...
-Program Size: Code=47016 RO-data=3832 RW-data=1364 ZI-data=37236  
+Program Size: Code=47600 RO-data=3832 RW-data=1400 ZI-data=37312  
 FromELF: creating hex file...
-"CHASSIS\CHASSIS.axf" - 0 Error(s), 4 Warning(s).
+"CHASSIS\CHASSIS.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -64,7 +70,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

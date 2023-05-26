@@ -10,6 +10,10 @@
 float Chassis_x = 0.0f;
 float Chassis_yaw = 0.0f;
 
+float azimuth_angle[3][3] = { 	{-135, 	-180, 	135}, \
+								{-90, 	0,		90},
+								{-45,	0,		45}
+};
 
 /********************函数声明********************/
 void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f);
@@ -257,7 +261,7 @@ void chassis_barycenter_dispose(chassis_control_t *barycenter_dispose_f)
 void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 {
 	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) * CHASSIS_X_SEN);
-    Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
+    Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
 	
 	//4096 8192 4120
 	
@@ -299,18 +303,48 @@ void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 void f_CHASSIS_ROTATION(chassis_control_t *Chassis_behaviour_react_f)
 {
 
+	float angle = 0;
+	uint8_t ch2 = 0;
+	uint8_t ch3 = 0;
 	
-	if(abs(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3]) > 1)
+	
+	
+	if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] > 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.W > 0)
 	{
-
-		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 100) / 1000.0f;
+		ch3 = 2;
+		
+	}else if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] < 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.S > 0)
+	{
+		ch3 = 0;
 	}else
 	{
+		ch3 = 1;
+	}
+	
+	if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] > 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)
+	{
+		ch2 = 2;	
+	}else if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] < 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.A)
+	{
+		ch2 = 0;
+	}else
+	{
+		ch2 = 1;
+	}
+	//解算陀螺前进角度
+	angle = azimuth_angle[ch2][ch3];
+	
+	if(ch2 == 1 && ch3 == 1)
+	{
+		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 100) / 1000.0f;
+		Chassis_x = arm_cos_f32(loop_float_constrain(angle - YAW_ZERO_OFFSET / 8192.0f * 360.0f, -180.0f ,180.0f)/ RADIAN_COEF);
+	}else{
 		Chassis_behaviour_react_f->chassis_motor[0]->Speed = 0.0f;
 		Chassis_behaviour_react_f->chassis_motor[1]->Speed = 0.0f;
 		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 100) / 1000.0f;
 	}
-	Chassis_x = arm_cos_f32(loop_float_constrain((Chassis_behaviour_react_f->Chassis_INS->Yaw - Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.0f * 90.0f), -180.0f ,180.0f)/ RADIAN_COEF) * Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 4000.0f;
+	
+
 }
 void f_CHASSIS_BATTERY(chassis_control_t *Chassis_behaviour_react_f)
 {
