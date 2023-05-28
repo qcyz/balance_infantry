@@ -14,9 +14,10 @@
 #define MAX_Y 1080
 
 
-const static char *chassis_mode_ui[4] =
+const static char *chassis_mode_ui[5] =
 {
     "CHASSIS_FOLLOW",      //跟随
+	"CHASSIS_SIDE_FOLLOW",
     "CHASSIS_NO_FOLLOW",   //不跟随
     "CHASSIS_ROTATION",    //小陀螺
     "CHASSIS_SLIP"
@@ -111,10 +112,10 @@ static void ui_init(void)
     //	Line_Draw(&pose, "003", UI_Graph_ADD, 5, UI_Color_Green, 25, 100,100,1000,1000);
     //	My_Graph_Refresh(&pose);
     /*--------------------底盘路线指引-----------------*/
-    	Line_Draw(&path1, "004", UI_Graph_ADD, 5,UI_Color_Pink, 3, 1072, 543, 1456, 0);
-    	My_Graph_Refresh(&path1);
-    	Line_Draw(&path2, "005", UI_Graph_ADD, 5, UI_Color_Pink, 3, 464, 0, 848, 543);
-    	My_Graph_Refresh(&path2);
+//    	Line_Draw(&path1, "004", UI_Graph_ADD, 5,UI_Color_Pink, 3, 1072, 543, 1456, 0);
+//    	My_Graph_Refresh(&path1);
+//    	Line_Draw(&path2, "005", UI_Graph_ADD, 5, UI_Color_Pink, 3, 464, 0, 848, 543);
+//    	My_Graph_Refresh(&path2);
     /*--------------------瞄准标线--------------------*/
     Line_Draw(&reticle1, "006", UI_Graph_ADD, 5, UI_Color_Green, 3, 960, 580, 960, 350);
     My_Graph_Refresh(&reticle1);

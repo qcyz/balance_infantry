@@ -73,6 +73,7 @@ ___`. .' /--.--\ `. . __
 typedef enum
 {
 	CHASSIS_FOLLOW,	   //¸úËæ
+	CHASSIS_SIDE_FOLLOW, //²à±ß¸úËæ
 	CHASSIS_NO_FOLLOW, //²»¸úËæ
 	CHASSIS_ROTATION,  //Ð¡ÍÓÂÝ
 	CHASSIS_SLIP,	 // ´ò»¬×´Ì¬

@@ -10,13 +10,14 @@
 float Chassis_x = 0.0f;
 float Chassis_yaw = 0.0f;
 
-float azimuth_angle[3][3] = { 	{-135, 	-180, 	135}, \
-								{-90, 	0,		90},
-								{-45,	0,		45}
+float azimuth_angle[3][3] = { 	{45, 	90, 	135}, \
+								{0, 	0,		-180},
+								{-45,	-90,	-135}
 };
 
 /********************函数声明********************/
 void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f);
+void f_CHASSIS_SIDE_FOLLOW(chassis_control_t *Chassis_behaviour_react_f);
 void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f);
 void f_CHASSIS_ROTATION(chassis_control_t *Chassis_behaviour_react_f);
 void f_CHASSIS_BATTERY(chassis_control_t *Chassis_behaviour_react_f);
@@ -28,8 +29,8 @@ void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f)
 {
     //用于记录上一次数据
     chassis_behaviour_e last_behaviour;
-    static chassis_behaviour_e rc_behaviour = CHASSIS_FOLLOW;
-    static chassis_behaviour_e kb_behaviour = CHASSIS_FOLLOW;
+    static chassis_behaviour_e rc_behaviour = CHASSIS_NO_FOLLOW;
+    static chassis_behaviour_e kb_behaviour = CHASSIS_NO_FOLLOW;
 
     //手柄
     last_behaviour = rc_behaviour;
@@ -75,6 +76,11 @@ void chassis_behaviour_choose(chassis_control_t *Chassis_behaviour_f)
     {
         kb_behaviour = CHASSIS_SLIP; //打滑模式下，底盘不跟随云台
     }
+	//**Shift
+	if (Chassis_behaviour_f->Chassis_RC->kb.bit.SHIFT)
+    {
+        kb_behaviour = CHASSIS_SIDE_FOLLOW; //打滑模式下，底盘不跟随云台
+    }
     //如果模式发生改变，设置对应的模式
     if (last_behaviour != kb_behaviour)
     {
@@ -89,6 +95,9 @@ void chassis_behaviour_react(chassis_control_t *Chassis_behaviour_react_f)
     {
     case CHASSIS_FOLLOW:
         f_CHASSIS_FOLLOW(Chassis_behaviour_react_f);
+        break;
+	case CHASSIS_SIDE_FOLLOW:
+		f_CHASSIS_SIDE_FOLLOW(Chassis_behaviour_react_f);
         break;
     case CHASSIS_ROTATION:
         f_CHASSIS_ROTATION(Chassis_behaviour_react_f);
@@ -280,17 +289,16 @@ void f_CHASSIS_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 void f_CHASSIS_SIDE_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
 {
 	int32_t offset = YAW_ZERO_OFFSET - 8192 / 4;
-	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] / 660.0f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.S + Chassis_behaviour_react_f->Chassis_RC->kb.bit.W)) * CHASSIS_X_SEN);
-    Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
+	Chassis_x = -((Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.0f + (Chassis_behaviour_react_f->Chassis_RC->kb.bit.A - Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) * CHASSIS_X_SEN);
 
-	if(Chassis_behaviour_react_f->yaw_motor->position > (offset - 8192 / 4) && Chassis_behaviour_react_f->yaw_motor->position < (offset + 8192 / 4))
-	{
+	//if(Chassis_behaviour_react_f->yaw_motor->position > (offset - 8192 / 4) && Chassis_behaviour_react_f->yaw_motor->position < (offset + 8192 / 4))
+//	{
 		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - offset) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
-	}else
-	{
-		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - offset - 8192 / 2) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
-		Chassis_x = (-Chassis_x);
-	}
+//	}else
+//	{
+//		Chassis_yaw = -((Chassis_behaviour_react_f->yaw_motor->position - offset - 8192 / 2) / 8192.0f * 360.0f + Chassis_behaviour_react_f->Chassis_INS->Yaw);
+//		Chassis_x = (-Chassis_x);
+//	}
 }
 
 void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
@@ -299,49 +307,55 @@ void f_CHASSIS_NO_FOLLOW(chassis_control_t *Chassis_behaviour_react_f)
     Chassis_yaw += (Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] / 660.f + (-Chassis_behaviour_react_f->Chassis_RC->kb.bit.A + Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)) / CHASSIS_TASK_Hz * CHASSIS_YAW_SEN;
 	
 }
+float angle = 0;
 
 void f_CHASSIS_ROTATION(chassis_control_t *Chassis_behaviour_react_f)
 {
 
-	float angle = 0;
+	
 	uint8_t ch2 = 0;
 	uint8_t ch3 = 0;
+	angle = 0;
+
 	
-	
-	
-	if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] > 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.W > 0)
-	{
-		ch3 = 2;
-		
-	}else if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] < 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.S > 0)
+	if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] > 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.W == 1)
 	{
 		ch3 = 0;
+		
+	}else if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[3] < 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.S == 1)
+	{
+		ch3 = 2;
 	}else
 	{
 		ch3 = 1;
 	}
 	
-	if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] > 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.D)
+	if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] > 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.D == 1)
 	{
-		ch2 = 2;	
-	}else if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] < 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.A)
+		ch2 = 0;	
+	}else if(Chassis_behaviour_react_f->Chassis_RC->rc.ch[2] < 0 || Chassis_behaviour_react_f->Chassis_RC->kb.bit.A == 1)
 	{
-		ch2 = 0;
+		ch2 = 2;
 	}else
 	{
 		ch2 = 1;
 	}
 	//解算陀螺前进角度
-	angle = azimuth_angle[ch2][ch3];
+	//angle = azimuth_angle[ch2][ch3];
+	
 	
 	if(ch2 == 1 && ch3 == 1)
 	{
-		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 100) / 1000.0f;
-		Chassis_x = arm_cos_f32(loop_float_constrain(angle - YAW_ZERO_OFFSET / 8192.0f * 360.0f, -180.0f ,180.0f)/ RADIAN_COEF);
-	}else{
+		Chassis_x = 0;
 		Chassis_behaviour_react_f->chassis_motor[0]->Speed = 0.0f;
 		Chassis_behaviour_react_f->chassis_motor[1]->Speed = 0.0f;
-		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 100) / 1000.0f;
+		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 150) / 1000.0f;
+		
+		
+	}else{
+		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 150) / 1000.0f;
+		//Chassis_x = arm_cos_f32(loop_float_constrain(angle - YAW_ZERO_OFFSET / 8192.0f * 360.0f, -180.0f ,180.0f)/ RADIAN_COEF);
+		Chassis_x = arm_cos_f32(loop_float_constrain((Chassis_behaviour_react_f->yaw_motor->position - YAW_ZERO_OFFSET) / 8192.0f * 360.0f  - angle -45, -180.0f ,180.0f)/ RADIAN_COEF) / 0.001f;
 	}
 	
 
