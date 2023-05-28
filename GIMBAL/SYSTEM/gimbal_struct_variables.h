@@ -63,7 +63,8 @@ typedef enum
 {
 	GIMBAL_MANUAL,		 // ÊÖ¶¯×´Ì¬
 	GIMBAL_AUTOATTACK,	 // ×ÔÃé×´Ì¬
-	GIMBAL_AUTOBUFF,	 // ´ò·û×´Ì¬
+	GIMBAL_AUTOBUFF,	 // Ð¡·û×´Ì¬
+	GIMBAL_TOPBUFF,	 // ´ó·û×´Ì¬
 	GIMBAL_REPLENISHMEN, // ²¹¸ø×´Ì¬
 } gimbal_behaviour_e;
 

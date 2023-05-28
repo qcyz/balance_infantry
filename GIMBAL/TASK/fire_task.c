@@ -107,19 +107,19 @@ void fire_behaviour_choose(gimbal_fire_control_t *fire_behaviour_choose_f)
 
     //摩擦轮开关
 
-    if((fire_behaviour_choose_f->fire_rc->rc.ch[4] < -500 && last_ch4 == 1) || (last_shift == false && fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT == true))
-    {
-        fire_behaviour_choose_f->fire_sw = !fire_behaviour_choose_f->fire_sw;;
-    }
-    if(fire_behaviour_choose_f->fire_rc->rc.ch[4] > -500)
-    {
-        last_ch4 = 1;
-    }
-    else
-    {
-        last_ch4 = 0;
-    }
-    last_shift = fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT;
+//    if((fire_behaviour_choose_f->fire_rc->rc.ch[4] < -500 && last_ch4 == 1) || (last_shift == false && fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT == true))
+//    {
+//        fire_behaviour_choose_f->fire_sw = !fire_behaviour_choose_f->fire_sw;;
+//    }
+//    if(fire_behaviour_choose_f->fire_rc->rc.ch[4] > -500)
+//    {
+//        last_ch4 = 1;
+//    }
+//    else
+//    {
+//        last_ch4 = 0;
+//    }
+//    last_shift = fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT;
 
     // 裁判系统弹速设置
     switch (fire_behaviour_choose_f->referee->Robot_Status.shooter_id1_17mm_speed_limit)

@@ -60,19 +60,21 @@ void Virtual_send(gimbal_auto_control_t *Virtual_send_p)
 	switch (*Virtual_send_p->gimbal_behaviour)
 	{
     case GIMBAL_MANUAL:
-				Virtual_send_p->visual_buff_send[2] = -1;
+				Virtual_send_p->visual_buff_send[2] = 0;
     case GIMBAL_AUTOATTACK:
 				Virtual_send_p->visual_buff_send[2] = 0;
         break;
     case GIMBAL_AUTOBUFF:
 				Virtual_send_p->visual_buff_send[2] = 1;
         break;
+	case GIMBAL_TOPBUFF:
+				Virtual_send_p->visual_buff_send[2] = 2;
     default:
         break;
 	}
 //		//裁判系统接收 阵营，射速。
 //		//阵营
-		Virtual_send_p->visual_buff_send[1] = 1;
+		Virtual_send_p->visual_buff_send[1] = referee->Robot_Status.robot_id;
 //		//射速
 
 		Virtual_send_p->visual_buff_send[3] = referee->Robot_Status.shooter_id1_17mm_speed_limit;

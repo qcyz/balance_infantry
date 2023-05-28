@@ -66,7 +66,7 @@ void gimbal_behaviour_choose(gimbal_control_t *gimbal_behaviour_choose_f)
 	//**v
     if (gimbal_behaviour_choose_f->Gimbal_RC->kb.bit.V)
     {
-        kb_behaviour = GIMBAL_AUTOATTACK;
+        kb_behaviour = GIMBAL_TOPBUFF;
     }
 	//**v
     if (gimbal_behaviour_choose_f->Gimbal_RC->kb.bit.B)
@@ -109,6 +109,8 @@ void gimbal_behaviour_react(gimbal_control_t *gimbal_behaviour_react_f)
     case GIMBAL_AUTOBUFF:
         f_GIMBAL_AUTOBUFF(gimbal_behaviour_react_f);
         break;
+	case GIMBAL_TOPBUFF:
+		f_GIMBAL_AUTOBUFF(gimbal_behaviour_react_f);
     default:
         break;
     }
