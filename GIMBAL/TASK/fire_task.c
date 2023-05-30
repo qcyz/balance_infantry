@@ -60,7 +60,7 @@ void fire_task_init(gimbal_fire_control_t *fire_init_f)
 
     fire_init_f->full_automatic = true;
     fire_init_f->feed_buttle = false;
-    fire_init_f->fire_sw = true;
+    fire_init_f->fire_sw = false;
     fire_init_f->replenish_flag = false;
 
     HAL_TIM_Base_Start(&htim1);
@@ -164,6 +164,7 @@ void fire_pid_calculate(gimbal_fire_control_t *fire_pid_calculate_f)
         }
         else // 非全自动使用闭环控制
         {
+			//软件边沿触发 + 发射一个弹丸的编码变化值
             fire_pid_calculate_f->fire_motor_speed_pid.out = motor_position_speed_control(&fire_pid_calculate_f->fire_motor_speed_pid,
                     &fire_pid_calculate_f->fire_motor_position_pid,
                     (fire_pid_calculate_f->fire_motor_encoder->Encode_Record_Val + 1368),

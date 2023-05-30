@@ -624,7 +624,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x64297ECA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x64297ECA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x64297ECA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x64297ECA)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../ACE-ECF/Algorithm/inc/struct_typedef.h)(0x63E665D4)
 I (D:\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../ACE-ECF/Bsp/Inc/bsp_dr16.h)(0x63E665D4)
@@ -2328,7 +2328,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x64297F33)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x64297EC7)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x64297EC7)
 I (..\TASK\gimbal_task.h)(0x63D68A26)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../ACE-ECF/Algorithm/inc/struct_typedef.h)(0x63E665D4)
 I (D:\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../ACE-ECF/Bsp/Inc/bsp_dr16.h)(0x63E665D4)
@@ -2365,12 +2365,12 @@ I (../TASK/ins_task.h)(0x63CAD52D)
 I (../IMU/BMI088driver.h)(0x62CD1EB8)
 I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
-I (../SYSTEM/gimbal_config.h)(0x645CF75F)
+I (../SYSTEM/gimbal_config.h)(0x6475EC35)
 I (..\TASK\fire_Task.h)(0x64432EA5)
 I (..\TASK\virtual_task.h)(0x6415586D)
 I (../COMMUNICATION/can1_receive.h)(0x643F9A36)
 I (../Core/Inc/can.h)(0x640D9502)
-I (../COMMUNICATION/can2_receive.h)(0x643F9A36)
+I (../COMMUNICATION/can2_receive.h)(0x6475EC35)
 I (../COMMUNICATION/can1_send.h)(0x641FFA07)
 I (../COMMUNICATION/can2_send.h)(0x646BA023)
 I (../BEHAVIOUR/gimbal_behaviour.h)(0x64141695)
@@ -2431,7 +2431,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x64297F33)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../ACE-ECF/Algorithm/inc/struct_typedef.h)(0x63E665D4)
 I (D:\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../ACE-ECF/Bsp/Inc/bsp_dr16.h)(0x63E665D4)
@@ -2457,10 +2457,10 @@ I (../TASK/ins_task.h)(0x63CAD52D)
 I (../IMU/BMI088driver.h)(0x62CD1EB8)
 I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
-I (../COMMUNICATION/can2_receive.h)(0x643F9A36)
+I (../COMMUNICATION/can2_receive.h)(0x6475EC35)
 I (..\TASK\Task_Safe.h)(0x63E665BC)
 I (..\TASK\gimbal_task.h)(0x63D68A26)
-I (../SYSTEM/gimbal_config.h)(0x645CF75F)
+I (../SYSTEM/gimbal_config.h)(0x6475EC35)
 I (..\TASK\virtual_task.h)(0x6415586D)
 I (..\TASK\fire_task.h)(0x64432EA5)
 I (../Core/Inc/spi.h)(0x640D9502)
@@ -2583,7 +2583,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x64297ECA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x64297ECA)
 F (..\TASK\virtual_task.c)(0x6472F8C2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\virtual_task.o --omf_browse gimbal\virtual_task.crf --depend gimbal\virtual_task.d)
 I (../BEHAVIOUR/gimbal_behaviour.h)(0x64141695)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../Core/Inc/main.h)(0x640D9504)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x64297F33)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x64422833)
@@ -2661,7 +2661,7 @@ I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
 I (..\TASK\virtual_task.h)(0x6415586D)
 I (..\TASK\gimbal_task.h)(0x63D68A26)
-I (../SYSTEM/gimbal_config.h)(0x645CF75F)
+I (../SYSTEM/gimbal_config.h)(0x6475EC35)
 I (../USB_DEVICE/App/usbd_cdc_if.h)(0x640D9503)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h)(0x64297EC7)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x64297EC7)
@@ -2669,9 +2669,9 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x64297EC7)
 I (../USB_DEVICE/Target/usbd_conf.h)(0x640D9503)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x64297EC7)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x64297EC7)
-F (..\TASK\fire_task.c)(0x6472F8C2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\fire_task.o --omf_browse gimbal\fire_task.crf --depend gimbal\fire_task.d)
+F (..\TASK\fire_task.c)(0x6475C623)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\fire_task.o --omf_browse gimbal\fire_task.crf --depend gimbal\fire_task.d)
 I (..\TASK\fire_Task.h)(0x64432EA5)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../Core/Inc/main.h)(0x640D9504)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x64297F33)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x64422833)
@@ -2748,12 +2748,12 @@ I (../IMU/BMI088driver.h)(0x62CD1EB8)
 I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
 I (..\TASK\gimbal_task.h)(0x63D68A26)
-I (../SYSTEM/gimbal_config.h)(0x645CF75F)
+I (../SYSTEM/gimbal_config.h)(0x6475EC35)
 I (../COMMUNICATION/can1_receive.h)(0x643F9A36)
 I (../Core/Inc/can.h)(0x640D9502)
 I (../COMMUNICATION/can1_send.h)(0x641FFA07)
-F (..\SYSTEM\gimbal_config.h)(0x645CF75F)()
-F (..\SYSTEM\gimbal_struct_variables.h)(0x6472F8C2)()
+F (..\SYSTEM\gimbal_config.h)(0x6475EC35)()
+F (..\SYSTEM\gimbal_struct_variables.h)(0x6475EC35)()
 F (..\COMMUNICATION\can1_receive.c)(0x643F9A36)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\can1_receive.o --omf_browse gimbal\can1_receive.crf --depend gimbal\can1_receive.d)
 I (..\COMMUNICATION\can1_receive.h)(0x643F9A36)
 I (../Core/Inc/can.h)(0x640D9502)
@@ -2793,7 +2793,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x64297F33)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../ACE-ECF/Algorithm/inc/struct_typedef.h)(0x63E665D4)
 I (D:\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../ACE-ECF/Bsp/Inc/bsp_dr16.h)(0x63E665D4)
@@ -2833,10 +2833,10 @@ I (../TASK/ins_task.h)(0x63CAD52D)
 I (../IMU/BMI088driver.h)(0x62CD1EB8)
 I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
-I (..\COMMUNICATION\can2_receive.h)(0x643F9A36)
+I (..\COMMUNICATION\can2_receive.h)(0x6475EC35)
 F (..\COMMUNICATION\can1_send.c)(0x641FFA07)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\can1_send.o --omf_browse gimbal\can1_send.crf --depend gimbal\can1_send.d)
 I (..\COMMUNICATION\can1_send.h)(0x641FFA07)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../Core/Inc/main.h)(0x640D9504)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x64297F33)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x64422833)
@@ -2913,8 +2913,8 @@ I (../IMU/BMI088driver.h)(0x62CD1EB8)
 I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
 I (../Core/Inc/can.h)(0x640D9502)
-F (..\COMMUNICATION\can2_receive.c)(0x643F9A36)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\can2_receive.o --omf_browse gimbal\can2_receive.crf --depend gimbal\can2_receive.d)
-I (..\COMMUNICATION\can2_receive.h)(0x643F9A36)
+F (..\COMMUNICATION\can2_receive.c)(0x6475EC35)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\can2_receive.o --omf_browse gimbal\can2_receive.crf --depend gimbal\can2_receive.d)
+I (..\COMMUNICATION\can2_receive.h)(0x6475EC35)
 I (..\COMMUNICATION\can1_receive.h)(0x643F9A36)
 I (../Core/Inc/can.h)(0x640D9502)
 I (../Core/Inc/main.h)(0x640D9504)
@@ -2953,7 +2953,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x64297F33)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../ACE-ECF/Algorithm/inc/struct_typedef.h)(0x63E665D4)
 I (D:\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../ACE-ECF/Bsp/Inc/bsp_dr16.h)(0x63E665D4)
@@ -2995,7 +2995,7 @@ I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
 F (..\COMMUNICATION\can2_send.c)(0x646BA18D)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\can2_send.o --omf_browse gimbal\can2_send.crf --depend gimbal\can2_send.d)
 I (..\COMMUNICATION\can2_send.h)(0x646BA023)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../Core/Inc/main.h)(0x640D9504)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x64297F33)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x64422833)
@@ -3282,9 +3282,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h)(0x64297F33)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h)(0x64297F33)
-F (..\BEHAVIOUR\gimbal_behaviour.c)(0x6472F8C2)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\gimbal_behaviour.o --omf_browse gimbal\gimbal_behaviour.crf --depend gimbal\gimbal_behaviour.d)
+F (..\BEHAVIOUR\gimbal_behaviour.c)(0x64760520)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\gimbal_behaviour.o --omf_browse gimbal\gimbal_behaviour.crf --depend gimbal\gimbal_behaviour.d)
 I (..\BEHAVIOUR\gimbal_behaviour.h)(0x64141695)
-I (../SYSTEM/gimbal_struct_variables.h)(0x6472F8C2)
+I (../SYSTEM/gimbal_struct_variables.h)(0x6475EC35)
 I (../Core/Inc/main.h)(0x640D9504)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x64297F33)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x64422833)
@@ -3361,10 +3361,13 @@ I (../IMU/BMI088driver.h)(0x62CD1EB8)
 I (../IMU/QuaternionEKF.h)(0x62CD1EB8)
 I (../IMU/kalman_filter.h)(0x63900085)
 I (../TASK/gimbal_task.h)(0x63D68A26)
-I (../SYSTEM/gimbal_config.h)(0x645CF75F)
+I (../SYSTEM/gimbal_config.h)(0x6475EC35)
 I (../ACE-ECF/Algorithm/inc/maths.h)(0x63E665D4)
 I (../ACE-ECF/Algorithm/inc/user_lib.h)(0x63EC8B34)
 I (../TASK/virtual_task.h)(0x6415586D)
+I (../COMMUNICATION/can2_receive.h)(0x6475EC35)
+I (../COMMUNICATION/can1_receive.h)(0x643F9A36)
+I (../Core/Inc/can.h)(0x640D9502)
 F (..\SYSTEMVIEW\SEGGER_RTT.c)(0x63D68A26)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../ACE-ECF/Algorithm/inc -I ../ACE-ECF/Bsp/Inc -I ../ACE-ECF/Control -I ../SYSTEM -I ../BEHAVIOUR -I ../COMMUNICATION -I ../IMU -I ../TASK -I ../SYSTEMVIEW -I ../Drivers/CMSIS/DSP/Include-I.\RTE\_GIMBAL-IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_USED="1U" -D__FPU_PRESENT="1U" -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING-o gimbal\segger_rtt.o --omf_browse gimbal\segger_rtt.crf --depend gimbal\segger_rtt.d)
 I (..\SYSTEMVIEW\SEGGER_RTT.h)(0x63D68A26)
 I (..\SYSTEMVIEW\SEGGER_RTT_Conf.h)(0x63D68A26)

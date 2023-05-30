@@ -4,9 +4,11 @@
 #include "user_lib.h"
 #include "gimbal_config.h"
 #include "virtual_task.h"
+#include "can2_receive.h"
 
 float Gimbal_pitch = 0.0f;
 float Gimbal_yaw = 0.0f;
+chassis_control_t *Chassis_Control;
 
 static void f_GIMBAL_MANUAL(gimbal_control_t *f_GIMBAL_MANUAL_f);
 static void f_GIMBAL_AUTOATTACK(gimbal_control_t *f_GIMBAL_AUTOATTACK_f);
@@ -89,9 +91,20 @@ void gimbal_behaviour_choose(gimbal_control_t *gimbal_behaviour_choose_f)
 float see_gimbal_yaw = 0;
 void gimbal_behaviour_react(gimbal_control_t *gimbal_behaviour_react_f)
 {
+	float pitch_up_limit = PITCH_ANGLE_LIMIT_UP;
+	float pitch_down_limit = PITCH_ANGLE_LIMIT_DOWN;
+	Chassis_Control = get_chassis_control_point();
+	
+	//½âËãÔÆÌ¨pitchÏÞ·ù
+	pitch_up_limit = PITCH_ANGLE_LIMIT_UP + Chassis_Control->pitch * arm_cos_f32(loop_float_constrain((gimbal_behaviour_react_f->Yaw_c.motor_measure->position - YAW_ZERO_OFFSET) / 8192.0f * 360.0f , -180.0f, 180.0f) / RADIAN_COEF);
+	pitch_down_limit = PITCH_ANGLE_LIMIT_DOWN + Chassis_Control->pitch * arm_cos_f32(loop_float_constrain((gimbal_behaviour_react_f->Yaw_c.motor_measure->position - YAW_ZERO_OFFSET) / 8192.0f * 360.0f , -180.0f, 180.0f) / RADIAN_COEF);
+
+	
     Gimbal_pitch -= gimbal_behaviour_react_f->Gimbal_RC->mouse.y * MOUSE_PITCH_SPEED;
     Gimbal_pitch += gimbal_behaviour_react_f->Gimbal_RC->rc.ch[1] * RC_PITCH_SPEED;
-    value_limit(Gimbal_pitch, PITCH_ANGLE_LIMIT_DOWN, PITCH_ANGLE_LIMIT_UP);
+	
+	
+    value_limit(Gimbal_pitch, pitch_down_limit, pitch_up_limit);
 
     Gimbal_yaw -= gimbal_behaviour_react_f->Gimbal_RC->mouse.x * MOUSE_YAW_SPEED;
     Gimbal_yaw -= gimbal_behaviour_react_f->Gimbal_RC->rc.ch[0] * RC_YAW_SPEED;

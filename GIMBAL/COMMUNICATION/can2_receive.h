@@ -12,6 +12,7 @@ extern float re_gimbal_pitch_angle(void);
 extern int re_gimbal_behaviour(void);
 extern uint8_t re_robot_red_or_blue(void);
 motor_measure_t *get_yaw_motor_measure_point(void);
+chassis_control_t *get_chassis_control_point(void);
 
 
 

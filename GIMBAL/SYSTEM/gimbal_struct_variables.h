@@ -154,4 +154,10 @@ typedef struct
 	const gimbal_auto_control_t **auto_c;
 } gimbal_control_t;
 
+typedef struct 
+{
+	float pitch;
+	float yaw;
+} chassis_control_t;
+
 #endif

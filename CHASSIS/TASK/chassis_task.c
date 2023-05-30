@@ -22,7 +22,7 @@ static void Chassis_Work(chassis_control_t *Chassis_Control_f);
 
 
 double k_banlance[4] = {0,-60.9048292577891,-0.00690578556486,-10.47729819946999};
-double k_yaw[2] = {15.1421356237309,3.53567287862321};
+double k_yaw[2] = {10.1421356237309,3.53567287862321};
 
 void Task_Chassis(void const *argument)
 {
@@ -38,7 +38,7 @@ void Task_Chassis(void const *argument)
 		Chassis_Work(&Chassis_Control);
 
 		can2_chassis_to_gimbal(Chassis_Control.Chassis_RC);
-		can2_chassis_to_gimbal_referee(Chassis_Control.Chassis_Referee);
+		can2_chassis_to_gimbal_referee(Chassis_Control.Chassis_Referee, Chassis_Control.Chassis_INS->Pitch);
 //			
 		chassis_motor_9025_send(Chassis_Control.chassis_motor[0]->Motor_output,	\
 								Chassis_Control.chassis_motor[1]->Motor_output);

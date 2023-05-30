@@ -245,6 +245,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>Data_Tx,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>17</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>chassis_control</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>

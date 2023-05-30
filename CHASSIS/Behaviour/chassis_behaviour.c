@@ -349,11 +349,11 @@ void f_CHASSIS_ROTATION(chassis_control_t *Chassis_behaviour_react_f)
 		Chassis_x = 0;
 		Chassis_behaviour_react_f->chassis_motor[0]->Speed = 0.0f;
 		Chassis_behaviour_react_f->chassis_motor[1]->Speed = 0.0f;
-		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 150) / 1000.0f;
+		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 50) / 1000.0f;
 		
 		
 	}else{
-		Chassis_yaw += (CHASSIS_ROTATION_SPEED + 150) / 1000.0f;
+		Chassis_yaw += (CHASSIS_ROTATION_SPEED) / 1000.0f;
 		//Chassis_x = arm_cos_f32(loop_float_constrain(angle - YAW_ZERO_OFFSET / 8192.0f * 360.0f, -180.0f ,180.0f)/ RADIAN_COEF);
 		Chassis_x = arm_cos_f32(loop_float_constrain((Chassis_behaviour_react_f->yaw_motor->position - YAW_ZERO_OFFSET) / 8192.0f * 360.0f  - angle -45, -180.0f ,180.0f)/ RADIAN_COEF) / 0.001f;
 	}

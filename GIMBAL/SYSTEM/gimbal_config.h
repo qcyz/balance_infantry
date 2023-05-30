@@ -25,7 +25,7 @@
 
 #define FIRE_WORK
 #define PITCH_ZERO_OFFSET 100.0f 
-#define YAW_ZERO_OFFSET 6617
+#define YAW_ZERO_OFFSET 6300
 /**********************pitch÷·PID≤Œ ˝**********************/
 #define GIMBAL_PITCH_P 0.0f
 #define GIMBAL_PITCH_I 8.0f

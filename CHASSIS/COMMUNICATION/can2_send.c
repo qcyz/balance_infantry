@@ -41,7 +41,7 @@ void can2_chassis_to_gimbal(const RC_ctrl_t *can2_MK_send)
 	
 	HAL_CAN_AddTxMessage(&hcan2, &Txmessage, Data, &send_mail_box); //将一段数据通过 CAN 总线发送
 }
-void can2_chassis_to_gimbal_referee(const REFEREE_t *can2_referee_send)
+void can2_chassis_to_gimbal_referee(const REFEREE_t *can2_referee_send, int8_t angle)
 {
 	uint32_t send_mail_box; //发送邮箱
 	uint8_t Data[8];		//发送数据的数组
@@ -56,7 +56,7 @@ void can2_chassis_to_gimbal_referee(const REFEREE_t *can2_referee_send)
 	Data[2] = (can2_referee_send->Power_Heat.shooter_id1_17mm_cooling_heat >> 8);
 	Data[3] = (can2_referee_send->Power_Heat.shooter_id1_17mm_cooling_heat);
 	Data[4] = (can2_referee_send->Robot_Status.shooter_id1_17mm_speed_limit);
-	Data[5] = 0;
+	Data[5] = angle;
 	Data[6] = 0;
 	Data[7] = 0xAA;
 	while ((HAL_CAN_GetTxMailboxesFreeLevel(&hcan2))==0);

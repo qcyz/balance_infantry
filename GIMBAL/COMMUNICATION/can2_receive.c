@@ -9,10 +9,15 @@ extern gimbal_control_t Gimbal_Control;
 
 /*--------------------±äÁ¿-----------------------*/
 static motor_measure_t yaw_motor_measure;
+static chassis_control_t chassis_control;
 
 motor_measure_t *get_yaw_motor_measure_point(void)
 {
 	return &yaw_motor_measure;
+}
+chassis_control_t *get_chassis_control_point(void)
+{
+	return &chassis_control;
 }
 /**
  * @brief		can2ÂË²¨Æ÷ÅäÖÃ
@@ -91,9 +96,10 @@ void gimbal_can2_callback(CAN_HandleTypeDef *hcan)
 			case 0x402:
 				if(Rx_Data[7] == 0xAA)
 				{
-					referee->Robot_Status.shooter_id1_17mm_cooling_limit = ((Rx_Data[0] << 8) | Rx_Data[1]);
 					referee->Power_Heat.shooter_id1_17mm_cooling_heat = ((Rx_Data[2] << 8) | Rx_Data[3]);
+					referee->Robot_Status.shooter_id1_17mm_cooling_limit = ((Rx_Data[0] << 8) | Rx_Data[1]);
 					referee->Robot_Status.shooter_id1_17mm_speed_limit = Rx_Data[4];
+					chassis_control.pitch = (int8_t)Rx_Data[5];
 				
 				}
 		}

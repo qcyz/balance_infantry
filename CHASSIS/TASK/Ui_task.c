@@ -97,16 +97,16 @@ static void ui_init(void)
     My_Graph_Refresh(&diff_ang);
 
     /*--------------------底盘模式ui加入--------------------*/
-    Char_Draw(&CH_MODE, "093", UI_Graph_ADD, 8, UI_Color_Main, 25, 5, 80, 880 - 80, chassis_mode_ui[Chassis_Control_p->behaviour]);
+    Char_Draw(&CH_MODE, "093", UI_Graph_ADD, 5, UI_Color_Main, 25, 5, 80, 880 - 80, chassis_mode_ui[Chassis_Control_p->behaviour]);
     My_Char_Refresh(CH_MODE);
 
-    Char_Draw(&GM_MODE, "094", UI_Graph_ADD, 7, UI_Color_Yellow, 25, 5, 80, 700, gimbal_mode_ui[Gimbal_Control_p->behaviour]);
+    Char_Draw(&GM_MODE, "094", UI_Graph_ADD, 5, UI_Color_Yellow, 25, 5, 80, 700, gimbal_mode_ui[Gimbal_Control_p->behaviour]);
     My_Char_Refresh(GM_MODE);
     /*--------------------云台补弹ui加入--------------------*/
     if(Gimbal_Control_p->replenish_flag)
-        Char_Draw(&replenish, "002", UI_Graph_ADD, 6, UI_Color_Green, 20, 4, 80, 600, "replenish:ing");
+        Char_Draw(&replenish, "002", UI_Graph_ADD, 5, UI_Color_Green, 20, 4, 80, 600, "replenish:finish");
     else
-        Char_Draw(&replenish, "002", UI_Graph_ADD, 6, UI_Color_Orange, 20, 4, 80, 600, "replenish:finish");
+        Char_Draw(&replenish, "002", UI_Graph_ADD, 5, UI_Color_Orange, 20, 4, 80, 600, "replenish:ing");
     My_Char_Refresh(replenish);
     /*--------------------云台底盘姿态描述-----------------*/
     //	Line_Draw(&pose, "003", UI_Graph_ADD, 5, UI_Color_Green, 25, 100,100,1000,1000);
@@ -117,12 +117,12 @@ static void ui_init(void)
 //    	Line_Draw(&path2, "005", UI_Graph_ADD, 5, UI_Color_Pink, 3, 464, 0, 848, 543);
 //    	My_Graph_Refresh(&path2);
     /*--------------------瞄准标线--------------------*/
-    Line_Draw(&reticle1, "006", UI_Graph_ADD, 5, UI_Color_Green, 3, 960, 580, 960, 350);
+    Line_Draw(&reticle1, "006", UI_Graph_ADD, 5, UI_Color_Green, 2, 960, 580, 960, 350);
     My_Graph_Refresh(&reticle1);
-    Line_Draw(&reticle2, "007", UI_Graph_ADD, 5, UI_Color_Green, 3, 900, 468, 1020, 468);
+    Line_Draw(&reticle2, "007", UI_Graph_ADD, 5, UI_Color_Green, 2, 900, 468, 1020, 468);
     My_Graph_Refresh(&reticle2);
-		 Circle_Draw(&circle1, "008", UI_Graph_ADD, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
-	  My_Graph_Refresh(&circle1);
+//		 Circle_Draw(&circle1, "008", UI_Graph_ADD, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
+//	  My_Graph_Refresh(&circle1);
 
 }
 
@@ -132,14 +132,14 @@ static void ui_init(void)
 static void print_mode(void)
 {
     //底盘
-    Char_Draw(&CH_MODE, "093", UI_Graph_Change, 8, UI_Color_Main, 25, 5, 80, 880 - 80, chassis_mode_ui[Chassis_Control_p->behaviour]);
+    Char_Draw(&CH_MODE, "093", UI_Graph_Change, 5, UI_Color_Main, 25, 5, 80, 880 - 80, chassis_mode_ui[Chassis_Control_p->behaviour]);
     My_Char_Refresh(CH_MODE);
-    Char_Draw(&GM_MODE, "094", UI_Graph_Change, 7, UI_Color_Yellow, 25, 5, 80, 700, gimbal_mode_ui[Gimbal_Control_p->behaviour]);
+    Char_Draw(&GM_MODE, "094", UI_Graph_Change, 5, UI_Color_Yellow, 25, 5, 80, 700, gimbal_mode_ui[Gimbal_Control_p->behaviour]);
     My_Char_Refresh(GM_MODE);
     if(Gimbal_Control_p->replenish_flag)
-        Char_Draw(&replenish, "002", UI_Graph_Change, 6, UI_Color_Green, 20, 4, 80, 600, "replenish:ing");
+        Char_Draw(&replenish, "002", UI_Graph_Change, 5, UI_Color_Green, 20, 4, 80, 600, "replenish:finish");
     else
-        Char_Draw(&replenish, "002", UI_Graph_Change, 6, UI_Color_Orange, 20, 4, 80, 600, "replenish:finish");
+        Char_Draw(&replenish, "002", UI_Graph_Change, 5, UI_Color_Orange, 20, 4, 80, 600, "replenish:ing");
     My_Char_Refresh(replenish);
 
 }
@@ -189,10 +189,10 @@ static void print_chassis_path(void)
   */
 static void print_reticle(void)
 {
-    Line_Draw(&reticle1, "006", UI_Graph_Change, 5, UI_Color_Green, 3, 960, 580, 960, 350);
+    Line_Draw(&reticle1, "006", UI_Graph_Change, 5, UI_Color_Green, 2, 960, 580, 960, 350);
     My_Graph_Refresh(&reticle1);
-    Line_Draw(&reticle2, "007", UI_Graph_Change, 5, UI_Color_Green, 3, 900, 468, 1020, 468);
+    Line_Draw(&reticle2, "007", UI_Graph_Change, 5, UI_Color_Green, 2, 900, 468, 1020, 468);
     My_Graph_Refresh(&reticle2);
-	  Circle_Draw(&circle1, "008", UI_Graph_Change, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
-	  My_Graph_Refresh(&circle1);
+//	  Circle_Draw(&circle1, "008", UI_Graph_Change, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
+//	  My_Graph_Refresh(&circle1);
 }

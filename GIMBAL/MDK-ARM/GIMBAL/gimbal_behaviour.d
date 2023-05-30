@@ -87,3 +87,6 @@ gimbal\gimbal_behaviour.o: ../ACE-ECF/Algorithm/inc/maths.h
 gimbal\gimbal_behaviour.o: ../ACE-ECF/Algorithm/inc/user_lib.h
 gimbal\gimbal_behaviour.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 gimbal\gimbal_behaviour.o: ../TASK/virtual_task.h
+gimbal\gimbal_behaviour.o: ../COMMUNICATION/can2_receive.h
+gimbal\gimbal_behaviour.o: ../COMMUNICATION/can1_receive.h
+gimbal\gimbal_behaviour.o: ../Core/Inc/can.h
