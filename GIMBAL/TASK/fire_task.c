@@ -22,7 +22,7 @@ static void fire_task_init(gimbal_fire_control_t *fire_init_f);
 static void fire_pid_calculate(gimbal_fire_control_t *fire_pid_calculate_f);
 static void fire_behaviour_choose(gimbal_fire_control_t *fire_behaviour_choose_f);
 int16_t pwm_set = 800;
-int16_t i=0;
+
 
 void fire_Task(void const *argument)
 {
