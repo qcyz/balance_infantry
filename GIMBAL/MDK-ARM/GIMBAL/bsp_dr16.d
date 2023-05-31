@@ -7,7 +7,7 @@ gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\bsp_dr16.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal\bsp_dr16.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Include/cmsis_version.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ gimbal\bsp_dr16.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 gimbal\bsp_dr16.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\bsp_dr16.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+gimbal\bsp_dr16.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -36,7 +36,7 @@ gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 gimbal\bsp_dr16.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-gimbal\bsp_dr16.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
+gimbal\bsp_dr16.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 gimbal\bsp_dr16.o: ../Core/Inc/usart.h
 gimbal\bsp_dr16.o: ../Core/Inc/main.h
 gimbal\bsp_dr16.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h

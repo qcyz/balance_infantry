@@ -3,7 +3,7 @@ chassis\quaternionekf.o: ..\IMU\QuaternionEKF.h
 chassis\quaternionekf.o: ..\IMU\kalman_filter.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\quaternionekf.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_version.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -11,7 +11,7 @@ chassis\quaternionekf.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\quaternionekf.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\string.h
-chassis\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\math.h
-chassis\quaternionekf.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\quaternionekf.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
+chassis\quaternionekf.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
+chassis\quaternionekf.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 chassis\quaternionekf.o: ../ACE-ECF/Algorithm/inc/mat.h

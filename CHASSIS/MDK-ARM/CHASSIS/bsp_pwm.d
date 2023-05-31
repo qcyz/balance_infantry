@@ -1,6 +1,6 @@
 chassis\bsp_pwm.o: ..\ACE-ECF\Bsp\Src\bsp_pwm.c
 chassis\bsp_pwm.o: ../ACE-ECF/Bsp/Inc/bsp_PWM.h
-chassis\bsp_pwm.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\bsp_pwm.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\bsp_pwm.o: ../Core/Inc/tim.h
 chassis\bsp_pwm.o: ../Core/Inc/main.h
 chassis\bsp_pwm.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -17,7 +17,7 @@ chassis\bsp_pwm.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 chassis\bsp_pwm.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 chassis\bsp_pwm.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 chassis\bsp_pwm.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-chassis\bsp_pwm.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\bsp_pwm.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 chassis\bsp_pwm.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 chassis\bsp_pwm.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 chassis\bsp_pwm.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

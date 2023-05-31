@@ -1,8 +1,8 @@
 chassis\user_lib.o: ..\ACE-ECF\Algorithm\src\user_lib.c
-chassis\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-chassis\user_lib.o: D:\ARM\ARMCC\Bin\..\include\string.h
+chassis\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 chassis\user_lib.o: ../ACE-ECF/Algorithm/inc/user_lib.h
-chassis\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\user_lib.o: ../Core/Inc/main.h
 chassis\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 chassis\user_lib.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -18,7 +18,7 @@ chassis\user_lib.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 chassis\user_lib.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 chassis\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 chassis\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-chassis\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 chassis\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 chassis\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 chassis\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -50,4 +50,4 @@ chassis\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 chassis\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 chassis\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 chassis\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-chassis\user_lib.o: D:\ARM\ARMCC\Bin\..\include\math.h
+chassis\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h

@@ -1,12 +1,12 @@
 gimbal\gimbal_task.o: ..\TASK\gimbal_task.c
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 gimbal\gimbal_task.o: ../USB_DEVICE/App/usbd_cdc_if.h
 gimbal\gimbal_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
 gimbal\gimbal_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 gimbal\gimbal_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 gimbal\gimbal_task.o: ../USB_DEVICE/Target/usbd_conf.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\gimbal_task.o: ../Core/Inc/main.h
 gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\gimbal_task.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -15,7 +15,7 @@ gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Include/cmsis_version.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -23,7 +23,7 @@ gimbal\gimbal_task.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 gimbal\gimbal_task.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 gimbal\gimbal_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -50,7 +50,7 @@ gimbal\gimbal_task.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_c
 gimbal\gimbal_task.o: ..\TASK\gimbal_task.h
 gimbal\gimbal_task.o: ../SYSTEM/gimbal_struct_variables.h
 gimbal\gimbal_task.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stdbool.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
 gimbal\gimbal_task.o: ../ACE-ECF/Bsp/Inc/bsp_dr16.h
 gimbal\gimbal_task.o: ../Core/Inc/usart.h
 gimbal\gimbal_task.o: ../ACE-ECF/Bsp/Inc/ECF_BspConfig.h
@@ -59,9 +59,9 @@ gimbal\gimbal_task.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
 gimbal\gimbal_task.o: ../ACE-ECF/Bsp/Inc/CRC.h
 gimbal\gimbal_task.o: ../ACE-ECF/Algorithm/inc/pid.h
 gimbal\gimbal_task.o: ../ACE-ECF/Algorithm/inc/fifo.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\stdarg.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\math.h
-gimbal\gimbal_task.o: D:\ARM\ARMCC\Bin\..\include\errno.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
+gimbal\gimbal_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\errno.h
 gimbal\gimbal_task.o: ../ACE-ECF/Algorithm/inc/linux_list.h
 gimbal\gimbal_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 gimbal\gimbal_task.o: ../Core/Inc/FreeRTOSConfig.h

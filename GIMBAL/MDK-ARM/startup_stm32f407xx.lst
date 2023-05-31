@@ -849,11 +849,11 @@ interwork --depend=gimbal\startup_stm32f407xx.d -ogimbal\startup_stm32f407xx.o
 ARM Macro Assembler    Page 14 
 
 
--I..\Core\Inc -I.\RTE\_GIMBAL -IC:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSI
-S\5.8.0\CMSIS\Core\Include -IC:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F
-4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVISION
-_VERSION SETA 535" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" 
---predefine="_RTE_ SETA 1" --list=startup_stm32f407xx.lst startup_stm32f407xx.s
+-I..\Core\Inc -I.\RTE\_GIMBAL -ID:\keil5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\In
+clude -ID:\keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM
+32F4xx\Include --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA
+ 1" --predefine="STM32F407xx SETA 1" --predefine="_RTE_ SETA 1" --list=startup_
+stm32f407xx.lst startup_stm32f407xx.s
 
 
 

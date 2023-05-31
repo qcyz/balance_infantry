@@ -1,8 +1,8 @@
 gimbal\user_lib.o: ..\ACE-ECF\Algorithm\src\user_lib.c
-gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\string.h
+gimbal\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+gimbal\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 gimbal\user_lib.o: ../ACE-ECF/Algorithm/inc/user_lib.h
-gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\user_lib.o: ../Core/Inc/main.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\user_lib.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -18,7 +18,7 @@ gimbal\user_lib.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 gimbal\user_lib.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+gimbal\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 gimbal\user_lib.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -53,4 +53,4 @@ gimbal\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 gimbal\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 gimbal\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 gimbal\user_lib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-gimbal\user_lib.o: D:\ARM\ARMCC\Bin\..\include\math.h
+gimbal\user_lib.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h

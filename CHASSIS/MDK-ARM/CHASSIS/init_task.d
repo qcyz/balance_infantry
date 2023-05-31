@@ -2,8 +2,8 @@ chassis\init_task.o: ..\TASK\Init_Task.c
 chassis\init_task.o: ..\TASK\Init_Task.h
 chassis\init_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 chassis\init_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\init_task.o: ../Core/Inc/FreeRTOSConfig.h
 chassis\init_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 chassis\init_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -52,10 +52,10 @@ chassis\init_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 chassis\init_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 chassis\init_task.o: ../SYSTEM/chassis_struct_variables.h
 chassis\init_task.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\stdbool.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
 chassis\init_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_dr16.h
 chassis\init_task.o: ../Core/Inc/usart.h
@@ -66,7 +66,7 @@ chassis\init_task.o: ../IMU/QuaternionEKF.h
 chassis\init_task.o: ../IMU/kalman_filter.h
 chassis\init_task.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 chassis\init_task.o: ../Drivers/CMSIS/Include/core_cm4.h
-chassis\init_task.o: D:\ARM\ARMCC\Bin\..\include\math.h
+chassis\init_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 chassis\init_task.o: ../ACE-ECF/Algorithm/inc/mat.h
 chassis\init_task.o: ../ACE-ECF/Bsp/Inc/bsp_referee.h
 chassis\init_task.o: ../ACE-ECF/Bsp/Inc/CRC.h

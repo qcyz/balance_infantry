@@ -1,8 +1,8 @@
 chassis\transfer_function.o: ..\IMU\transfer_function.c
 chassis\transfer_function.o: ..\IMU\transfer_function.h
-chassis\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
-chassis\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
-chassis\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\math.h
+chassis\transfer_function.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\transfer_function.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\transfer_function.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 chassis\transfer_function.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h
 chassis\transfer_function.o: ../Core/Inc/main.h
 chassis\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -19,7 +19,7 @@ chassis\transfer_function.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 chassis\transfer_function.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 chassis\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 chassis\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-chassis\transfer_function.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\transfer_function.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 chassis\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 chassis\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 chassis\transfer_function.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

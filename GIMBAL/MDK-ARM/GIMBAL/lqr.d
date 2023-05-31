@@ -3,7 +3,7 @@ gimbal\lqr.o: ../ACE-ECF/Algorithm/inc/lqr.h
 gimbal\lqr.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gimbal\lqr.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 gimbal\lqr.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\lqr.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal\lqr.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\lqr.o: ../Drivers/CMSIS/Include/cmsis_version.h
 gimbal\lqr.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 gimbal\lqr.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ gimbal\lqr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 gimbal\lqr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 gimbal\lqr.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gimbal\lqr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\lqr.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+gimbal\lqr.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 gimbal\lqr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 gimbal\lqr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 gimbal\lqr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -50,5 +50,5 @@ gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 gimbal\lqr.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-gimbal\lqr.o: D:\ARM\ARMCC\Bin\..\include\string.h
+gimbal\lqr.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 gimbal\lqr.o: ../ACE-ECF/Algorithm/inc/mat.h

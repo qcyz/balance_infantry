@@ -17,21 +17,22 @@
 const static char *chassis_mode_ui[5] =
 {
     "CHASSIS_FOLLOW",      //跟随
-	"CHASSIS_SIDE_FOLLOW",
+    "CHASSIS_SIDE_FOLLOW",
     "CHASSIS_NO_FOLLOW",   //不跟随
     "CHASSIS_ROTATION",    //小陀螺
     "CHASSIS_SLIP"
 };    //炮台模式
-const static char *gimbal_mode_ui[3] =
+const static char *gimbal_mode_ui[4] =
 {
     "GIMBAL_MANUAL",		 // 手动状态
     "GIMBAL_AUTOATTACK",	 // 自瞄状态
     "GIMBAL_AUTOBUFF"	 // 打符状态
+    "GIMBAL_TOPBUFF"
 };
 
 chassis_control_t *Chassis_Control_p = NULL;
 gimbal_control_t *Gimbal_Control_p = NULL;
-Graph_Data diff_ang, pose, path1, path2, reticle1, reticle2,circle1;
+Graph_Data diff_ang, pose, path1, path2, reticle1, reticle2, circle1;
 
 Float_Data CAP_VOLTAGE;
 String_Data CH_MODE, GM_MODE, voltage, replenish;
@@ -112,17 +113,17 @@ static void ui_init(void)
     //	Line_Draw(&pose, "003", UI_Graph_ADD, 5, UI_Color_Green, 25, 100,100,1000,1000);
     //	My_Graph_Refresh(&pose);
     /*--------------------底盘路线指引-----------------*/
-//    	Line_Draw(&path1, "004", UI_Graph_ADD, 5,UI_Color_Pink, 3, 1072, 543, 1456, 0);
-//    	My_Graph_Refresh(&path1);
-//    	Line_Draw(&path2, "005", UI_Graph_ADD, 5, UI_Color_Pink, 3, 464, 0, 848, 543);
-//    	My_Graph_Refresh(&path2);
+    //    	Line_Draw(&path1, "004", UI_Graph_ADD, 5,UI_Color_Pink, 3, 1072, 543, 1456, 0);
+    //    	My_Graph_Refresh(&path1);
+    //    	Line_Draw(&path2, "005", UI_Graph_ADD, 5, UI_Color_Pink, 3, 464, 0, 848, 543);
+    //    	My_Graph_Refresh(&path2);
     /*--------------------瞄准标线--------------------*/
     Line_Draw(&reticle1, "006", UI_Graph_ADD, 5, UI_Color_Green, 2, 960, 580, 960, 350);
     My_Graph_Refresh(&reticle1);
     Line_Draw(&reticle2, "007", UI_Graph_ADD, 5, UI_Color_Green, 2, 900, 468, 1020, 468);
     My_Graph_Refresh(&reticle2);
-//		 Circle_Draw(&circle1, "008", UI_Graph_ADD, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
-//	  My_Graph_Refresh(&circle1);
+    //		 Circle_Draw(&circle1, "008", UI_Graph_ADD, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
+    //	  My_Graph_Refresh(&circle1);
 
 }
 
@@ -193,6 +194,6 @@ static void print_reticle(void)
     My_Graph_Refresh(&reticle1);
     Line_Draw(&reticle2, "007", UI_Graph_Change, 5, UI_Color_Green, 2, 900, 468, 1020, 468);
     My_Graph_Refresh(&reticle2);
-//	  Circle_Draw(&circle1, "008", UI_Graph_Change, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
-//	  My_Graph_Refresh(&circle1);
+    //	  Circle_Draw(&circle1, "008", UI_Graph_Change, 2, UI_Color_Purplish_red, 4, 960, 540, 30);
+    //	  My_Graph_Refresh(&circle1);
 }

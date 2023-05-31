@@ -1,6 +1,6 @@
 gimbal\ins_task.o: ..\TASK\ins_task.c
 gimbal\ins_task.o: ..\TASK\ins_task.h
-gimbal\ins_task.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal\ins_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 gimbal\ins_task.o: ../IMU/BMI088driver.h
 gimbal\ins_task.o: ../Core/Inc/main.h
 gimbal\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -17,7 +17,7 @@ gimbal\ins_task.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 gimbal\ins_task.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 gimbal\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 gimbal\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gimbal\ins_task.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+gimbal\ins_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 gimbal\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 gimbal\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 gimbal\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -42,9 +42,9 @@ gimbal\ins_task.o: ../IMU/QuaternionEKF.h
 gimbal\ins_task.o: ../IMU/kalman_filter.h
 gimbal\ins_task.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 gimbal\ins_task.o: ../Drivers/CMSIS/Include/core_cm4.h
-gimbal\ins_task.o: D:\ARM\ARMCC\Bin\..\include\string.h
-gimbal\ins_task.o: D:\ARM\ARMCC\Bin\..\include\math.h
-gimbal\ins_task.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
+gimbal\ins_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
+gimbal\ins_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
+gimbal\ins_task.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 gimbal\ins_task.o: ../ACE-ECF/Algorithm/inc/mat.h
 gimbal\ins_task.o: ../IMU/controller.h
 gimbal\ins_task.o: ../ACE-ECF/Bsp/Inc/bsp_dwt.h

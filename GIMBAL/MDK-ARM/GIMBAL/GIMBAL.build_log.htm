@@ -3,31 +3,42 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.35.0.0
+IDE-Version: ¦ÌVision V5.36.0.0
 Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 8617875585701, 11, LIC=JL28G-VB7Y4-VEHHA-1ULLD-22WWL-B9LC7
+License Information: 1 1, 1, LIC=TIVNB-2BA5M-12DLE-5ID65-LQ26C-B30JT
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.35.0.2
-Toolchain Path:  D:\ARM\ARMCC\Bin
+Toolchain:       MDK-ARM Plus  Version: 5.36.0.0
+Toolchain Path:  D:\keil5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 7 (build 960)
 Assembler:       Armasm.exe V5.06 update 7 (build 960)
 Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
 Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
-CPU DLL:         SARMCM3.DLL V5.35.0.2
+CPU DLL:         SARMCM3.DLL V5.36.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
 Target DLL:      CMSIS_AGDI.dll V1.33.0.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Users\86178\Desktop\balance_infantry\GIMBAL\MDK-ARM\GIMBAL.uvprojx
-Project File Date:  04/21/2023
+F:\2653310054\×ÀÃæ\balance_infantry\GIMBAL\MDK-ARM\GIMBAL.uvprojx
+Project File Date:  05/30/2023
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keil5\ARM\ARMCC\Bin'
 Build target 'GIMBAL'
-"GIMBAL\GIMBAL.axf" - 0 Error(s), 0 Warning(s).
+compiling fire_task.c...
+..\TASK\fire_task.c(75): warning:  #177-D: variable "last_shift"  was declared but never referenced
+      static uint16_t last_shift = 0;
+..\TASK\fire_task.c(76): warning:  #177-D: variable "last_ch4"  was declared but never referenced
+      static uint8_t last_ch4 = 0;
+..\TASK\fire_task.c(80): warning:  #177-D: variable "last_C"  was declared but never referenced
+      static uint16_t last_C = 0;
+..\TASK\fire_task.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=60540 RO-data=3036 RW-data=1040 ZI-data=47496  
+FromELF: creating hex file...
+"GIMBAL\GIMBAL.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -38,20 +49,20 @@ Package Vendor: ARM
    * Component: CORE Version: 5.5.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
-                Keil.STM32F4xx_DFP.2.15.0
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.16.0.pack
+                Keil.STM32F4xx_DFP.2.16.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_GIMBAL
-  C:\Users\86178\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
-  C:\Users\86178\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  D:\keil5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  D:\keil5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

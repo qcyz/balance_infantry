@@ -3269,7 +3269,7 @@ Image Symbol Table
     .constdata                               0x0800bf98   Section     2052  arm_common_tables.o(.constdata)
     .conststring                             0x0800c79c   Section       24  freertos.o(.conststring)
     .conststring                             0x0800c7b4   Section       46  init_task.o(.conststring)
-    .conststring                             0x0800c7e4   Section      143  ui_task.o(.conststring)
+    .conststring                             0x0800c7e4   Section      159  ui_task.o(.conststring)
     .data                                    0x20000000   Section        8  freertos.o(.data)
     .data                                    0x20000008   Section        4  can.o(.data)
     HAL_RCC_CAN1_CLK_ENABLED                 0x20000008   Data           4  can.o(.data)
@@ -3338,100 +3338,100 @@ Image Symbol Table
     c_31                                     0x2000015c   Data           4  ins_task.o(.data)
     c_32                                     0x20000160   Data           4  ins_task.o(.data)
     c_33                                     0x20000164   Data           4  ins_task.o(.data)
-    .data                                    0x20000168   Section       40  ui_task.o(.data)
+    .data                                    0x20000168   Section       44  ui_task.o(.data)
     chassis_mode_ui                          0x20000170   Data          20  ui_task.o(.data)
-    gimbal_mode_ui                           0x20000184   Data          12  ui_task.o(.data)
-    .data                                    0x20000190   Section       10  can2_receive.o(.data)
-    gimbal_control                           0x20000190   Data           2  can2_receive.o(.data)
-    yaw_motor_measure                        0x20000192   Data           8  can2_receive.o(.data)
-    .data                                    0x2000019c   Section       72  bmi088driver.o(.data)
-    res                                      0x2000019c   Data           1  bmi088driver.o(.data)
-    write_reg_num                            0x2000019d   Data           1  bmi088driver.o(.data)
-    error                                    0x2000019e   Data           1  bmi088driver.o(.data)
-    CaliTimes                                0x200001a2   Data           2  bmi088driver.o(.data)
-    bmi088_raw_temp                          0x200001a4   Data           2  bmi088driver.o(.data)
-    startTime                                0x200001b0   Data           4  bmi088driver.o(.data)
-    buf                                      0x200001b8   Data           8  bmi088driver.o(.data)
-    write_BMI088_accel_reg_data_error        0x200001c0   Data          18  bmi088driver.o(.data)
-    write_BMI088_gyro_reg_data_error         0x200001d2   Data          18  bmi088driver.o(.data)
-    .data                                    0x200001e4   Section        4  bmi088middleware.o(.data)
-    .data                                    0x200001e8   Section      624  controller.o(.data)
-    temp_Output                              0x200001e8   Data           4  controller.o(.data)
-    temp_Iout                                0x200001ec   Data           4  controller.o(.data)
-    d                                        0x200001f0   Data           4  controller.o(.data)
-    a0                                       0x200001f4   Data           4  controller.o(.data)
-    y                                        0x200001f8   Data           4  controller.o(.data)
-    a1                                       0x200001fc   Data           4  controller.o(.data)
-    a2                                       0x20000200   Data           4  controller.o(.data)
-    a                                        0x20000204   Data           4  controller.o(.data)
-    fhan                                     0x20000208   Data           4  controller.o(.data)
-    FuzzyRuleKpRAW                           0x2000020c   Data         196  controller.o(.data)
-    FuzzyRuleKiRAW                           0x200002d0   Data         196  controller.o(.data)
-    FuzzyRuleKdRAW                           0x20000394   Data         196  controller.o(.data)
-    .data                                    0x20000458   Section        4  kalman_filter.o(.data)
-    .data                                    0x2000045c   Section      212  quaternionekf.o(.data)
-    halfgxdt                                 0x2000045c   Data           4  quaternionekf.o(.data)
-    halfgydt                                 0x20000460   Data           4  quaternionekf.o(.data)
-    halfgzdt                                 0x20000464   Data           4  quaternionekf.o(.data)
-    accelInvNorm                             0x20000468   Data           4  quaternionekf.o(.data)
-    q0                                       0x2000046c   Data           4  quaternionekf.o(.data)
-    q1                                       0x20000470   Data           4  quaternionekf.o(.data)
-    q2                                       0x20000474   Data           4  quaternionekf.o(.data)
-    q3                                       0x20000478   Data           4  quaternionekf.o(.data)
-    qInvNorm                                 0x2000047c   Data           4  quaternionekf.o(.data)
-    doubleq0                                 0x20000480   Data           4  quaternionekf.o(.data)
-    doubleq1                                 0x20000484   Data           4  quaternionekf.o(.data)
-    doubleq2                                 0x20000488   Data           4  quaternionekf.o(.data)
-    doubleq3                                 0x2000048c   Data           4  quaternionekf.o(.data)
-    q0                                       0x20000490   Data           4  quaternionekf.o(.data)
-    q1                                       0x20000494   Data           4  quaternionekf.o(.data)
-    q2                                       0x20000498   Data           4  quaternionekf.o(.data)
-    q3                                       0x2000049c   Data           4  quaternionekf.o(.data)
-    .data                                    0x20000530   Section       32  chassis_behaviour.o(.data)
-    rc_behaviour                             0x20000530   Data           1  chassis_behaviour.o(.data)
-    kb_behaviour                             0x20000531   Data           1  chassis_behaviour.o(.data)
-    .data                                    0x20000550   Section        4  mvars.o(.data)
+    gimbal_mode_ui                           0x20000184   Data          16  ui_task.o(.data)
+    .data                                    0x20000194   Section       10  can2_receive.o(.data)
+    gimbal_control                           0x20000194   Data           2  can2_receive.o(.data)
+    yaw_motor_measure                        0x20000196   Data           8  can2_receive.o(.data)
+    .data                                    0x200001a0   Section       72  bmi088driver.o(.data)
+    res                                      0x200001a0   Data           1  bmi088driver.o(.data)
+    write_reg_num                            0x200001a1   Data           1  bmi088driver.o(.data)
+    error                                    0x200001a2   Data           1  bmi088driver.o(.data)
+    CaliTimes                                0x200001a6   Data           2  bmi088driver.o(.data)
+    bmi088_raw_temp                          0x200001a8   Data           2  bmi088driver.o(.data)
+    startTime                                0x200001b4   Data           4  bmi088driver.o(.data)
+    buf                                      0x200001bc   Data           8  bmi088driver.o(.data)
+    write_BMI088_accel_reg_data_error        0x200001c4   Data          18  bmi088driver.o(.data)
+    write_BMI088_gyro_reg_data_error         0x200001d6   Data          18  bmi088driver.o(.data)
+    .data                                    0x200001e8   Section        4  bmi088middleware.o(.data)
+    .data                                    0x200001ec   Section      624  controller.o(.data)
+    temp_Output                              0x200001ec   Data           4  controller.o(.data)
+    temp_Iout                                0x200001f0   Data           4  controller.o(.data)
+    d                                        0x200001f4   Data           4  controller.o(.data)
+    a0                                       0x200001f8   Data           4  controller.o(.data)
+    y                                        0x200001fc   Data           4  controller.o(.data)
+    a1                                       0x20000200   Data           4  controller.o(.data)
+    a2                                       0x20000204   Data           4  controller.o(.data)
+    a                                        0x20000208   Data           4  controller.o(.data)
+    fhan                                     0x2000020c   Data           4  controller.o(.data)
+    FuzzyRuleKpRAW                           0x20000210   Data         196  controller.o(.data)
+    FuzzyRuleKiRAW                           0x200002d4   Data         196  controller.o(.data)
+    FuzzyRuleKdRAW                           0x20000398   Data         196  controller.o(.data)
+    .data                                    0x2000045c   Section        4  kalman_filter.o(.data)
+    .data                                    0x20000460   Section      212  quaternionekf.o(.data)
+    halfgxdt                                 0x20000460   Data           4  quaternionekf.o(.data)
+    halfgydt                                 0x20000464   Data           4  quaternionekf.o(.data)
+    halfgzdt                                 0x20000468   Data           4  quaternionekf.o(.data)
+    accelInvNorm                             0x2000046c   Data           4  quaternionekf.o(.data)
+    q0                                       0x20000470   Data           4  quaternionekf.o(.data)
+    q1                                       0x20000474   Data           4  quaternionekf.o(.data)
+    q2                                       0x20000478   Data           4  quaternionekf.o(.data)
+    q3                                       0x2000047c   Data           4  quaternionekf.o(.data)
+    qInvNorm                                 0x20000480   Data           4  quaternionekf.o(.data)
+    doubleq0                                 0x20000484   Data           4  quaternionekf.o(.data)
+    doubleq1                                 0x20000488   Data           4  quaternionekf.o(.data)
+    doubleq2                                 0x2000048c   Data           4  quaternionekf.o(.data)
+    doubleq3                                 0x20000490   Data           4  quaternionekf.o(.data)
+    q0                                       0x20000494   Data           4  quaternionekf.o(.data)
+    q1                                       0x20000498   Data           4  quaternionekf.o(.data)
+    q2                                       0x2000049c   Data           4  quaternionekf.o(.data)
+    q3                                       0x200004a0   Data           4  quaternionekf.o(.data)
+    .data                                    0x20000534   Section       32  chassis_behaviour.o(.data)
+    rc_behaviour                             0x20000534   Data           1  chassis_behaviour.o(.data)
+    kb_behaviour                             0x20000535   Data           1  chassis_behaviour.o(.data)
     .data                                    0x20000554   Section        4  mvars.o(.data)
-    .data                                    0x20000558   Section        4  errno.o(.data)
-    _errno                                   0x20000558   Data           4  errno.o(.data)
-    .bss                                     0x2000055c   Section      596  freertos.o(.bss)
-    xIdleTaskTCBBuffer                       0x2000055c   Data          84  freertos.o(.bss)
-    xIdleStack                               0x200005b0   Data         512  freertos.o(.bss)
-    .bss                                     0x200007b0   Section       80  can.o(.bss)
-    .bss                                     0x20000800   Section      280  spi.o(.bss)
-    .bss                                     0x20000918   Section       72  tim.o(.bss)
-    .bss                                     0x20000960   Section      424  usart.o(.bss)
-    .bss                                     0x20000b08   Section       72  stm32f4xx_hal_timebase_tim.o(.bss)
-    .bss                                     0x20000b50   Section      240  tasks.o(.bss)
-    pxReadyTasksLists                        0x20000b50   Data         140  tasks.o(.bss)
-    xDelayedTaskList1                        0x20000bdc   Data          20  tasks.o(.bss)
-    xDelayedTaskList2                        0x20000bf0   Data          20  tasks.o(.bss)
-    xPendingReadyList                        0x20000c04   Data          20  tasks.o(.bss)
-    xTasksWaitingTermination                 0x20000c18   Data          20  tasks.o(.bss)
-    xSuspendedTaskList                       0x20000c2c   Data          20  tasks.o(.bss)
-    .bss                                     0x20000c40   Section    15360  heap_4.o(.bss)
-    ucHeap                                   0x20000c40   Data       15360  heap_4.o(.bss)
-    .bss                                     0x20004840   Section       96  bsp_dr16.o(.bss)
-    rc_ctl                                   0x20004840   Data          24  bsp_dr16.o(.bss)
-    .bss                                     0x200048a0   Section      540  bsp_motor_encoder.o(.bss)
-    .bss                                     0x20004abc   Section     1015  bsp_referee.o(.bss)
-    .bss                                     0x20004eb3   Section       90  rm_cilent_ui.o(.bss)
-    msg                                      0x20004eb3   Data          30  rm_cilent_ui.o(.bss)
-    msg                                      0x20004ed1   Data          60  rm_cilent_ui.o(.bss)
-    .bss                                     0x20004f10   Section      520  chassis_task.o(.bss)
-    .bss                                     0x20005118   Section      332  ins_task.o(.bss)
-    .bss                                     0x20005264   Section      180  ui_task.o(.bss)
-    .bss                                     0x20005318   Section       24  can1_send.o(.bss)
-    Txmessage                                0x20005318   Data          24  can1_send.o(.bss)
-    .bss                                     0x20005330   Section       24  can2_send.o(.bss)
-    Txmessage                                0x20005330   Data          24  can2_send.o(.bss)
-    .bss                                     0x20005348   Section      248  lk9025_communication.o(.bss)
-    Txmessage                                0x20005348   Data          24  lk9025_communication.o(.bss)
-    Supercap_receive                         0x20005430   Data          16  lk9025_communication.o(.bss)
-    .bss                                     0x20005440   Section       64  bmi088driver.o(.bss)
-    .bss                                     0x20005480   Section      616  quaternionekf.o(.bss)
-    HEAP                                     0x200056e8   Section     8192  startup_stm32f407xx.o(HEAP)
-    STACK                                    0x200076e8   Section     8192  startup_stm32f407xx.o(STACK)
+    .data                                    0x20000558   Section        4  mvars.o(.data)
+    .data                                    0x2000055c   Section        4  errno.o(.data)
+    _errno                                   0x2000055c   Data           4  errno.o(.data)
+    .bss                                     0x20000560   Section      596  freertos.o(.bss)
+    xIdleTaskTCBBuffer                       0x20000560   Data          84  freertos.o(.bss)
+    xIdleStack                               0x200005b4   Data         512  freertos.o(.bss)
+    .bss                                     0x200007b4   Section       80  can.o(.bss)
+    .bss                                     0x20000804   Section      280  spi.o(.bss)
+    .bss                                     0x2000091c   Section       72  tim.o(.bss)
+    .bss                                     0x20000964   Section      424  usart.o(.bss)
+    .bss                                     0x20000b0c   Section       72  stm32f4xx_hal_timebase_tim.o(.bss)
+    .bss                                     0x20000b54   Section      240  tasks.o(.bss)
+    pxReadyTasksLists                        0x20000b54   Data         140  tasks.o(.bss)
+    xDelayedTaskList1                        0x20000be0   Data          20  tasks.o(.bss)
+    xDelayedTaskList2                        0x20000bf4   Data          20  tasks.o(.bss)
+    xPendingReadyList                        0x20000c08   Data          20  tasks.o(.bss)
+    xTasksWaitingTermination                 0x20000c1c   Data          20  tasks.o(.bss)
+    xSuspendedTaskList                       0x20000c30   Data          20  tasks.o(.bss)
+    .bss                                     0x20000c44   Section    15360  heap_4.o(.bss)
+    ucHeap                                   0x20000c44   Data       15360  heap_4.o(.bss)
+    .bss                                     0x20004844   Section       96  bsp_dr16.o(.bss)
+    rc_ctl                                   0x20004844   Data          24  bsp_dr16.o(.bss)
+    .bss                                     0x200048a4   Section      540  bsp_motor_encoder.o(.bss)
+    .bss                                     0x20004ac0   Section     1015  bsp_referee.o(.bss)
+    .bss                                     0x20004eb7   Section       90  rm_cilent_ui.o(.bss)
+    msg                                      0x20004eb7   Data          30  rm_cilent_ui.o(.bss)
+    msg                                      0x20004ed5   Data          60  rm_cilent_ui.o(.bss)
+    .bss                                     0x20004f18   Section      520  chassis_task.o(.bss)
+    .bss                                     0x20005120   Section      332  ins_task.o(.bss)
+    .bss                                     0x2000526c   Section      180  ui_task.o(.bss)
+    .bss                                     0x20005320   Section       24  can1_send.o(.bss)
+    Txmessage                                0x20005320   Data          24  can1_send.o(.bss)
+    .bss                                     0x20005338   Section       24  can2_send.o(.bss)
+    Txmessage                                0x20005338   Data          24  can2_send.o(.bss)
+    .bss                                     0x20005350   Section      248  lk9025_communication.o(.bss)
+    Txmessage                                0x20005350   Data          24  lk9025_communication.o(.bss)
+    Supercap_receive                         0x20005438   Data          16  lk9025_communication.o(.bss)
+    .bss                                     0x20005448   Section       64  bmi088driver.o(.bss)
+    .bss                                     0x20005488   Section      616  quaternionekf.o(.bss)
+    HEAP                                     0x200056f0   Section     8192  startup_stm32f407xx.o(HEAP)
+    STACK                                    0x200076f0   Section     8192  startup_stm32f407xx.o(STACK)
 
     Global Symbols
 
@@ -3828,8 +3828,8 @@ Image Symbol Table
     zb                                       0x0800bef0   Data          12  ins_task.o(.constdata)
     IMU_QuaternionEKF_F                      0x0800bf08   Data         144  quaternionekf.o(.constdata)
     sinTable_f32                             0x0800bf98   Data        2052  arm_common_tables.o(.constdata)
-    Region$$Table$$Base                      0x0800c874   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800c894   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Base                      0x0800c884   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800c8a4   Number         0  anon$$obj.o(Region$$Table)
     defaultTaskHandle                        0x20000000   Data           4  freertos.o(.data)
     Init_TASKHandle                          0x20000004   Data           4  freertos.o(.data)
     uwTickFreq                               0x2000000c   Data           1  stm32f4xx_hal.o(.data)
@@ -3852,60 +3852,60 @@ Image Symbol Table
     RefTemp                                  0x20000130   Data           4  ins_task.o(.data)
     Chassis_Control_p                        0x20000168   Data           4  ui_task.o(.data)
     Gimbal_Control_p                         0x2000016c   Data           4  ui_task.o(.data)
-    caliOffset                               0x2000019f   Data           1  bmi088driver.o(.data)
-    caliCount                                0x200001a0   Data           2  bmi088driver.o(.data)
-    BMI088_ACCEL_SEN                         0x200001a8   Data           4  bmi088driver.o(.data)
-    BMI088_GYRO_SEN                          0x200001ac   Data           4  bmi088driver.o(.data)
-    gNormDiff                                0x200001b4   Data           4  bmi088driver.o(.data)
-    BMI088_SPI                               0x200001e4   Data           4  bmi088middleware.o(.data)
-    sizeof_float                             0x20000458   Data           2  kalman_filter.o(.data)
-    sizeof_double                            0x2000045a   Data           2  kalman_filter.o(.data)
-    IMU_QuaternionEKF_P                      0x200004a0   Data         144  quaternionekf.o(.data)
-    Chassis_x                                0x20000534   Data           4  chassis_behaviour.o(.data)
-    Chassis_yaw                              0x20000538   Data           4  chassis_behaviour.o(.data)
-    angle                                    0x2000053c   Data           4  chassis_behaviour.o(.data)
-    see_cos_yaw                              0x20000540   Data           4  chassis_behaviour.o(.data)
-    see_position_speed                       0x20000544   Data           4  chassis_behaviour.o(.data)
-    see_position                             0x20000548   Data           4  chassis_behaviour.o(.data)
-    see_position_t                           0x2000054c   Data           4  chassis_behaviour.o(.data)
-    __microlib_freelist                      0x20000550   Data           4  mvars.o(.data)
-    __microlib_freelist_initialised          0x20000554   Data           4  mvars.o(.data)
-    hcan1                                    0x200007b0   Data          40  can.o(.bss)
-    hcan2                                    0x200007d8   Data          40  can.o(.bss)
-    hspi1                                    0x20000800   Data          88  spi.o(.bss)
-    hdma_spi1_rx                             0x20000858   Data          96  spi.o(.bss)
-    hdma_spi1_tx                             0x200008b8   Data          96  spi.o(.bss)
-    htim10                                   0x20000918   Data          72  tim.o(.bss)
-    huart3                                   0x20000960   Data          68  usart.o(.bss)
-    huart6                                   0x200009a4   Data          68  usart.o(.bss)
-    hdma_usart3_rx                           0x200009e8   Data          96  usart.o(.bss)
-    hdma_usart6_rx                           0x20000a48   Data          96  usart.o(.bss)
-    hdma_usart6_tx                           0x20000aa8   Data          96  usart.o(.bss)
-    htim2                                    0x20000b08   Data          72  stm32f4xx_hal_timebase_tim.o(.bss)
-    Sbus_RX_Buffer                           0x20004858   Data          72  bsp_dr16.o(.bss)
-    CAN_Encoder                              0x200048a0   Data         540  bsp_motor_encoder.o(.bss)
-    Referee_RX_Buffer                        0x20004abc   Data         512  bsp_referee.o(.bss)
-    referee                                  0x20004cbc   Data         503  bsp_referee.o(.bss)
-    Chassis_Control                          0x20004f10   Data         520  chassis_task.o(.bss)
-    TempCtrl                                 0x20005118   Data         170  ins_task.o(.bss)
-    INS                                      0x200051c4   Data         132  ins_task.o(.bss)
-    IMU_Param                                0x20005248   Data          28  ins_task.o(.bss)
-    diff_ang                                 0x20005264   Data          15  ui_task.o(.bss)
-    reticle1                                 0x20005273   Data          15  ui_task.o(.bss)
-    reticle2                                 0x20005282   Data          15  ui_task.o(.bss)
-    CH_MODE                                  0x20005291   Data          45  ui_task.o(.bss)
-    GM_MODE                                  0x200052be   Data          45  ui_task.o(.bss)
-    replenish                                0x200052eb   Data          45  ui_task.o(.bss)
-    motor_9025_l                             0x20005360   Data         104  lk9025_communication.o(.bss)
-    motor_9025_r                             0x200053c8   Data         104  lk9025_communication.o(.bss)
-    gyroDiff                                 0x20005440   Data          12  bmi088driver.o(.bss)
-    BMI088                                   0x2000544c   Data          52  bmi088driver.o(.bss)
-    QEKF_INS                                 0x20005480   Data         472  quaternionekf.o(.bss)
-    IMU_QuaternionEKF_K                      0x20005658   Data          72  quaternionekf.o(.bss)
-    IMU_QuaternionEKF_H                      0x200056a0   Data          72  quaternionekf.o(.bss)
-    __heap_base                              0x200056e8   Data           0  startup_stm32f407xx.o(HEAP)
-    __heap_limit                             0x200076e8   Data           0  startup_stm32f407xx.o(HEAP)
-    __initial_sp                             0x200096e8   Data           0  startup_stm32f407xx.o(STACK)
+    caliOffset                               0x200001a3   Data           1  bmi088driver.o(.data)
+    caliCount                                0x200001a4   Data           2  bmi088driver.o(.data)
+    BMI088_ACCEL_SEN                         0x200001ac   Data           4  bmi088driver.o(.data)
+    BMI088_GYRO_SEN                          0x200001b0   Data           4  bmi088driver.o(.data)
+    gNormDiff                                0x200001b8   Data           4  bmi088driver.o(.data)
+    BMI088_SPI                               0x200001e8   Data           4  bmi088middleware.o(.data)
+    sizeof_float                             0x2000045c   Data           2  kalman_filter.o(.data)
+    sizeof_double                            0x2000045e   Data           2  kalman_filter.o(.data)
+    IMU_QuaternionEKF_P                      0x200004a4   Data         144  quaternionekf.o(.data)
+    Chassis_x                                0x20000538   Data           4  chassis_behaviour.o(.data)
+    Chassis_yaw                              0x2000053c   Data           4  chassis_behaviour.o(.data)
+    angle                                    0x20000540   Data           4  chassis_behaviour.o(.data)
+    see_cos_yaw                              0x20000544   Data           4  chassis_behaviour.o(.data)
+    see_position_speed                       0x20000548   Data           4  chassis_behaviour.o(.data)
+    see_position                             0x2000054c   Data           4  chassis_behaviour.o(.data)
+    see_position_t                           0x20000550   Data           4  chassis_behaviour.o(.data)
+    __microlib_freelist                      0x20000554   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x20000558   Data           4  mvars.o(.data)
+    hcan1                                    0x200007b4   Data          40  can.o(.bss)
+    hcan2                                    0x200007dc   Data          40  can.o(.bss)
+    hspi1                                    0x20000804   Data          88  spi.o(.bss)
+    hdma_spi1_rx                             0x2000085c   Data          96  spi.o(.bss)
+    hdma_spi1_tx                             0x200008bc   Data          96  spi.o(.bss)
+    htim10                                   0x2000091c   Data          72  tim.o(.bss)
+    huart3                                   0x20000964   Data          68  usart.o(.bss)
+    huart6                                   0x200009a8   Data          68  usart.o(.bss)
+    hdma_usart3_rx                           0x200009ec   Data          96  usart.o(.bss)
+    hdma_usart6_rx                           0x20000a4c   Data          96  usart.o(.bss)
+    hdma_usart6_tx                           0x20000aac   Data          96  usart.o(.bss)
+    htim2                                    0x20000b0c   Data          72  stm32f4xx_hal_timebase_tim.o(.bss)
+    Sbus_RX_Buffer                           0x2000485c   Data          72  bsp_dr16.o(.bss)
+    CAN_Encoder                              0x200048a4   Data         540  bsp_motor_encoder.o(.bss)
+    Referee_RX_Buffer                        0x20004ac0   Data         512  bsp_referee.o(.bss)
+    referee                                  0x20004cc0   Data         503  bsp_referee.o(.bss)
+    Chassis_Control                          0x20004f18   Data         520  chassis_task.o(.bss)
+    TempCtrl                                 0x20005120   Data         170  ins_task.o(.bss)
+    INS                                      0x200051cc   Data         132  ins_task.o(.bss)
+    IMU_Param                                0x20005250   Data          28  ins_task.o(.bss)
+    diff_ang                                 0x2000526c   Data          15  ui_task.o(.bss)
+    reticle1                                 0x2000527b   Data          15  ui_task.o(.bss)
+    reticle2                                 0x2000528a   Data          15  ui_task.o(.bss)
+    CH_MODE                                  0x20005299   Data          45  ui_task.o(.bss)
+    GM_MODE                                  0x200052c6   Data          45  ui_task.o(.bss)
+    replenish                                0x200052f3   Data          45  ui_task.o(.bss)
+    motor_9025_l                             0x20005368   Data         104  lk9025_communication.o(.bss)
+    motor_9025_r                             0x200053d0   Data         104  lk9025_communication.o(.bss)
+    gyroDiff                                 0x20005448   Data          12  bmi088driver.o(.bss)
+    BMI088                                   0x20005454   Data          52  bmi088driver.o(.bss)
+    QEKF_INS                                 0x20005488   Data         472  quaternionekf.o(.bss)
+    IMU_QuaternionEKF_K                      0x20005660   Data          72  quaternionekf.o(.bss)
+    IMU_QuaternionEKF_H                      0x200056a8   Data          72  quaternionekf.o(.bss)
+    __heap_base                              0x200056f0   Data           0  startup_stm32f407xx.o(HEAP)
+    __heap_limit                             0x200076f0   Data           0  startup_stm32f407xx.o(HEAP)
+    __initial_sp                             0x200096f0   Data           0  startup_stm32f407xx.o(STACK)
 
 
 
@@ -3915,9 +3915,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000cdf0, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000c99c])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000ce04, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000c9ac])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000c894, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000c8a4, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -4269,12 +4269,12 @@ Memory Map of the image
     0x0800c79c   0x0800c79c   0x00000018   Data   RO          258    .conststring        freertos.o
     0x0800c7b4   0x0800c7b4   0x0000002e   Data   RO         6105    .conststring        init_task.o
     0x0800c7e2   0x0800c7e2   0x00000002   PAD
-    0x0800c7e4   0x0800c7e4   0x0000008f   Data   RO         6381    .conststring        ui_task.o
-    0x0800c873   0x0800c873   0x00000001   PAD
-    0x0800c874   0x0800c874   0x00000020   Data   RO         7736    Region$$Table       anon$$obj.o
+    0x0800c7e4   0x0800c7e4   0x0000009f   Data   RO         6381    .conststring        ui_task.o
+    0x0800c883   0x0800c883   0x00000001   PAD
+    0x0800c884   0x0800c884   0x00000020   Data   RO         7736    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800c894, Size: 0x000096e8, Max: 0x0001c000, ABSOLUTE, COMPRESSED[0x00000108])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800c8a4, Size: 0x000096f0, Max: 0x0001c000, ABSOLUTE, COMPRESSED[0x00000108])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -4297,44 +4297,44 @@ Memory Map of the image
     0x200000f0   COMPRESSED   0x00000030   Data   RW         6200    .data               chassis_task.o
     0x20000120   COMPRESSED   0x00000004   Data   RW         6254    .data               task_safe.o
     0x20000124   COMPRESSED   0x00000044   Data   RW         6289    .data               ins_task.o
-    0x20000168   COMPRESSED   0x00000028   Data   RW         6382    .data               ui_task.o
-    0x20000190   COMPRESSED   0x0000000a   Data   RW         6505    .data               can2_receive.o
-    0x2000019a   COMPRESSED   0x00000002   PAD
-    0x2000019c   COMPRESSED   0x00000048   Data   RW         6654    .data               bmi088driver.o
-    0x200001e4   COMPRESSED   0x00000004   Data   RW         6718    .data               bmi088middleware.o
-    0x200001e8   COMPRESSED   0x00000270   Data   RW         6777    .data               controller.o
-    0x20000458   COMPRESSED   0x00000004   Data   RW         6865    .data               kalman_filter.o
-    0x2000045c   COMPRESSED   0x000000d4   Data   RW         6936    .data               quaternionekf.o
-    0x20000530   COMPRESSED   0x00000020   Data   RW         7051    .data               chassis_behaviour.o
-    0x20000550   COMPRESSED   0x00000004   Data   RW         7710    .data               mc_w.l(mvars.o)
-    0x20000554   COMPRESSED   0x00000004   Data   RW         7711    .data               mc_w.l(mvars.o)
-    0x20000558   COMPRESSED   0x00000004   Data   RW         7715    .data               mc_w.l(errno.o)
-    0x2000055c        -       0x00000254   Zero   RW          256    .bss                freertos.o
-    0x200007b0        -       0x00000050   Zero   RW          307    .bss                can.o
-    0x20000800        -       0x00000118   Zero   RW          379    .bss                spi.o
-    0x20000918        -       0x00000048   Zero   RW          422    .bss                tim.o
-    0x20000960        -       0x000001a8   Zero   RW          470    .bss                usart.o
-    0x20000b08        -       0x00000048   Zero   RW          680    .bss                stm32f4xx_hal_timebase_tim.o
-    0x20000b50        -       0x000000f0   Zero   RW         4108    .bss                tasks.o
-    0x20000c40        -       0x00003c00   Zero   RW         4753    .bss                heap_4.o
-    0x20004840        -       0x00000060   Zero   RW         5569    .bss                bsp_dr16.o
-    0x200048a0        -       0x0000021c   Zero   RW         5672    .bss                bsp_motor_encoder.o
-    0x20004abc        -       0x000003f7   Zero   RW         5949    .bss                bsp_referee.o
-    0x20004eb3        -       0x0000005a   Zero   RW         6007    .bss                rm_cilent_ui.o
-    0x20004f0d   COMPRESSED   0x00000003   PAD
-    0x20004f10        -       0x00000208   Zero   RW         6199    .bss                chassis_task.o
-    0x20005118        -       0x0000014c   Zero   RW         6287    .bss                ins_task.o
-    0x20005264        -       0x000000b4   Zero   RW         6374    .bss                ui_task.o
-    0x20005318        -       0x00000018   Zero   RW         6468    .bss                can1_send.o
-    0x20005330        -       0x00000018   Zero   RW         6548    .bss                can2_send.o
-    0x20005348        -       0x000000f8   Zero   RW         6589    .bss                lk9025_communication.o
-    0x20005440        -       0x00000040   Zero   RW         6653    .bss                bmi088driver.o
-    0x20005480        -       0x00000268   Zero   RW         6934    .bss                quaternionekf.o
-    0x200056e8        -       0x00002000   Zero   RW            2    HEAP                startup_stm32f407xx.o
-    0x200076e8        -       0x00002000   Zero   RW            1    STACK               startup_stm32f407xx.o
+    0x20000168   COMPRESSED   0x0000002c   Data   RW         6382    .data               ui_task.o
+    0x20000194   COMPRESSED   0x0000000a   Data   RW         6505    .data               can2_receive.o
+    0x2000019e   COMPRESSED   0x00000002   PAD
+    0x200001a0   COMPRESSED   0x00000048   Data   RW         6654    .data               bmi088driver.o
+    0x200001e8   COMPRESSED   0x00000004   Data   RW         6718    .data               bmi088middleware.o
+    0x200001ec   COMPRESSED   0x00000270   Data   RW         6777    .data               controller.o
+    0x2000045c   COMPRESSED   0x00000004   Data   RW         6865    .data               kalman_filter.o
+    0x20000460   COMPRESSED   0x000000d4   Data   RW         6936    .data               quaternionekf.o
+    0x20000534   COMPRESSED   0x00000020   Data   RW         7051    .data               chassis_behaviour.o
+    0x20000554   COMPRESSED   0x00000004   Data   RW         7710    .data               mc_w.l(mvars.o)
+    0x20000558   COMPRESSED   0x00000004   Data   RW         7711    .data               mc_w.l(mvars.o)
+    0x2000055c   COMPRESSED   0x00000004   Data   RW         7715    .data               mc_w.l(errno.o)
+    0x20000560        -       0x00000254   Zero   RW          256    .bss                freertos.o
+    0x200007b4        -       0x00000050   Zero   RW          307    .bss                can.o
+    0x20000804        -       0x00000118   Zero   RW          379    .bss                spi.o
+    0x2000091c        -       0x00000048   Zero   RW          422    .bss                tim.o
+    0x20000964        -       0x000001a8   Zero   RW          470    .bss                usart.o
+    0x20000b0c        -       0x00000048   Zero   RW          680    .bss                stm32f4xx_hal_timebase_tim.o
+    0x20000b54        -       0x000000f0   Zero   RW         4108    .bss                tasks.o
+    0x20000c44        -       0x00003c00   Zero   RW         4753    .bss                heap_4.o
+    0x20004844        -       0x00000060   Zero   RW         5569    .bss                bsp_dr16.o
+    0x200048a4        -       0x0000021c   Zero   RW         5672    .bss                bsp_motor_encoder.o
+    0x20004ac0        -       0x000003f7   Zero   RW         5949    .bss                bsp_referee.o
+    0x20004eb7        -       0x0000005a   Zero   RW         6007    .bss                rm_cilent_ui.o
+    0x20004f11   COMPRESSED   0x00000007   PAD
+    0x20004f18        -       0x00000208   Zero   RW         6199    .bss                chassis_task.o
+    0x20005120        -       0x0000014c   Zero   RW         6287    .bss                ins_task.o
+    0x2000526c        -       0x000000b4   Zero   RW         6374    .bss                ui_task.o
+    0x20005320        -       0x00000018   Zero   RW         6468    .bss                can1_send.o
+    0x20005338        -       0x00000018   Zero   RW         6548    .bss                can2_send.o
+    0x20005350        -       0x000000f8   Zero   RW         6589    .bss                lk9025_communication.o
+    0x20005448        -       0x00000040   Zero   RW         6653    .bss                bmi088driver.o
+    0x20005488        -       0x00000268   Zero   RW         6934    .bss                quaternionekf.o
+    0x200056f0        -       0x00002000   Zero   RW            2    HEAP                startup_stm32f407xx.o
+    0x200076f0        -       0x00002000   Zero   RW            1    STACK               startup_stm32f407xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x0800c99c, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x0800c9ac, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
@@ -4346,68 +4346,68 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      2420        114          0         72         64      10275   bmi088driver.o
-       100         28          0          4          0       3056   bmi088middleware.o
-       668         34          0          8         96       7334   bsp_dr16.o
-       436         64          0         64          0       4262   bsp_dwt.o
-       412          8          0          0        540     586639   bsp_motor_encoder.o
-        44          0          0          0          0        966   bsp_pwm.o
-      2120         30          0          2       1015       7338   bsp_referee.o
-       380         36          0          4         80       2566   can.o
-       100         14          0          0          0       1693   can1_receive.o
-        72          8          0          0         24        834   can1_send.o
-       212         26          0         10          0       3212   can2_receive.o
-       284         20          0          0         24       2090   can2_send.o
-      1892        252          0         32          0       8315   chassis_behaviour.o
+      2420        114          0         72         64      10267   bmi088driver.o
+       100         28          0          4          0       3040   bmi088middleware.o
+       668         34          0          8         96       7330   bsp_dr16.o
+       436         64          0         64          0       4250   bsp_dwt.o
+       412          8          0          0        540     586631   bsp_motor_encoder.o
+        44          0          0          0          0        958   bsp_pwm.o
+      2120         30          0          2       1015       7334   bsp_referee.o
+       380         36          0          4         80       2550   can.o
+       100         14          0          0          0       1689   can1_receive.o
+        72          8          0          0         24        826   can1_send.o
+       212         26          0         10          0       3204   can2_receive.o
+       284         20          0          0         24       2082   can2_send.o
+      1892        252          0         32          0       8287   chassis_behaviour.o
        472         38          0         48        520       2418   chassis_task.o
-       130          0          0          0          0      23357   cmsis_os.o
-      1826         16          0        624          0       8672   controller.o
-       296         28        768          2          0       4600   crc.o
-       124          4          0          0          0        866   dma.o
-         0          0          0          0          0      16800   event_groups.o
-       170         10          0          0          0      17199   filter.o
-        92         14         80          8        596       2610   freertos.o
+       130          0          0          0          0      23361   cmsis_os.o
+      1826         16          0        624          0       8680   controller.o
+       296         28        768          2          0       4584   crc.o
+       124          4          0          0          0        862   dma.o
+         0          0          0          0          0      16812   event_groups.o
+       170         10          0          0          0      17203   filter.o
+        92         14         80          8        596       2606   freertos.o
        316         16          0          0          0       1151   gpio.o
-       568         24          0         32      15360       6787   heap_4.o
-       160         16        158         20          0      28358   init_task.o
-      1622        108         48         68        332       9050   ins_task.o
+       568         24          0         32      15360       6779   heap_4.o
+       160         16        158         20          0      28362   init_task.o
+      1622        108         48         68        332       9054   ins_task.o
       2364         18          0          4          0       6355   kalman_filter.o
-       148          0          0          0          0       3634   list.o
-       816         50          0          0        248       5828   lk9025_communication.o
+       148          0          0          0          0       3630   list.o
+       816         50          0          0        248       5812   lk9025_communication.o
        264         14          0          0          0       3265   lqr.o
-       242         14          0          0          0     742550   main.o
-      1200         14          0          0          0       5599   pid.o
-       726         80          0         12          0      11132   port.o
-      3262        168        144        212        616       9407   quaternionekf.o
-       962         36          0          1         90      14702   rm_cilent_ui.o
-       332         40          0          0        280       1971   spi.o
-        36          8        392          0      16384        848   startup_stm32f407xx.o
-       120         20          0         12          0       8794   stm32f4xx_hal.o
-      1978          4          0          0          0      16577   stm32f4xx_hal_can.o
+       242         14          0          0          0     742530   main.o
+      1200         14          0          0          0       5591   pid.o
+       726         80          0         12          0      11108   port.o
+      3262        168        144        212        616       9403   quaternionekf.o
+       962         36          0          1         90      14714   rm_cilent_ui.o
+       332         40          0          0        280       1959   spi.o
+        36          8        392          0      16384        844   startup_stm32f407xx.o
+       120         20          0         12          0       8786   stm32f4xx_hal.o
+      1978          4          0          0          0      16541   stm32f4xx_hal_can.o
        166         10          0          0          0      32746   stm32f4xx_hal_cortex.o
-      1172         20          8          0          0       5902   stm32f4xx_hal_dma.o
-       548         22          0          0          0       3320   stm32f4xx_hal_gpio.o
-        60         10          0          0          0        890   stm32f4xx_hal_msp.o
-      1620        114          0          0          0       6181   stm32f4xx_hal_rcc.o
-      1012         14          0          0          0       5218   stm32f4xx_hal_spi.o
-      1698         38          0          0          0      11706   stm32f4xx_hal_tim.o
-         4          0          0          0          0       1633   stm32f4xx_hal_tim_ex.o
-       152         18          0          0         72       1519   stm32f4xx_hal_timebase_tim.o
-      1742         22          0          0          0      12105   stm32f4xx_hal_uart.o
-       164         58          0          0          0      14509   stm32f4xx_it.o
-         0          0          0          0          0        376   stream_buffer.o
-        16          4         24          4          0       1163   system_stm32f4xx.o
+      1172         20          8          0          0       5898   stm32f4xx_hal_dma.o
+       548         22          0          0          0       3304   stm32f4xx_hal_gpio.o
+        60         10          0          0          0        886   stm32f4xx_hal_msp.o
+      1620        114          0          0          0       6165   stm32f4xx_hal_rcc.o
+      1012         14          0          0          0       5202   stm32f4xx_hal_spi.o
+      1698         38          0          0          0      11678   stm32f4xx_hal_tim.o
+         4          0          0          0          0       1625   stm32f4xx_hal_tim_ex.o
+       152         18          0          0         72       1515   stm32f4xx_hal_timebase_tim.o
+      1742         22          0          0          0      12073   stm32f4xx_hal_uart.o
+       164         58          0          0          0      14497   stm32f4xx_it.o
+         0          0          0          0          0        384   stream_buffer.o
+        16          4         24          4          0       1151   system_stm32f4xx.o
         24          6          0          4          0        516   task_safe.o
-      2292        154          0         60        240      22806   tasks.o
-       228         20          0          0         72       1990   tim.o
-      1228        232        143         40        180       6241   ui_task.o
-       524         68          0          0        424       2772   usart.o
-      1154         10          0          0          0       7091   user_lib.o
+      2292        154          0         60        240      22782   tasks.o
+       228         20          0          0         72       1978   tim.o
+      1228        232        159         44        180       6237   ui_task.o
+       524         68          0          0        424       2768   usart.o
+      1154         10          0          0          0       7083   user_lib.o
 
     ----------------------------------------------------------------------
-     41236       2206       1800       1360      37260    1729794   Object Totals
+     41236       2206       1816       1364      37264    1729346   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        66         12          3         13          3          0   (incl. Padding)
+        66         12          3         13          7          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -4488,15 +4488,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     47496       2476       3852       1372      37260    1744954   Grand Totals
-     47496       2476       3852        264      37260    1744954   ELF Image Totals (compressed)
-     47496       2476       3852        264          0          0   ROM Totals
+     47496       2476       3868       1376      37264    1744506   Grand Totals
+     47496       2476       3868        264      37264    1744506   ELF Image Totals (compressed)
+     47496       2476       3868        264          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                51348 (  50.14kB)
-    Total RW  Size (RW Data + ZI Data)             38632 (  37.73kB)
-    Total ROM Size (Code + RO Data + RW Data)      51612 (  50.40kB)
+    Total RO  Size (Code + RO Data)                51364 (  50.16kB)
+    Total RW  Size (RW Data + ZI Data)             38640 (  37.73kB)
+    Total ROM Size (Code + RO Data + RW Data)      51628 (  50.42kB)
 
 ==============================================================================
 

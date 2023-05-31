@@ -1,3 +1,4 @@
+
 #include "gimbal_behaviour.h"
 #include "gimbal_task.h"
 #include "maths.h"
@@ -122,8 +123,8 @@ void gimbal_behaviour_react(gimbal_control_t *gimbal_behaviour_react_f)
     case GIMBAL_AUTOBUFF:
         f_GIMBAL_AUTOBUFF(gimbal_behaviour_react_f);
         break;
-	case GIMBAL_TOPBUFF:
-		f_GIMBAL_AUTOBUFF(gimbal_behaviour_react_f);
+		case GIMBAL_TOPBUFF:
+				f_GIMBAL_AUTOBUFF(gimbal_behaviour_react_f);
     default:
         break;
     }
@@ -210,7 +211,7 @@ void gimbal_motor_calculate(gimbal_control_t *motor_calculate_f)
 		motor_calculate_f->Yaw_c.motor_output = torque_to_voltage_6020(motor_calculate_f->Yaw_c.motor_lqr.Output[0]) + motor_calculate_f->Yaw_c.motor_pid.out;
 
 	}
-	else if(motor_calculate_f->gimbal_behaviour == GIMBAL_AUTOATTACK || motor_calculate_f->gimbal_behaviour == GIMBAL_AUTOBUFF)
+	else if(motor_calculate_f->gimbal_behaviour == GIMBAL_AUTOATTACK || motor_calculate_f->gimbal_behaviour == GIMBAL_AUTOBUFF || motor_calculate_f->gimbal_behaviour == GIMBAL_TOPBUFF)
 	{
 		LQR_Data_Update(&motor_calculate_f->Pitch_c.virtual_motor_lqr, pitch_system_state);
 		LQR_Calculate(&motor_calculate_f->Pitch_c.virtual_motor_lqr);

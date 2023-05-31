@@ -22,6 +22,7 @@ static void fire_task_init(gimbal_fire_control_t *fire_init_f);
 static void fire_pid_calculate(gimbal_fire_control_t *fire_pid_calculate_f);
 static void fire_behaviour_choose(gimbal_fire_control_t *fire_behaviour_choose_f);
 int16_t pwm_set = 800;
+int16_t i=0;
 
 void fire_Task(void const *argument)
 {
@@ -60,7 +61,7 @@ void fire_task_init(gimbal_fire_control_t *fire_init_f)
 
     fire_init_f->full_automatic = true;
     fire_init_f->feed_buttle = false;
-    fire_init_f->fire_sw = false;
+    fire_init_f->fire_sw = true;
     fire_init_f->replenish_flag = false;
 
     HAL_TIM_Base_Start(&htim1);
@@ -107,19 +108,19 @@ void fire_behaviour_choose(gimbal_fire_control_t *fire_behaviour_choose_f)
 
     //摩擦轮开关
 
-//    if((fire_behaviour_choose_f->fire_rc->rc.ch[4] < -500 && last_ch4 == 1) || (last_shift == false && fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT == true))
-//    {
-//        fire_behaviour_choose_f->fire_sw = !fire_behaviour_choose_f->fire_sw;;
-//    }
-//    if(fire_behaviour_choose_f->fire_rc->rc.ch[4] > -500)
-//    {
-//        last_ch4 = 1;
-//    }
-//    else
-//    {
-//        last_ch4 = 0;
-//    }
-//    last_shift = fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT;
+    //    if((fire_behaviour_choose_f->fire_rc->rc.ch[4] < -500 && last_ch4 == 1) || (last_shift == false && fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT == true))
+    //    {
+    //        fire_behaviour_choose_f->fire_sw = !fire_behaviour_choose_f->fire_sw;;
+    //    }
+    //    if(fire_behaviour_choose_f->fire_rc->rc.ch[4] > -500)
+    //    {
+    //        last_ch4 = 1;
+    //    }
+    //    else
+    //    {
+    //        last_ch4 = 0;
+    //    }
+    //    last_shift = fire_behaviour_choose_f->fire_rc->kb.bit.SHIFT;
 
     // 裁判系统弹速设置
     switch (fire_behaviour_choose_f->referee->Robot_Status.shooter_id1_17mm_speed_limit)
@@ -152,6 +153,7 @@ void fire_behaviour_choose(gimbal_fire_control_t *fire_behaviour_choose_f)
 
 void fire_pid_calculate(gimbal_fire_control_t *fire_pid_calculate_f)
 {
+    
 
     if (((fire_pid_calculate_f->fire_rc->mouse.press_l != 0) || (fire_pid_calculate_f->fire_rc->rc.ch[4] > 0)) && (fire_pid_calculate_f->referee->Power_Heat.shooter_id1_17mm_cooling_heat + 40 <= fire_pid_calculate_f->referee->Robot_Status.shooter_id1_17mm_cooling_limit))
     {
@@ -162,12 +164,12 @@ void fire_pid_calculate(gimbal_fire_control_t *fire_pid_calculate_f)
                     fire_pid_calculate_f->fire_motor_speed_pid.SetValue,
                     fire_pid_calculate_f->fire_motor->speed);
         }
-        else // 非全自动使用闭环控制
+        else   // 非全自动使用闭环控制
         {
-			//软件边沿触发 + 发射一个弹丸的编码变化值
+            //软件边沿触发 + 发射一个弹丸的编码变化值
             fire_pid_calculate_f->fire_motor_speed_pid.out = motor_position_speed_control(&fire_pid_calculate_f->fire_motor_speed_pid,
                     &fire_pid_calculate_f->fire_motor_position_pid,
-                    (fire_pid_calculate_f->fire_motor_encoder->Encode_Record_Val + 1368),
+                    (fire_pid_calculate_f->fire_motor_encoder->Encode_Record_Val + 1365),    //1365
                     fire_pid_calculate_f->fire_motor_encoder->Encode_Record_Val,
                     fire_pid_calculate_f->fire_motor->speed);
         }

@@ -1,8 +1,8 @@
 chassis\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
-chassis\timers.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
+chassis\timers.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 chassis\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-chassis\timers.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
-chassis\timers.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+chassis\timers.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+chassis\timers.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 chassis\timers.o: ../Core/Inc/FreeRTOSConfig.h
 chassis\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 chassis\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
